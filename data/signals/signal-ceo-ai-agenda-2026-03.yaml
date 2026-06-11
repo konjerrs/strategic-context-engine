@@ -1,0 +1,46 @@
+id: signal-ceo-ai-agenda-2026-03
+title: AI tops CEO agenda for third consecutive year
+signal_type: Pattern
+date_published: 2026-03-18
+date_added: 2026-06-11
+
+source_name: PwC
+source_title: "PwC 29th Annual Global CEO Survey"
+source_url: https://www.pwc.com/gx/en/ceo-survey/2026/report/pwc-29th-annual-global-ceo-survey.pdf
+source_type: Research
+
+geographic_scope:
+  - Global
+
+summary: >
+  PwC's 29th Annual Global CEO Survey finds AI as the top strategic priority for the third consecutive
+  year, with 83% of CEOs citing it as important or critically important to their organization's
+  competitiveness over the next three years. However, only 41% report having a clear enterprise-wide
+  AI strategy, and 34% cite AI governance as a significant gap.
+
+interpretation: >
+  AI has moved from aspirational priority to accountability pressure at the CEO level. The gap between
+  prioritization and strategy clarity represents a significant execution risk. For incoming CEOs, the
+  expectation is no longer whether to pursue AI — it is whether they can lead it credibly. Boards are
+  increasingly asking whether leadership teams have the capability to execute on AI commitments.
+
+affected_forces:
+  - AI Ascendance
+  - Trust Recalibration
+  - Workforce Transformation
+
+confidence: High
+momentum_impact: Strengthening
+
+potential_implications:
+  - CEO mandate framing
+  - Board expectations for AI fluency
+  - Strategy-execution gap assessment
+  - Governance structure investment
+
+related_signals:
+  - signal-enterprise-ai-deployment-2026-05
+  - signal-ai-governance-regulation-2026-04
+  - signal-ai-workforce-anxiety-2026-05
+
+snapshot_id: snapshot-ai-ascendance-2026-06-11

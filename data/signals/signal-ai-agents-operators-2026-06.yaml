@@ -1,0 +1,44 @@
+id: signal-ai-agents-operators-2026-06
+title: AI agents move from assistants to operators
+signal_type: Pattern
+date_published: 2026-05-20
+date_added: 2026-06-11
+
+source_name: OpenAI
+source_title: "Introducing Operator: Autonomous agents in ChatGPT"
+source_url: https://openai.com/blog/introducing-operator
+source_type: Company
+
+geographic_scope:
+  - Global
+
+summary: >
+  OpenAI and competing platforms have introduced agentic capabilities that allow AI to independently
+  plan and execute multi-step workflows — booking, research, data entry, and process automation —
+  without continuous human direction.
+
+interpretation: >
+  The market is moving beyond AI as a conversational interface toward AI as an operational actor.
+  Organizations that have not mapped which workflows are candidates for agent delegation risk both
+  competitive disadvantage and ungoverned AI activity.
+
+affected_forces:
+  - AI Ascendance
+  - Workforce Transformation
+  - Trust Recalibration
+
+confidence: High
+momentum_impact: Strengthening
+
+potential_implications:
+  - Workflow redesign
+  - Management redesign
+  - AI governance
+  - Workforce reskilling
+
+related_signals:
+  - signal-enterprise-ai-deployment-2026-05
+  - signal-ai-governance-regulation-2026-04
+  - signal-workforce-ai-anxiety-2026-05
+
+snapshot_id: snapshot-ai-ascendance-2026-06-11

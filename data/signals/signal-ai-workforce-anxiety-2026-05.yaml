@@ -1,0 +1,47 @@
+id: signal-ai-workforce-anxiety-2026-05
+title: Worker anxiety about AI displacement reaches five-year high
+signal_type: Pattern
+date_published: 2026-05-22
+date_added: 2026-06-11
+
+source_name: Gallup
+source_title: "Work and AI 2026: Employee Sentiment Survey"
+source_url: https://www.gallup.com/workplace/reports/work-and-ai-2026.aspx
+source_type: Research
+
+geographic_scope:
+  - United States
+  - Global
+
+summary: >
+  Gallup's 2026 Work and AI survey finds that 54% of U.S. workers believe AI will significantly
+  change or eliminate their role within five years, up from 38% in 2023. Anxiety is highest among
+  knowledge workers in healthcare, financial services, and legal sectors. Only 29% of respondents
+  say their employer has communicated a clear plan for how AI will affect their work.
+
+interpretation: >
+  The gap between AI deployment velocity and organizational communication is creating a workforce
+  trust deficit. Leaders who have not developed credible narratives about AI and work risk talent
+  attrition and engagement decline precisely when they need workforce commitment to execute
+  transformation. This is as much a leadership communication challenge as a technology strategy.
+
+affected_forces:
+  - AI Ascendance
+  - Workforce Transformation
+  - Trust Recalibration
+
+confidence: High
+momentum_impact: Complicating
+
+potential_implications:
+  - Internal communication strategy
+  - Change management investment
+  - Talent retention risk
+  - Employee trust monitoring
+
+related_signals:
+  - signal-enterprise-ai-deployment-2026-05
+  - signal-ai-agents-operators-2026-06
+  - signal-ceo-ai-agenda-2026-03
+
+snapshot_id: snapshot-ai-ascendance-2026-06-11

@@ -1,0 +1,88 @@
+lenses:
+  - id: growth
+    name: Growth
+    lens_type: Strategic Challenge
+
+    description: >
+      Organizations seeking to expand revenue, market share, customers, or capability in a context
+      where traditional growth assumptions are being disrupted. Growth challenges today are often
+      intertwined with technology adoption, workforce capability, and changing customer expectations.
+
+    associated_needs:
+      - Market Expansion
+      - Customer Acquisition
+      - Innovation
+      - Competitive Differentiation
+      - Capability Building
+
+    relevant_impact_areas:
+      - Business Model
+      - Customer Experience
+      - Operating Model
+      - Talent
+      - Leadership
+
+    associated_challenges:
+      - Innovation
+      - Talent
+      - Reinvention
+      - Efficiency
+
+    default_time_horizons:
+      - 0-2 Years
+      - 3-5 Years
+
+    high_relevance_forces:
+      - AI Ascendance
+      - Workforce Transformation
+      - Trust Recalibration
+
+    starter_questions:
+      - Where are the highest-potential sources of growth that existing assumptions are obscuring?
+      - How should AI change the growth model, not just the cost model?
+      - What customer expectation shifts are creating new growth opportunities?
+      - What capabilities are required for the next phase of growth that do not yet exist?
+
+  - id: trust
+    name: Trust
+    lens_type: Strategic Challenge
+
+    description: >
+      Organizations navigating erosion, rebuilding, or proactive cultivation of trust among
+      customers, employees, regulators, or the public. Trust challenges often emerge from rapid
+      change, past failures, opacity, or widening gaps between stated values and observable actions.
+
+    associated_needs:
+      - Accountability
+      - Transparency
+      - Consistency
+      - Communication
+      - Stakeholder Confidence
+
+    relevant_impact_areas:
+      - Trust
+      - Governance
+      - Culture
+      - Leadership
+      - Customer Experience
+
+    associated_challenges:
+      - Resilience
+      - Transformation
+      - Reinvention
+      - Growth
+
+    default_time_horizons:
+      - 0-2 Years
+      - 3-5 Years
+
+    high_relevance_forces:
+      - Trust Recalibration
+      - AI Ascendance
+      - Institutional Rewiring
+
+    starter_questions:
+      - Which stakeholder groups are most at risk of losing trust, and why?
+      - What actions have created trust gaps that strategy must now close?
+      - How does AI change what stakeholders expect in terms of transparency and accountability?
+      - What would it mean to treat trust as a strategic asset rather than a risk to manage?

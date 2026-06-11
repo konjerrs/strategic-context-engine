@@ -1,0 +1,101 @@
+lenses:
+  - id: healthcare
+    name: Healthcare
+    lens_type: Industry
+
+    description: >
+      Organizations operating in clinical care, health systems, insurance, pharmaceuticals,
+      medical devices, and health technology. Characterized by high regulatory oversight,
+      workforce intensity, trust sensitivity, and increasing pressure from AI, consumerization,
+      and cost.
+
+    associated_needs:
+      - Patient Trust
+      - Regulatory Compliance
+      - Workforce Stability
+      - Care Quality
+      - Operational Efficiency
+      - Innovation
+
+    relevant_impact_areas:
+      - Operating Model
+      - Talent
+      - Governance
+      - Customer Experience
+      - Trust
+      - Business Model
+      - Infrastructure
+
+    associated_challenges:
+      - Growth
+      - Efficiency
+      - Talent
+      - Trust
+      - Reinvention
+      - Resilience
+
+    default_time_horizons:
+      - 3-5 Years
+      - 5-10 Years
+
+    high_relevance_forces:
+      - AI Ascendance
+      - Workforce Transformation
+      - Trust Recalibration
+      - Demographic Shift
+
+    starter_questions:
+      - How is AI changing what patients expect from clinical interactions?
+      - Where are workforce shortages most likely to constrain growth?
+      - What regulatory shifts most threaten or enable the strategy?
+      - How should the organization build trust with patients in an AI-mediated care environment?
+
+  - id: financial-services
+    name: Financial Services
+    lens_type: Industry
+
+    description: >
+      Organizations operating in banking, insurance, asset management, capital markets, fintech,
+      and payments. Characterized by heavy regulation, data intensity, trust sensitivity, competitive
+      disruption from technology-native entrants, and accelerating AI deployment across core functions.
+
+    associated_needs:
+      - Regulatory Compliance
+      - Customer Trust
+      - Risk Management
+      - Innovation
+      - Operational Resilience
+      - Talent
+
+    relevant_impact_areas:
+      - Governance
+      - Trust
+      - Operating Model
+      - Business Model
+      - Customer Experience
+      - Talent
+      - Infrastructure
+
+    associated_challenges:
+      - Trust
+      - Growth
+      - Reinvention
+      - Resilience
+      - Innovation
+      - Efficiency
+
+    default_time_horizons:
+      - 3-5 Years
+      - 5-10 Years
+
+    high_relevance_forces:
+      - AI Ascendance
+      - Trust Recalibration
+      - Institutional Rewiring
+      - Workforce Transformation
+
+    starter_questions:
+      - How will AI change the relationship between customers and financial advisors?
+      - Where are regulatory frameworks creating exposure for AI deployment?
+      - Which competitors — including non-traditional entrants — are setting new expectations?
+      - How should the organization balance efficiency gains from AI with workforce trust obligations?

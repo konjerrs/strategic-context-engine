@@ -1,0 +1,47 @@
+id: signal-ai-governance-regulation-2026-04
+title: EU AI Act enters enforcement phase for high-risk systems
+signal_type: Event
+date_published: 2026-04-02
+date_added: 2026-06-11
+
+source_name: European Commission
+source_title: "EU AI Act: High-Risk System Requirements Now in Force"
+source_url: https://digital-strategy.ec.europa.eu/en/policies/european-approach-artificial-intelligence
+source_type: Government
+
+geographic_scope:
+  - Europe
+  - Global
+
+summary: >
+  The EU AI Act's high-risk system provisions entered enforcement in Q1 2026, requiring organizations
+  operating in the EU to conduct conformity assessments, register systems in the EU AI database,
+  and establish human oversight mechanisms for AI used in healthcare, financial services, hiring,
+  and critical infrastructure.
+
+interpretation: >
+  Compliance with the EU AI Act is now a real operational requirement, not a future planning item.
+  Organizations in healthcare and financial services face the most immediate exposure. Leaders who
+  treated AI governance as a downstream concern now face retroactive remediation at scale, making
+  governance a board-level priority.
+
+affected_forces:
+  - AI Ascendance
+  - Trust Recalibration
+  - Institutional Rewiring
+
+confidence: High
+momentum_impact: Complicating
+
+potential_implications:
+  - AI compliance and audit functions
+  - Human oversight workflow design
+  - Board-level AI governance
+  - Vendor due diligence requirements
+
+related_signals:
+  - signal-enterprise-ai-deployment-2026-05
+  - signal-ai-agents-operators-2026-06
+  - signal-ai-healthcare-regulation-2026-02
+
+snapshot_id: snapshot-ai-ascendance-2026-06-11

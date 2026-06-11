@@ -1,0 +1,48 @@
+id: signal-enterprise-ai-deployment-2026-05
+title: Enterprise AI deployment accelerates across Fortune 500
+signal_type: Pattern
+date_published: 2026-05-07
+date_added: 2026-06-11
+
+source_name: McKinsey & Company
+source_title: "The State of AI in Early 2026: Gen AI Adoption Accelerates"
+source_url: https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai
+source_type: Research
+
+geographic_scope:
+  - Global
+  - North America
+  - Europe
+
+summary: >
+  McKinsey's 2026 State of AI survey finds that 78% of large enterprises now report using generative
+  AI in at least one business function, up from 55% in 2024. Deployment is concentrated in marketing,
+  software development, and customer service, with healthcare and financial services showing the
+  fastest year-over-year growth.
+
+interpretation: >
+  AI adoption is no longer a leading-edge differentiator — it is becoming a baseline operational
+  expectation. Organizations that have not deployed AI in core workflows risk falling behind peers
+  on cost structure and response speed, while those that have deployed broadly now face the harder
+  challenge of governance and integration.
+
+affected_forces:
+  - AI Ascendance
+  - Workforce Transformation
+  - Trust Recalibration
+
+confidence: High
+momentum_impact: Strengthening
+
+potential_implications:
+  - Competitive pressure on AI laggards
+  - Governance and risk frameworks
+  - Workforce role redesign
+  - Operating model restructuring
+
+related_signals:
+  - signal-ai-agents-operators-2026-06
+  - signal-ai-governance-regulation-2026-04
+  - signal-ceo-ai-agenda-2026-03
+
+snapshot_id: snapshot-ai-ascendance-2026-06-11

@@ -1,0 +1,59 @@
+id: snapshot-healthcare-ceo-growth-2026-06-11
+context_id: healthcare-ceo-growth-3-5
+snapshot_date: 2026-06-11
+created_by: system
+
+summary: >
+  Initial baseline assessment for Healthcare + CEO Transition + Growth + 3-5 Years.
+  Three forces rank in the high-90s, reflecting the density of AI, workforce, and trust
+  dynamics converging in healthcare at this moment. The new CEO window is open; no major
+  strategic commitments have been made that would constrain these forces' relevance.
+
+ranked_forces:
+  - force_id: ai-ascendance
+    score: 94
+  - force_id: workforce-transformation
+    score: 91
+  - force_id: trust-recalibration
+    score: 88
+
+top_tensions:
+  - Efficiency ↔ Humanity
+  - Scale ↔ Personalization
+  - Innovation ↔ Trust
+  - Access ↔ Quality
+  - Intelligence ↔ Judgment
+
+top_questions:
+  - What assumptions about healthcare delivery were built for a world of scarce intelligence?
+  - Which parts of our model should be redesigned rather than optimized?
+  - What aspects of care should become more personalized as AI handles more routine functions?
+  - How should the new CEO establish growth credibility while managing workforce anxiety about AI?
+
+top_provocations:
+  - What if healthcare's primary scarcity is no longer expertise but attention?
+  - What if trust becomes a more durable competitive asset than technology investment?
+  - What if the workforce shortage is partially a role design problem, not just a supply problem?
+
+signals_included:
+  - signal-ai-agents-operators-2026-06
+  - signal-ai-healthcare-clinical-2026-05
+  - signal-ai-workforce-anxiety-2026-05
+  - signal-ai-governance-regulation-2026-04
+  - signal-enterprise-ai-deployment-2026-05
+  - signal-human-ai-teaming-research-2026-02
+  - signal-ai-trust-public-opinion-2026-05
+
+context_state_at_snapshot:
+  status: Active Monitoring
+  selected_lenses:
+    industry: Healthcare
+    leadership_situation: CEO Transition
+    strategic_challenge: Growth
+    time_horizon: 3-5 Years
+
+change_since_previous:
+  summary: Initial baseline; no prior snapshot.
+  force_changes: []
+  signal_changes: []
+  interpretation_changes: []

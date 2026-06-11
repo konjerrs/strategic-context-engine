@@ -1,0 +1,63 @@
+id: snapshot-financial-services-ceo-trust-2026-06-11
+context_id: financial-services-ceo-trust-3-5
+snapshot_date: 2026-06-11
+created_by: system
+
+summary: >
+  Initial baseline assessment for Financial Services + CEO Transition + Trust + 3-5 Years.
+  Trust Recalibration ranks highest of any context in the prototype dataset, reflecting the
+  near-perfect convergence of trust as both the strategic challenge and the dominant
+  environmental force in financial services. AI Ascendance is close behind, given the active
+  displacement of knowledge roles and the regulatory pressure building around AI deployment.
+
+ranked_forces:
+  - force_id: trust-recalibration
+    score: 96
+  - force_id: ai-ascendance
+    score: 92
+  - force_id: workforce-transformation
+    score: 85
+
+top_tensions:
+  - Transparency ↔ Competitive Advantage
+  - Efficiency ↔ Accountability
+  - AI Deployment ↔ Workforce Trust
+  - Speed ↔ Regulatory Compliance
+  - Innovation ↔ Stability
+
+top_questions:
+  - How should the new CEO position the organization's AI strategy in a way that builds rather
+    than erodes trust?
+  - Which trust gaps — with customers, employees, or regulators — are most urgent to close
+    in the first 12 months?
+  - What governance structures are needed to ensure AI deployment is seen as accountable?
+
+top_provocations:
+  - What if the institutions most trusted in financial services in 2030 are those that chose
+    transparency over efficiency at key AI decision points?
+  - What if the new CEO's most important early decision is about governance, not strategy?
+  - What if competitors who rushed AI deployment without governance frameworks are creating
+    a trust advantage for those who didn't?
+
+signals_included:
+  - signal-ai-finserv-underwriting-2026-03
+  - signal-ai-governance-regulation-2026-04
+  - signal-ai-trust-public-opinion-2026-05
+  - signal-ai-workforce-anxiety-2026-05
+  - signal-ceo-ai-agenda-2026-03
+  - signal-enterprise-ai-deployment-2026-05
+  - signal-foundation-model-commoditization-2026-04
+
+context_state_at_snapshot:
+  status: Active Monitoring
+  selected_lenses:
+    industry: Financial Services
+    leadership_situation: CEO Transition
+    strategic_challenge: Trust
+    time_horizon: 3-5 Years
+
+change_since_previous:
+  summary: Initial baseline; no prior snapshot.
+  force_changes: []
+  signal_changes: []
+  interpretation_changes: []

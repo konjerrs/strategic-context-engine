@@ -1,0 +1,88 @@
+lenses:
+  - id: 0-2-years
+    name: 0-2 Years
+    lens_type: Time Horizon
+
+    description: >
+      The immediate operating window. Forces and signals that will have direct, near-term impact
+      on decisions, talent, operations, and competitive position. This horizon is dominated by
+      deployable AI, regulatory activation, workforce pressure, and leadership credibility
+      establishment.
+
+    associated_needs:
+      - Immediate Action
+      - Quick Wins
+      - Credibility
+      - Operational Stability
+      - Foundation Setting
+
+    relevant_impact_areas:
+      - Operating Model
+      - Leadership
+      - Talent
+      - Governance
+      - Trust
+
+    default_signal_types:
+      - Event
+      - Pattern
+
+    strategic_posture: Execute and establish
+
+  - id: 3-5-years
+    name: 3-5 Years
+    lens_type: Time Horizon
+
+    description: >
+      The strategic planning window. Forces that will reshape competitive structure, workforce
+      composition, operating models, and customer expectations. This is the primary horizon for
+      capital allocation, capability building, and transformation sequencing.
+
+    associated_needs:
+      - Strategic Clarity
+      - Capability Building
+      - Transformation Sequencing
+      - Competitive Positioning
+      - Structural Adaptation
+
+    relevant_impact_areas:
+      - Business Model
+      - Operating Model
+      - Talent
+      - Customer Experience
+      - Governance
+
+    default_signal_types:
+      - Pattern
+      - Tension
+
+    strategic_posture: Build and position
+
+  - id: 5-10-years
+    name: 5-10 Years
+    lens_type: Time Horizon
+
+    description: >
+      The long-range horizon. Forces that will define the nature of industries, work, institutions,
+      and society. This horizon is characterized by higher uncertainty but also higher strategic
+      optionality — decisions made today can compound significantly by this timeframe.
+
+    associated_needs:
+      - Vision
+      - Scenario Planning
+      - Long-Range Positioning
+      - Adaptive Strategy
+      - Optionality Preservation
+
+    relevant_impact_areas:
+      - Business Model
+      - Governance
+      - Culture
+      - Infrastructure
+      - Leadership
+
+    default_signal_types:
+      - Pattern
+      - Tension
+
+    strategic_posture: Envision and adapt

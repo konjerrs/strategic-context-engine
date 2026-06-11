@@ -1,0 +1,47 @@
+id: signal-foundation-model-commoditization-2026-04
+title: Foundation model costs fall 90% in 18 months, reshaping AI economics
+signal_type: Pattern
+date_published: 2026-04-29
+date_added: 2026-06-11
+
+source_name: Andreessen Horowitz
+source_title: "The Great Model Deflation: AI Infrastructure Costs in 2026"
+source_url: https://a16z.com/ai-infrastructure-costs-2026/
+source_type: Industry
+
+geographic_scope:
+  - Global
+
+summary: >
+  Analysis from a16z shows that the cost of running frontier-equivalent AI inference has fallen
+  approximately 90% since late 2024, driven by hardware improvements, model efficiency gains, and
+  intensifying competition among providers. Tasks that cost $1 per thousand completions in 2024
+  now cost less than $0.10, with further declines projected through 2027.
+
+interpretation: >
+  When AI capability effectively becomes free at scale, the limiting factor shifts from technology
+  access to organizational capability — the ability to identify where to apply intelligence, design
+  the workflows, govern the outputs, and build the trust to act on them. Intelligence abundance does
+  not automatically create competitive advantage; deployment quality, governance, and human judgment
+  increasingly do.
+
+affected_forces:
+  - AI Ascendance
+  - Workforce Transformation
+  - Trust Recalibration
+
+confidence: High
+momentum_impact: Strengthening
+
+potential_implications:
+  - Build vs. buy strategy recalibration
+  - Competitive moat reassessment
+  - AI investment prioritization
+  - Vendor consolidation pressure
+
+related_signals:
+  - signal-enterprise-ai-deployment-2026-05
+  - signal-ai-agents-operators-2026-06
+  - signal-ceo-ai-agenda-2026-03
+
+snapshot_id: snapshot-ai-ascendance-2026-06-11

@@ -1,0 +1,48 @@
+id: signal-ai-healthcare-clinical-2026-05
+title: AI diagnostic tools reach clinical parity in radiology and pathology
+signal_type: Pattern
+date_published: 2026-05-14
+date_added: 2026-06-11
+
+source_name: The New England Journal of Medicine
+source_title: "AI Diagnostic Performance Across Radiology and Pathology: A Meta-Analysis"
+source_url: https://www.nejm.org/doi/full/10.1056/NEJMoa2600000
+source_type: Academic
+
+geographic_scope:
+  - Global
+  - North America
+  - Europe
+
+summary: >
+  A NEJM meta-analysis of 47 clinical trials finds that AI diagnostic systems in radiology and
+  pathology now match or exceed specialist-level accuracy in detecting early-stage cancers, diabetic
+  retinopathy, and pulmonary embolism. Adoption in academic medical centers has outpaced adoption in
+  community hospitals, creating a two-tier diagnostic landscape.
+
+interpretation: >
+  Clinical AI is no longer experimental in key diagnostic domains — it is achieving evidence-based
+  legitimacy. Healthcare leaders now face a deployment decision, not a readiness question. The
+  equity dimension is significant: if AI-enhanced diagnostics remain concentrated in academic
+  centers, the access gap between institution types will widen.
+
+affected_forces:
+  - AI Ascendance
+  - Workforce Transformation
+  - Trust Recalibration
+
+confidence: High
+momentum_impact: Strengthening
+
+potential_implications:
+  - Radiologist and pathologist role redesign
+  - Technology investment prioritization
+  - Health equity and access strategy
+  - Patient trust in AI-assisted care
+
+related_signals:
+  - signal-ai-healthcare-regulation-2026-02
+  - signal-healthcare-workforce-shortages-2026-04
+  - signal-enterprise-ai-deployment-2026-05
+
+snapshot_id: snapshot-ai-ascendance-2026-06-11

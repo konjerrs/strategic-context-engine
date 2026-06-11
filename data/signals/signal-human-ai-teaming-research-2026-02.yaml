@@ -1,0 +1,46 @@
+id: signal-human-ai-teaming-research-2026-02
+title: Research shows human-AI teams outperform AI alone on complex judgment tasks
+signal_type: Pattern
+date_published: 2026-02-11
+date_added: 2026-06-11
+
+source_name: MIT Sloan Management Review
+source_title: "The Complementarity Advantage: Why Human-AI Teams Win on Complex Decisions"
+source_url: https://sloanreview.mit.edu/article/human-ai-complementarity-2026/
+source_type: Academic
+
+geographic_scope:
+  - Global
+
+summary: >
+  A series of MIT and Stanford studies published in early 2026 consistently finds that human-AI
+  collaborative teams outperform AI alone by 18-31% on tasks requiring contextual judgment,
+  ethical reasoning, stakeholder interpretation, and novel problem-solving — while AI alone
+  outperforms humans alone on pattern recognition, data synthesis, and option generation.
+
+interpretation: >
+  The research is shifting from "will AI replace humans" to "how should humans and AI be organized
+  together." Organizations that design human-AI workflows to maximize complementarity — rather than
+  simply substituting AI for humans — appear to achieve superior outcomes. This has direct
+  implications for role design, management structure, and what capabilities leaders must develop
+  in their people.
+
+affected_forces:
+  - AI Ascendance
+  - Workforce Transformation
+
+confidence: High
+momentum_impact: Complicating
+
+potential_implications:
+  - Role redesign around complementarity
+  - Management training for AI collaboration
+  - Hiring criteria evolution
+  - Performance framework redesign
+
+related_signals:
+  - signal-ai-workforce-anxiety-2026-05
+  - signal-ai-agents-operators-2026-06
+  - signal-enterprise-ai-deployment-2026-05
+
+snapshot_id: snapshot-ai-ascendance-2026-06-11

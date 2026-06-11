@@ -1,0 +1,52 @@
+id: signal-ai-trust-public-opinion-2026-05
+title: Public trust in AI-assisted decisions diverges sharply by domain
+signal_type: Tension
+date_published: 2026-05-30
+date_added: 2026-06-11
+
+source_name: Edelman
+source_title: "Edelman AI Trust Barometer 2026"
+source_url: https://www.edelman.com/trust/2026/ai-trust-barometer
+source_type: Research
+
+geographic_scope:
+  - Global
+  - United States
+  - United Kingdom
+  - Germany
+  - Japan
+
+summary: >
+  Edelman's 2026 AI Trust Barometer finds that public trust in AI-assisted decisions varies
+  dramatically by domain. Navigation and logistics (82% trust), customer service (61%), and financial
+  planning support (54%) show majority acceptance. Healthcare diagnosis (44%), hiring decisions (31%),
+  and legal judgment (27%) remain below majority trust thresholds. Trust is higher when humans are
+  visibly involved in final decisions, and lower when processes are opaque.
+
+interpretation: >
+  The public is not uniformly skeptical of AI — it is selectively skeptical based on perceived stakes
+  and human oversight visibility. Organizations in healthcare and financial services operate in
+  trust-sensitive domains where opacity destroys acceptance. The implication is not to avoid AI but
+  to design for visible human judgment at consequential moments, and to communicate that design
+  clearly. Trust architecture is becoming a product and strategy requirement, not a communications
+  afterthought.
+
+affected_forces:
+  - AI Ascendance
+  - Trust Recalibration
+
+confidence: High
+momentum_impact: Complicating
+
+potential_implications:
+  - Human-in-the-loop design requirements
+  - Patient and customer communication strategy
+  - AI explainability as a brand asset
+  - Regulatory anticipation in high-trust-sensitivity domains
+
+related_signals:
+  - signal-ai-governance-regulation-2026-04
+  - signal-ai-healthcare-clinical-2026-05
+  - signal-ai-finserv-underwriting-2026-03
+
+snapshot_id: snapshot-ai-ascendance-2026-06-11

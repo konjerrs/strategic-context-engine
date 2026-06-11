@@ -1,0 +1,106 @@
+id: financial-services-ceo-trust-3-5
+name: Financial Services CEO Transition Trust
+created_at: 2026-06-11
+updated_at: 2026-06-11
+status: Active Monitoring
+
+selected_lenses:
+  industry: Financial Services
+  leadership_situation: CEO Transition
+  strategic_challenge: Trust
+  time_horizon: 3-5 Years
+
+context_summary: >
+  Financial services organizations are navigating simultaneous trust pressures from multiple
+  directions: AI deployment into consequential decisions, regulatory scrutiny, competitive
+  disruption from technology-native entrants, and a workforce navigating significant role change.
+  A new CEO entering this environment must establish personal credibility and institutional
+  legitimacy while managing a transformation agenda that depends on trust to succeed.
+
+ranked_forces:
+  - force_id: trust-recalibration
+    score: 96
+    score_breakdown:
+      industry_match: 24
+      leadership_situation_match: 25
+      strategic_challenge_match: 20
+      time_horizon_match: 10
+      impact_area_match: 10
+      signal_strength: 7
+    why_this_force_surfaced: >
+      Trust is the explicit strategic challenge, and financial services is among the most
+      trust-sensitive industries in the economy. A CEO transition amplifies trust dynamics —
+      stakeholders (customers, employees, regulators, investors) will be watching for signals of
+      direction and accountability. The 3-5 year window is precisely when trust architecture
+      decisions — around AI deployment, governance, and communication — will either build or
+      erode institutional standing.
+
+  - force_id: ai-ascendance
+    score: 92
+    score_breakdown:
+      industry_match: 23
+      leadership_situation_match: 19
+      strategic_challenge_match: 18
+      time_horizon_match: 10
+      impact_area_match: 10
+      signal_strength: 12
+    why_this_force_surfaced: >
+      AI is actively displacing knowledge work in financial services — underwriting, analysis,
+      compliance, and advisory functions are all being reshaped. In a trust context, this creates
+      dual exposure: AI deployment that is opaque or poorly governed erodes the trust the new CEO
+      needs to build, while failing to deploy AI creates competitive and cost disadvantage. How
+      the CEO frames AI relative to trust will define the institution's character.
+
+  - force_id: workforce-transformation
+    score: 85
+    score_breakdown:
+      industry_match: 21
+      leadership_situation_match: 18
+      strategic_challenge_match: 14
+      time_horizon_match: 10
+      impact_area_match: 10
+      signal_strength: 12
+    why_this_force_surfaced: >
+      Financial services is experiencing displacement of skilled roles — actuaries, analysts,
+      compliance officers, advisors — as AI matures. The workforce trust dimension is significant:
+      employees whose roles are threatened by AI will be skeptical of a new CEO who deploys it
+      without a credible story. Trust, in this context, is not just external — it is an internal
+      leadership challenge.
+
+strategic_tensions:
+  - Transparency ↔ Competitive Advantage
+  - Efficiency ↔ Accountability
+  - AI Deployment ↔ Workforce Trust
+  - Speed ↔ Regulatory Compliance
+  - Innovation ↔ Stability
+
+strategic_questions:
+  - How should the new CEO position the organization's AI strategy in a way that builds rather
+    than erodes trust?
+  - Which trust gaps — with customers, employees, or regulators — are most urgent to close in
+    the first 12 months?
+  - What governance structures are needed to ensure AI deployment is seen as accountable?
+  - How should the organization communicate about workforce transformation in a way that
+    preserves internal trust?
+  - Where is the organization most exposed if regulators increase scrutiny of AI-assisted decisions?
+
+provocations:
+  - What if the institutions most trusted in financial services in 2030 are those that chose
+    transparency over efficiency at key AI decision points?
+  - What if employees have higher trust standards for their institutions than customers do —
+    and internal trust is the leading indicator of external trust?
+  - What if the new CEO's most important early decision is about governance, not strategy?
+  - What if competitors who rushed AI deployment without governance frameworks are creating
+    a trust advantage for those who didn't?
+
+tracked_signals:
+  - signal-ai-finserv-underwriting-2026-03
+  - signal-ai-governance-regulation-2026-04
+  - signal-ai-trust-public-opinion-2026-05
+  - signal-ai-workforce-anxiety-2026-05
+  - signal-ceo-ai-agenda-2026-03
+  - signal-enterprise-ai-deployment-2026-05
+  - signal-foundation-model-commoditization-2026-04
+
+snapshots:
+  - snapshot-financial-services-ceo-trust-2026-06-11

@@ -1,0 +1,97 @@
+id: healthcare-ceo-growth-3-5
+name: Healthcare CEO Transition Growth
+created_at: 2026-06-11
+updated_at: 2026-06-11
+status: Active Monitoring
+
+selected_lenses:
+  industry: Healthcare
+  leadership_situation: CEO Transition
+  strategic_challenge: Growth
+  time_horizon: 3-5 Years
+
+context_summary: >
+  Healthcare organizations are entering a period of structural change shaped by AI, workforce
+  pressure, trust dynamics, and changing expectations of care. A new CEO entering this environment
+  faces simultaneous pressure to grow, to stabilize, and to make early decisions that signal
+  strategic direction. The 3-5 year horizon is the primary window for capability building and
+  model reinvention.
+
+ranked_forces:
+  - force_id: ai-ascendance
+    score: 94
+    score_breakdown:
+      industry_match: 23
+      leadership_situation_match: 20
+      strategic_challenge_match: 18
+      time_horizon_match: 10
+      impact_area_match: 10
+      signal_strength: 13
+    why_this_force_surfaced: >
+      Healthcare contains enormous volumes of knowledge work that AI is beginning to perform at
+      clinical parity. Workforce shortages create urgency for augmentation. A new CEO has a rare
+      window to redesign operating assumptions before they harden — and the 3-5 year horizon is
+      exactly when AI deployment decisions made now will define competitive position.
+
+  - force_id: workforce-transformation
+    score: 91
+    score_breakdown:
+      industry_match: 22
+      leadership_situation_match: 19
+      strategic_challenge_match: 17
+      time_horizon_match: 10
+      impact_area_match: 10
+      signal_strength: 13
+    why_this_force_surfaced: >
+      Healthcare is experiencing persistent workforce shortages, burnout, and significant role
+      disruption from AI. Growth in this context is contingent on workforce strategy — you cannot
+      grow a health system without a credible answer to how work will be done. CEO transitions
+      are moments when workforce expectations reset.
+
+  - force_id: trust-recalibration
+    score: 88
+    score_breakdown:
+      industry_match: 21
+      leadership_situation_match: 20
+      strategic_challenge_match: 15
+      time_horizon_match: 10
+      impact_area_match: 10
+      signal_strength: 12
+    why_this_force_surfaced: >
+      Healthcare depends on trust more than almost any industry — with patients, clinicians,
+      regulators, and payers. A CEO transition is a trust-sensitive moment. As AI enters clinical
+      and administrative functions, patients and staff will need visible human accountability.
+      Trust is both a constraint on growth strategy and a source of competitive differentiation.
+
+strategic_tensions:
+  - Efficiency ↔ Humanity
+  - Scale ↔ Personalization
+  - Innovation ↔ Trust
+  - Access ↔ Quality
+  - Intelligence ↔ Judgment
+
+strategic_questions:
+  - What assumptions about healthcare delivery were built for a world of scarce intelligence?
+  - Which parts of our model should be redesigned rather than optimized?
+  - What aspects of care should become more personalized as AI handles more routine functions?
+  - What role should AI play in organizational decision-making, and who governs that?
+  - How should the new CEO establish growth credibility while managing workforce anxiety about AI?
+
+provocations:
+  - What if healthcare's primary scarcity is no longer expertise but attention?
+  - What if patients increasingly trust AI for information and humans for decisions — and the
+    distinction between those moments is the real design challenge?
+  - What if trust becomes a more durable competitive asset than technology investment?
+  - What if the workforce shortage is partially a role design problem, not just a supply problem?
+
+tracked_signals:
+  - signal-ai-agents-operators-2026-06
+  - signal-ai-healthcare-clinical-2026-05
+  - signal-ai-workforce-anxiety-2026-05
+  - signal-ai-governance-regulation-2026-04
+  - signal-enterprise-ai-deployment-2026-05
+  - signal-human-ai-teaming-research-2026-02
+  - signal-ai-trust-public-opinion-2026-05
+
+snapshots:
+  - snapshot-healthcare-ceo-growth-2026-06-11

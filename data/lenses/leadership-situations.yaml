@@ -1,0 +1,50 @@
+lenses:
+  - id: ceo-transition
+    name: CEO Transition
+    lens_type: Leadership Situation
+
+    description: >
+      A leadership moment in which a new CEO is entering, inheriting, or reshaping an organization.
+      The transition window — typically the first 12-24 months — is the highest-leverage period for
+      strategic reset, cultural signal-setting, and mandate establishment. Forces that were latent
+      under prior leadership become live strategic questions.
+
+    associated_needs:
+      - Legitimacy
+      - Trust
+      - Vision
+      - Change
+      - Alignment
+      - Momentum
+
+    relevant_impact_areas:
+      - Leadership
+      - Culture
+      - Governance
+      - Talent
+      - Operating Model
+      - Trust
+
+    associated_challenges:
+      - Growth
+      - Transformation
+      - Trust
+      - Talent
+      - Reinvention
+
+    default_time_horizons:
+      - 0-2 Years
+      - 3-5 Years
+
+    high_relevance_forces:
+      - Trust Recalibration
+      - Institutional Rewiring
+      - AI Ascendance
+      - Workforce Transformation
+
+    starter_questions:
+      - What assumptions should the new CEO challenge immediately?
+      - Where does the organization need renewed belief?
+      - Which forces could reshape the CEO's mandate before it is fully established?
+      - What must change without breaking trust?
+      - What does the board expect that the market has not yet priced in?
