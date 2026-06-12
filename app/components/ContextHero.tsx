@@ -20,7 +20,7 @@ export function ContextHero({ context }: Props) {
         <div className="flex items-center justify-between mb-9">
           <div className="flex items-center gap-3">
             <Link
-              href="/"
+              href="/lens"
               className="inline-flex items-center gap-1.5 text-[12px] text-zinc-400 hover:text-zinc-700 transition-colors"
             >
               <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
