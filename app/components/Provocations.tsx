@@ -22,13 +22,13 @@ export function Provocations({ provocations }: Props) {
           {provocations.map((p) => (
             <div
               key={p.number}
-              className="border-b border-zinc-800 py-7 flex items-start gap-7 group cursor-pointer hover:bg-white/[0.02] transition-colors px-1 rounded-sm"
+              className="border-b border-zinc-800 py-7 flex items-start gap-7 group cursor-pointer hover:bg-white/[0.025] transition-colors px-1 rounded-sm"
             >
-              <span className="font-mono text-[11px] text-zinc-700 mt-[3px] tabular-nums shrink-0 w-5">
+              <span className="font-mono text-[11px] text-zinc-700 mt-[4px] tabular-nums shrink-0 w-5">
                 {p.number}
               </span>
               <p
-                className="text-[20px] text-zinc-200 leading-[1.55] group-hover:text-white transition-colors font-serif"
+                className="text-[19px] text-zinc-300 leading-[1.6] group-hover:text-white transition-colors italic"
                 style={{ fontFamily: 'var(--font-serif)' }}
               >
                 {p.text}
@@ -38,14 +38,19 @@ export function Provocations({ provocations }: Props) {
         </div>
       </div>
 
-      {/* Abstract accent shape */}
-      <div className="absolute bottom-0 right-0 w-72 h-72 pointer-events-none opacity-[0.04]">
-        <svg viewBox="0 0 288 288" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
-          <circle cx="144" cy="144" r="140" stroke="white" strokeWidth="1.5" />
-          <circle cx="144" cy="144" r="100" stroke="white" strokeWidth="1.5" />
-          <circle cx="144" cy="144" r="60" stroke="white" strokeWidth="1.5" />
-        </svg>
-      </div>
+      {/* Large solid accent circle — bottom right, bleeds off edge */}
+      <div
+        className="absolute pointer-events-none"
+        style={{
+          bottom: '-140px',
+          right: '-100px',
+          width: '420px',
+          height: '420px',
+          borderRadius: '50%',
+          backgroundColor: '#4c1d95',
+          opacity: 0.35,
+        }}
+      />
     </section>
   )
 }

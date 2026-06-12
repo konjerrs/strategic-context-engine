@@ -11,6 +11,10 @@ import { AlignmentExercise } from '@/components/AlignmentExercise'
 import { Footer } from '@/components/Footer'
 
 export default function ContextResultsPage() {
+  const forceAccentMap = Object.fromEntries(
+    mockContext.forces.map((f) => [f.name, f.accentHex])
+  )
+
   return (
     <div className="min-h-screen bg-white">
       <Header />
@@ -20,7 +24,7 @@ export default function ContextResultsPage() {
       <StrategicTensions tensions={mockContext.tensions} />
       <StrategicQuestions questions={mockContext.questions} />
       <Provocations provocations={mockContext.provocations} />
-      <SignalsToWatch signals={mockContext.signals} />
+      <SignalsToWatch signals={mockContext.signals} forceAccentMap={forceAccentMap} />
       <AlignmentExercise cards={mockContext.alignmentCards} />
       <Footer />
     </div>

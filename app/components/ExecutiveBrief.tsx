@@ -27,7 +27,7 @@ export function ExecutiveBrief() {
           <p className="text-[15px] text-zinc-500 leading-[1.8]">
             Over the next three to five years, the organizations most likely to succeed may not be
             those with the best technology or the largest scale, but those that most effectively
-            redesign themselves around changing expectations of care, trust, talent, and intelligence.
+            redesign themselves around changing expectations of care, trust, talent, and value creation.
           </p>
         </div>
       </div>
