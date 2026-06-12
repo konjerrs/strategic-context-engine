@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Strategic Context Engine",
+  title: "Forces at Play Forecaster™",
   description: "Forces × Signals × Lenses for strategic leadership decisions",
 };
 

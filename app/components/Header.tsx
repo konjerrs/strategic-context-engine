@@ -1,35 +1,53 @@
+'use client'
+
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 
 export function Header() {
+  const pathname = usePathname()
+  const isForces = pathname.startsWith('/forces')
+  const isSaved = pathname.startsWith('/saved')
+  const isLens = !isForces && !isSaved
+
   return (
     <header className="border-b border-zinc-100 bg-white">
       <div className="max-w-6xl mx-auto px-8 h-14 flex items-center justify-between">
         <div className="flex items-center gap-3">
-          <Link href="/" className="text-sm font-semibold tracking-tight text-zinc-900 hover:text-zinc-600 transition-colors">
-            Field
+          <Link href="/forces" className="flex items-center hover:opacity-75 transition-opacity">
+            <span className="text-[15px] font-bold tracking-[-0.02em] text-zinc-900 leading-none">SYP</span>
           </Link>
           <span className="text-zinc-200 select-none">|</span>
-          <span className="text-sm text-zinc-400 tracking-tight">Strategic Context Engine</span>
+          <span className="text-sm text-zinc-400 tracking-tight">Forces at Play Forecaster™</span>
         </div>
+
         <nav className="flex items-center gap-7">
           <Link
             href="/forces"
-            className="text-[13px] text-zinc-400 hover:text-zinc-700 transition-colors"
+            className={`text-[13px] transition-colors ${
+              isForces ? 'text-zinc-900 font-medium' : 'text-zinc-400 hover:text-zinc-700'
+            }`}
           >
             Forces
           </Link>
-          {['Signals', 'Saved'].map((item) => (
-            <a
-              key={item}
-              href="#"
-              className="text-[13px] text-zinc-400 hover:text-zinc-700 transition-colors"
-            >
-              {item}
-            </a>
-          ))}
-          <div className="w-7 h-7 rounded-full bg-zinc-100 flex items-center justify-center ml-1">
-            <span className="text-[10px] font-medium text-zinc-500 tracking-wide">JK</span>
-          </div>
+          <Link
+            href="/"
+            className={`text-[13px] transition-colors ${
+              isLens ? 'text-zinc-900 font-medium' : 'text-zinc-400 hover:text-zinc-700'
+            }`}
+          >
+            Apply a Lens
+          </Link>
+          <Link
+            href="/saved"
+            className={`text-[13px] transition-colors ${
+              pathname.startsWith('/saved') ? 'text-zinc-900 font-medium' : 'text-zinc-400 hover:text-zinc-700'
+            }`}
+          >
+            Saved
+          </Link>
+          <span className="text-[10px] font-medium text-amber-700 bg-amber-50 border border-amber-200 px-2.5 py-1 rounded-full tracking-wide ml-1">
+            WIP · Prototype V0.1
+          </span>
         </nav>
       </div>
     </header>

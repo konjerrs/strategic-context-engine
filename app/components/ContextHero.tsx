@@ -26,11 +26,11 @@ export function ContextHero({ context }: Props) {
               <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
                 <path d="M7.5 2L3 6l4.5 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
-              Context Selector
+              Apply a Lens
             </Link>
             <span className="text-zinc-200">·</span>
             <span className="text-[10px] uppercase tracking-[0.18em] text-zinc-400 font-medium">
-              Context Results
+              Detailed View
             </span>
           </div>
           <div className="flex items-center gap-5">
