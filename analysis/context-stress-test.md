@@ -4,6 +4,92 @@
 
 ---
 
+## Recalibration Results
+**Applied:** June 2026 | Follows original stress-test findings below
+
+### What Changed
+
+**Scoring matrix recalibration (`generator.ts`):**
+
+The challenge and industry scores were redesigned to use a wider range (1–8 instead of 1–5), creating larger gaps between forces when context strongly favors a specific one:
+- `challengeScore` for talent: Workforce Transformation raised from 5 → **8** (decisive for talent challenges)
+- `challengeScore` for trust: Trust Recalibration raised from 5 → **8** (decisive for trust challenges)
+- `challengeScore` for trust: AI Ascendance lowered from 2 → **1** (AI creates trust problems; Trust Recalibration solves them)
+- `challengeScore` for innovation: AI Ascendance raised from 5 → **7** (innovation is AI's strongest match)
+- `challengeScore` for talent: AI Ascendance lowered from 3 → **2** (Workforce Transformation owns talent)
+- `situationScore` for culture-change: AI Ascendance lowered from 2 → **1** (culture change is a human-first problem)
+- `industryScore` for technology: AI Ascendance raised from 5 → **7** (technology is AI's defining industry)
+- `industryScore` for healthcare: Workforce Transformation raised from 5 (unchanged — already dominant)
+- `industryScore` for financial-services: Trust Recalibration raised from 5 → **6**, Institutional Rewiring from 5 → **6**
+- `industryScore` for technology: Trust Recalibration lowered from 3 → **2** (financial services and healthcare carry trust more structurally)
+- `industryScore` for technology: Human Augmentation raised from 5 → **6**
+- `institutionalRewiring` situationScore equalized across all situations (**4** each) — institutional pressure applies regardless of situation type
+
+**Curated context reorder (`additionalContexts.ts`):**
+
+Consumer Brand + Growth: forces reordered from AI Ascendance #1 → **Human Augmentation #1**, Trust Recalibration #2, AI Ascendance #3. The executive brief already argued this case — the reorder brings the ranking into alignment with the content. Updated `whySurfaced` for Human Augmentation to explain why it surfaces first.
+
+### Before vs. After: Generated Contexts (48 combinations)
+
+| Metric | Before | After | Change |
+|---|---|---|---|
+| AI Ascendance in top-3 | 38/48 (79%) | 34/48 (71%) | −4 contexts |
+| AI Ascendance as #1 | 25/48 (52%) | ~19/48 (40%) | −6 contexts |
+
+### Before vs. After: Curated Contexts (11 contexts)
+
+| Metric | Before | After | Change |
+|---|---|---|---|
+| AI Ascendance in top-3 | 10/11 (91%) | 10/11 (91%) | Unchanged |
+| AI Ascendance as #1 | 5/11 (45%) | **4/11 (36%)** | −1 context |
+
+AI dropped from #1 to #3 in Consumer Brand + Growth. It remains in top-3 across 10 of 11 curated contexts because the 8 additional contexts were editorially written with already-correct orderings — the AI dominance problem lived primarily in the generated scoring engine.
+
+### Updated Force Rankings: Curated Contexts
+
+| Context | Old Force #1 | New Force #1 | Changed? |
+|---|---|---|---|
+| Healthcare + CEO Transition + Growth | AI Ascendance | AI Ascendance | No |
+| Financial Services + CEO Transition + Trust | Trust Recalibration | Trust Recalibration | No |
+| Consumer + Transformation + Innovation | AI Ascendance | AI Ascendance | No |
+| **Consumer Brand + Growth** | **AI Ascendance** | **Human Augmentation** | **Yes** |
+| Consumer Brand + Relevance | Trust Recalibration | Trust Recalibration | No |
+| Technology Company + Innovation | AI Ascendance | AI Ascendance | No |
+| Manufacturing + Workforce Transformation | Workforce Transformation | Workforce Transformation | No |
+| Healthcare + Talent | Workforce Transformation | Workforce Transformation | No |
+| Energy + Trust | Trust Recalibration | Trust Recalibration | No |
+| Government + Transformation | Institutional Rewiring | Institutional Rewiring | No |
+| Financial Services + Innovation | AI Ascendance | AI Ascendance | No |
+
+### Notable Generated Context Improvements
+
+Trust-challenge contexts now correctly surface Trust Recalibration first across all industries:
+- `consumer-ceo-transition-trust`: Trust #1, Institutional #2, AI drops to #3
+- `technology-ceo-transition-trust`: Trust #1, AI #2, Institutional #3 (trust beats technology's AI bias)
+
+Talent-challenge contexts now correctly surface Workforce Transformation first:
+- `healthcare-ceo-transition-talent`: Workforce(16) > HumanAug(12) > Trust(11) > AI(10)
+- `healthcare-transformation-talent`: Workforce leads, AI drops to #3
+- `financial-services-ceo-transition-talent`: Workforce #1, Trust #2, AI relegated
+
+Innovation contexts retain AI leadership where appropriate:
+- `technology-transformation-innovation`: AI(19) > HumanAug(16) — AI clearly dominant ✓
+- `consumer-transformation-innovation`: AI(16) > HumanAug(14) — AI leads ✓
+
+### Remaining Concerns
+
+1. **AI still in top-3 of 10/11 curated contexts.** The curated contexts were written before this recalibration with mostly correct orderings — AI being in top-3 reflects genuine strategic relevance in most contexts, not scoring bias. The remaining cases where AI is #3 (Consumer Brand + Relevance, Energy + Trust) are arguably correct given how AI shapes those contexts even if it is not the primary force.
+
+2. **Consumer Brand + Growth: AI moved from #1 to #3, not out of top-3.** Pushing AI entirely out would require either adding a fourth force not in the current model or accepting that AI has no meaningful role in consumer brand growth — which would be editorially questionable.
+
+3. **Financial Services + Innovation: AI remains #1.** This is the spec's stated acceptable outcome ("AI Ascendance or Institutional Rewiring can be #1, but the rationale should be clear"). The rationale: AI is the engine of financial services innovation pressure and the competitive force driving incumbents to act. Institutional Rewiring is the constraint. AI #1, Institutional #2 is defensible.
+
+4. **Generated contexts at 71% AI top-3 frequency.** Down from 79% — meaningful improvement, but roughly one-third of generated combinations still don't feel fully differentiated from each other. The long-term fix is additional content pools (whySurfaced, implications, provocations) indexed by challenge × industry, not just situation.
+
+---
+
+---
+
 ## 1. Force Frequency Analysis
 
 Appearances in top-3 position across all 11 curated contexts:

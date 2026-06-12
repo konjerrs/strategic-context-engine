@@ -43,28 +43,41 @@ const forceBase: Record<ForceId, { name: string; accentHex: string }> = {
 // ─── Force relevance scoring ─────────────────────────────────────────────────
 // Higher = more relevant for that dimension
 
+// Recalibrated June 2026: challenge and industry scores now use a wider range (1–8)
+// so that context-specific forces can dominate when appropriate, rather than
+// AI Ascendance winning by default across all combinations.
+
 const challengeScore: Record<ForceId, Record<ChallengeSlug, number>> = {
-  'ai-ascendance':          { growth: 5, innovation: 5, talent: 3, trust: 2 },
-  'workforce-transformation':{ talent: 5, growth: 3, innovation: 3, trust: 2 },
-  'trust-recalibration':    { trust: 5, talent: 2, growth: 2, innovation: 2 },
-  'human-augmentation':     { innovation: 5, talent: 4, growth: 3, trust: 2 },
-  'institutional-rewiring': { trust: 4, innovation: 3, growth: 2, talent: 2 },
+  // AI Ascendance is strongest for innovation; de-emphasised for trust/talent challenges
+  'ai-ascendance':          { growth: 5, innovation: 7, talent: 2, trust: 1 },
+  // Workforce Transformation dominates talent challenges decisively
+  'workforce-transformation':{ talent: 8, growth: 3, innovation: 3, trust: 2 },
+  // Trust Recalibration dominates trust challenges decisively
+  'trust-recalibration':    { trust: 8, talent: 2, growth: 2, innovation: 2 },
+  'human-augmentation':     { innovation: 6, talent: 5, growth: 3, trust: 2 },
+  'institutional-rewiring': { trust: 5, innovation: 3, growth: 2, talent: 2 },
 }
 
 const situationScore: Record<ForceId, Record<SituationSlug, number>> = {
-  'ai-ascendance':          { transformation: 5, 'ceo-transition': 4, 'culture-change': 2 },
+  // Culture change gives AI Ascendance less boost (culture change is a human issue)
+  'ai-ascendance':          { transformation: 5, 'ceo-transition': 4, 'culture-change': 1 },
   'workforce-transformation':{ 'culture-change': 5, transformation: 4, 'ceo-transition': 3 },
   'trust-recalibration':    { 'ceo-transition': 5, 'culture-change': 4, transformation: 2 },
   'human-augmentation':     { transformation: 5, 'ceo-transition': 3, 'culture-change': 3 },
-  'institutional-rewiring': { 'ceo-transition': 4, 'culture-change': 4, transformation: 3 },
+  // Institutional Rewiring now scores equally across all situations — all require governance
+  'institutional-rewiring': { 'ceo-transition': 4, 'culture-change': 4, transformation: 4 },
 }
 
 const industryScore: Record<ForceId, Record<IndustrySlug, number>> = {
-  'ai-ascendance':          { technology: 5, healthcare: 4, consumer: 4, 'financial-services': 3 },
-  'workforce-transformation':{ healthcare: 5, technology: 4, 'financial-services': 3, consumer: 3 },
-  'trust-recalibration':    { 'financial-services': 5, healthcare: 4, consumer: 4, technology: 3 },
-  'human-augmentation':     { technology: 5, healthcare: 4, consumer: 3, 'financial-services': 2 },
-  'institutional-rewiring': { 'financial-services': 5, healthcare: 4, technology: 3, consumer: 2 },
+  // Technology gets the highest AI boost; other industries get more modest scores
+  'ai-ascendance':          { technology: 7, healthcare: 4, consumer: 4, 'financial-services': 3 },
+  // Healthcare workforce crisis is the defining characteristic of that industry
+  'workforce-transformation':{ healthcare: 5, technology: 3, 'financial-services': 3, consumer: 3 },
+  // Financial services trust deficit is structurally dominant; consumer trust also high
+  'trust-recalibration':    { 'financial-services': 6, healthcare: 4, consumer: 4, technology: 2 },
+  'human-augmentation':     { technology: 6, healthcare: 4, consumer: 3, 'financial-services': 2 },
+  // Financial services faces the most active institutional rewriting
+  'institutional-rewiring': { 'financial-services': 6, healthcare: 4, technology: 3, consumer: 2 },
 }
 
 function rankForces(industry: IndustrySlug, situation: SituationSlug, challenge: ChallengeSlug): ForceId[] {
