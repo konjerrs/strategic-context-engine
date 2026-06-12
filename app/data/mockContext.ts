@@ -32,7 +32,8 @@ export type StrategicTension = {
 export type StrategicImplication = {
   id: string
   label: string
-  text: string
+  implication: string
+  detail: string
 }
 
 export type SnapshotChange = {
@@ -239,27 +240,32 @@ export const mockContext: ContextResult = {
     {
       id: 'leadership',
       label: 'Leadership',
-      text: 'A new CEO may need to become the organization\'s chief interpreter of how these forces interact — not just a manager of change, but a narrator of the transition.',
+      implication: "A new CEO may need to become the organization's chief interpreter of how these forces interact.",
+      detail: "The leadership task is less about responding to each force independently and more about creating a coherent narrative for why change is necessary, what will remain human, and where the organization must redesign itself.",
     },
     {
       id: 'talent',
       label: 'Talent',
-      text: 'The workforce strategy may need to shift from filling roles to redesigning work around new capabilities — treating AI deployment as a role design question, not just a technology one.',
+      implication: 'The workforce strategy may need to shift from filling roles to redesigning work around new capabilities.',
+      detail: 'Persistent shortages and AI-enabled augmentation suggest that healthcare organizations may need to rethink roles, workflows, skill models, and career paths rather than simply hiring against the current structure.',
     },
     {
       id: 'operating-model',
       label: 'Operating Model',
-      text: 'The organization may need to redesign workflows rather than simply improve existing processes — the assumption that current structures can be optimized may be the most dangerous assumption.',
+      implication: 'The organization may need to redesign workflows rather than simply improve existing processes.',
+      detail: 'Many current processes exist because coordination, documentation, and decision support were historically expensive. AI and automation may make it possible to reimagine how work flows across the enterprise.',
     },
     {
       id: 'growth',
       label: 'Growth',
-      text: 'New growth may come from more intelligent, personalized, and trusted models of care — not from scale alone. The growth strategy and the AI strategy may need to become one document.',
+      implication: 'New growth may come from more intelligent, personalized, and trusted models of care.',
+      detail: "Growth may depend less on scale alone and more on the organization's ability to create experiences that are accessible, personalized, credible, and human where it matters most.",
     },
     {
       id: 'governance',
       label: 'Governance',
-      text: 'AI deployment, workforce pressure, and trust dynamics may require clearer accountability structures — including visibility into where AI is making or influencing decisions.',
+      implication: 'AI, workforce pressure, and trust dynamics may require clearer accountability structures.',
+      detail: 'As AI influences decisions, care experiences, and operational workflows, leaders will need clearer models for oversight, transparency, risk, and responsibility.',
     },
   ],
 

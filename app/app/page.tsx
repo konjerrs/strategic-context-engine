@@ -4,8 +4,6 @@ import { ContextHero } from '@/components/ContextHero'
 import { SnapshotChanges } from '@/components/SnapshotChanges'
 import { ExecutiveBrief } from '@/components/ExecutiveBrief'
 import { ForceAccordion } from '@/components/ForceAccordion'
-import { StrategicTensions } from '@/components/StrategicTensions'
-import { StrategicQuestions } from '@/components/StrategicQuestions'
 import { StrategicImplications } from '@/components/StrategicImplications'
 import { Provocations } from '@/components/Provocations'
 import { SignalsToWatch } from '@/components/SignalsToWatch'
@@ -24,8 +22,6 @@ export default function ContextResultsPage() {
       <SnapshotChanges changes={mockContext.snapshotChanges} snapshot={mockContext.snapshot} />
       <ExecutiveBrief />
       <ForceAccordion forces={mockContext.forces} />
-      <StrategicTensions tensions={mockContext.tensions} />
-      <StrategicQuestions questions={mockContext.questions} />
       <StrategicImplications implications={mockContext.implications} />
       <Provocations provocations={mockContext.provocations} />
       <SignalsToWatch signals={mockContext.signals} forceAccentMap={forceAccentMap} />

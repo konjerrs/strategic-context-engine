@@ -1,38 +1,91 @@
+'use client'
+
+import { useState } from 'react'
 import type { StrategicImplication } from '@/data/mockContext'
 
 interface Props {
   implications: StrategicImplication[]
 }
 
+const numbers = ['01', '02', '03', '04', '05']
+
 export function StrategicImplications({ implications }: Props) {
+  const [openId, setOpenId] = useState<string | null>(null)
+
   return (
-    <section className="border-b border-zinc-100 bg-zinc-50/40">
-      <div className="max-w-6xl mx-auto px-8 py-16">
-        <div className="flex items-baseline justify-between mb-10">
-          <p className="text-[10px] uppercase tracking-[0.18em] text-zinc-400 font-medium">
+    <section className="border-b border-zinc-100 bg-white">
+      <div className="max-w-6xl mx-auto px-8 py-20">
+        {/* Section header */}
+        <div className="mb-14">
+          <p className="text-[10px] uppercase tracking-[0.18em] text-zinc-400 font-medium mb-5">
             Strategic Implications
           </p>
-          <span className="text-[11px] text-zinc-400 hidden md:block">
-            What these forces may mean for leadership
-          </span>
+          <p
+            className="text-[28px] text-zinc-800 leading-[1.4] max-w-2xl"
+            style={{ fontFamily: 'var(--font-serif)' }}
+          >
+            What leaders may need to pay attention to, rethink, or do differently.
+          </p>
         </div>
 
-        <div className="border-t border-zinc-100 flex flex-col">
-          {implications.map((imp) => (
-            <div
-              key={imp.id}
-              className="border-b border-zinc-100 py-7 flex items-start gap-8"
-            >
-              <div className="w-32 shrink-0 pt-0.5">
-                <span className="text-[10px] uppercase tracking-[0.15em] text-zinc-400 font-medium">
-                  {imp.label}
-                </span>
+        {/* Vertical list */}
+        <div className="border-t border-zinc-100">
+          {implications.map((imp, i) => {
+            const isOpen = openId === imp.id
+            return (
+              <div key={imp.id} className="border-b border-zinc-100">
+                <button
+                  onClick={() => setOpenId(isOpen ? null : imp.id)}
+                  className="w-full text-left py-8 flex items-start gap-8 group"
+                >
+                  {/* Number */}
+                  <span className="font-mono text-[11px] text-zinc-300 mt-[4px] tabular-nums shrink-0 w-5">
+                    {numbers[i]}
+                  </span>
+
+                  {/* Label */}
+                  <span
+                    className="text-[11px] uppercase tracking-[0.14em] text-zinc-400 font-medium shrink-0 w-32 mt-[5px] hidden sm:block"
+                  >
+                    {imp.label}
+                  </span>
+
+                  {/* Main implication */}
+                  <p
+                    className="flex-1 text-[20px] text-zinc-700 leading-[1.55] group-hover:text-zinc-900 transition-colors pr-4"
+                    style={{ fontFamily: 'var(--font-serif)' }}
+                  >
+                    {imp.implication}
+                  </p>
+
+                  {/* Expand toggle */}
+                  <div className="shrink-0 mt-1.5">
+                    <div
+                      className="w-6 h-6 rounded-full border border-zinc-200 group-hover:border-zinc-300 flex items-center justify-center transition-colors"
+                    >
+                      <svg
+                        className={`w-3 h-3 text-zinc-400 transition-transform duration-200 ${isOpen ? 'rotate-45' : ''}`}
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16M4 12h16" />
+                      </svg>
+                    </div>
+                  </div>
+                </button>
+
+                {/* Expanded detail */}
+                {isOpen && (
+                  <div className="pb-8 pl-[5.75rem] pr-8">
+                    <p className="text-[15px] text-zinc-500 leading-[1.8] max-w-2xl border-l-2 border-zinc-100 pl-5">
+                      {imp.detail}
+                    </p>
+                  </div>
+                )}
               </div>
-              <p className="text-[15px] text-zinc-600 leading-[1.75] flex-1">
-                {imp.text}
-              </p>
-            </div>
-          ))}
+            )
+          })}
         </div>
       </div>
     </section>
