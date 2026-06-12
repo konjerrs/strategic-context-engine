@@ -1,5 +1,6 @@
 import { notFound } from 'next/navigation'
-import { allContexts, getContextById } from '@/data/contexts'
+import { getContextById } from '@/data/contexts'
+import { getAllContextIds } from '@/data/generator'
 import { Header } from '@/components/Header'
 import { ContextHero } from '@/components/ContextHero'
 import { SnapshotChanges } from '@/components/SnapshotChanges'
@@ -12,7 +13,7 @@ import { AlignmentExercise } from '@/components/AlignmentExercise'
 import { Footer } from '@/components/Footer'
 
 export async function generateStaticParams() {
-  return allContexts.map((c) => ({ id: c.id }))
+  return getAllContextIds().map((id) => ({ id }))
 }
 
 export default async function ContextResultsPage({

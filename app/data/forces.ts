@@ -101,7 +101,7 @@ export const allForces: ForceDetail[] = [
       { id: 'trust-recalibration', name: 'Trust Recalibration' },
     ],
     relevantContexts: [
-      { id: 'healthcare-ceo-growth-3-5', label: 'Healthcare · CEO Transition · Growth · 3–5 Years' },
+      { id: 'healthcare-ceo-transition-growth', label: 'Healthcare · CEO Transition · Growth · 3–5 Years' },
     ],
   },
 
@@ -172,8 +172,8 @@ export const allForces: ForceDetail[] = [
       { id: 'workforce-transformation', name: 'Workforce Transformation' },
     ],
     relevantContexts: [
-      { id: 'healthcare-ceo-growth-3-5', label: 'Healthcare · CEO Transition · Growth · 3–5 Years' },
-      { id: 'financial-services-ceo-trust-3-5', label: 'Financial Services · CEO Transition · Trust · 3–5 Years' },
+      { id: 'healthcare-ceo-transition-growth', label: 'Healthcare · CEO Transition · Growth · 3–5 Years' },
+      { id: 'financial-services-ceo-transition-trust', label: 'Financial Services · CEO Transition · Trust · 3–5 Years' },
     ],
   },
 
@@ -244,7 +244,7 @@ export const allForces: ForceDetail[] = [
       { id: 'trust-recalibration', name: 'Trust Recalibration' },
     ],
     relevantContexts: [
-      { id: 'healthcare-ceo-growth-3-5', label: 'Healthcare · CEO Transition · Growth · 3–5 Years' },
+      { id: 'healthcare-ceo-transition-growth', label: 'Healthcare · CEO Transition · Growth · 3–5 Years' },
     ],
   },
 ]

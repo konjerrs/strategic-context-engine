@@ -48,6 +48,20 @@ export type AlignmentCard = {
   description: string
 }
 
+export type ContextData = ContextResult & {
+  id: string
+  name: string
+  headline: string
+  lastUpdated: string
+  trackedForces: number
+  executiveBrief: {
+    pullQuote: string
+    pullQuoteAccent: string
+    body1: string
+    body2: string
+  }
+}
+
 export type ContextResult = {
   industry: string
   leadershipSituation: string

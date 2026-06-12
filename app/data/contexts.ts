@@ -1,21 +1,10 @@
-import type { ContextResult } from './mockContext'
+import type { ContextData } from './mockContext'
+import { generateContext, parseContextId } from './generator'
 
-export type ContextData = ContextResult & {
-  id: string
-  name: string
-  headline: string
-  lastUpdated: string
-  trackedForces: number
-  executiveBrief: {
-    pullQuote: string
-    pullQuoteAccent: string
-    body1: string
-    body2: string
-  }
-}
+export type { ContextData }
 
 const healthcareContext: ContextData = {
-  id: 'healthcare-ceo-growth',
+  id: 'healthcare-ceo-transition-growth',
   name: 'Healthcare + CEO Transition + Growth',
   headline: 'Healthcare, through a CEO transition, in pursuit of growth.',
   lastUpdated: 'June 2026',
@@ -255,7 +244,7 @@ const healthcareContext: ContextData = {
 }
 
 const financialServicesContext: ContextData = {
-  id: 'financial-services-ceo-trust',
+  id: 'financial-services-ceo-transition-trust',
   name: 'Financial Services + CEO Transition + Trust',
   headline: 'Financial services, through a CEO transition, in pursuit of trust.',
   lastUpdated: 'June 2026',
@@ -740,28 +729,24 @@ const consumerContext: ContextData = {
   ],
 }
 
-export const allContexts: ContextData[] = [
+export const curatedContexts: ContextData[] = [
   healthcareContext,
   financialServicesContext,
   consumerContext,
 ]
 
+// allContexts used for the homepage saved-contexts cards
+export const allContexts = curatedContexts
+
 export function getContextById(id: string): ContextData | undefined {
-  return allContexts.find((c) => c.id === id)
+  const curated = curatedContexts.find((c) => c.id === id)
+  if (curated) return curated
+  const parsed = parseContextId(id)
+  if (!parsed) return undefined
+  return generateContext(parsed.industry, parsed.situation, parsed.challenge)
 }
 
-// Maps selector values → contextId
-const contextMap: Record<string, string> = {
-  'healthcare|ceo-transition|growth': 'healthcare-ceo-growth',
-  'financial-services|ceo-transition|trust': 'financial-services-ceo-trust',
-  'consumer|transformation|innovation': 'consumer-transformation-innovation',
-}
-
-export function resolveContextId(
-  industry: string,
-  situation: string,
-  challenge: string
-): string | null {
-  const key = `${industry}|${situation}|${challenge}`
-  return contextMap[key] ?? null
+// Always returns a full slug — never null
+export function resolveContextId(industry: string, situation: string, challenge: string): string {
+  return `${industry}-${situation}-${challenge}`
 }
