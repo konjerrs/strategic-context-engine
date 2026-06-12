@@ -55,8 +55,8 @@ export type ContextResult = {
   timeHorizon: string
   snapshot: string
   forces: Force[]
-  tensions: StrategicTension[]
-  questions: { number: string; text: string }[]
+  tensions?: StrategicTension[]
+  questions?: { number: string; text: string }[]
   provocations: { number: string; text: string }[]
   signals: Signal[]
   alignmentCards: AlignmentCard[]

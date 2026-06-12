@@ -1,7 +1,8 @@
-import type { ContextResult } from '@/data/mockContext'
+import Link from 'next/link'
+import type { ContextData } from '@/data/contexts'
 
 interface Props {
-  context: ContextResult
+  context: ContextData
 }
 
 export function ContextHero({ context }: Props) {
@@ -17,16 +18,22 @@ export function ContextHero({ context }: Props) {
       <div className="max-w-6xl mx-auto px-8 pt-10 pb-12">
         {/* Eyebrow + controls row */}
         <div className="flex items-center justify-between mb-9">
-          <span className="text-[10px] uppercase tracking-[0.18em] text-zinc-400 font-medium">
-            Context Results
-          </span>
+          <div className="flex items-center gap-3">
+            <Link
+              href="/"
+              className="inline-flex items-center gap-1.5 text-[12px] text-zinc-400 hover:text-zinc-700 transition-colors"
+            >
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                <path d="M7.5 2L3 6l4.5 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+              Context Selector
+            </Link>
+            <span className="text-zinc-200">·</span>
+            <span className="text-[10px] uppercase tracking-[0.18em] text-zinc-400 font-medium">
+              Context Results
+            </span>
+          </div>
           <div className="flex items-center gap-5">
-            <button className="text-[12px] text-zinc-400 hover:text-zinc-700 transition-colors">
-              Edit lens
-            </button>
-            <button className="text-[12px] text-zinc-400 hover:text-zinc-700 transition-colors">
-              Export brief
-            </button>
             <div className="relative">
               <button className="flex items-center gap-1.5 text-[12px] text-zinc-500 border border-zinc-200 rounded-md px-3 py-1.5 hover:border-zinc-300 transition-colors">
                 <span className="text-zinc-400">Snapshot:</span>
@@ -41,11 +48,10 @@ export function ContextHero({ context }: Props) {
 
         {/* Main headline */}
         <h1
-          className="text-[42px] leading-[1.15] text-zinc-900 max-w-3xl mb-9 font-serif"
+          className="text-[42px] leading-[1.15] text-zinc-900 max-w-3xl mb-9"
           style={{ fontFamily: 'var(--font-serif)' }}
         >
-          Healthcare, through a{' '}
-          <em>CEO transition</em>, in pursuit of growth.
+          {context.headline}
         </h1>
 
         {/* Metadata row */}
