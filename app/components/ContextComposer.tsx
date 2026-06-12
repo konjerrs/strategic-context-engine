@@ -3,6 +3,7 @@
 import { useState, useMemo } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
+import { ForceIcon } from '@/components/ForceIcon'
 import {
   type ComposerIndustry,
   type ComposerSituation,
@@ -286,11 +287,8 @@ return (
                   {String(i + 1).padStart(2, '0')}
                 </span>
 
-                {/* Force dot */}
-                <div
-                  className="w-2 h-2 rounded-full mt-1.5 shrink-0"
-                  style={{ backgroundColor: force.accentHex }}
-                />
+                {/* Force icon */}
+                <ForceIcon id={force.id} accentHex={force.accentHex} size={24} />
 
                 {/* Name + rationale */}
                 <div className="flex-1 min-w-0">

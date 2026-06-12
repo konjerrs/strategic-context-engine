@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import type { Force } from '@/data/mockContext'
+import { ForceIcon } from '@/components/ForceIcon'
 
 interface Props {
   forces: Force[]
@@ -37,10 +38,7 @@ export function ForceAccordion({ forces }: Props) {
                     {force.rank}
                   </span>
 
-                  <div
-                    className="w-1.5 h-1.5 rounded-full shrink-0"
-                    style={{ backgroundColor: force.accentHex }}
-                  />
+                  <ForceIcon id={force.id} accentHex={force.accentHex} size={24} />
 
                   <div className="flex-1 flex items-baseline gap-5 min-w-0">
                     {/* Force name — clickable link to detail page */}
