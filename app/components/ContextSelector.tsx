@@ -3,9 +3,12 @@
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 
-const industries = ['Healthcare', 'Financial Services', 'Consumer', 'Technology']
+const industries = [
+  'Healthcare', 'Financial Services', 'Consumer', 'Technology',
+  'Consumer Brand', 'Technology Company', 'Manufacturing', 'Energy', 'Government',
+]
 const situations = ['CEO Transition', 'Transformation', 'Culture Change']
-const challenges = ['Growth', 'Trust', 'Innovation', 'Talent']
+const challenges = ['Growth', 'Trust', 'Innovation', 'Talent', 'Relevance', 'Workforce Transformation']
 const horizons = ['0–2 Years', '3–5 Years', '5–10 Years']
 
 function slug(val: string) {
@@ -56,12 +59,14 @@ export function ContextSelector() {
   const [horizon, setHorizon] = useState<string | null>(null)
   const [attempted, setAttempted] = useState(false)
 
-  const coreComplete = industry && situation && challenge
+  const coreComplete = industry && challenge
 
   const handleGenerate = () => {
     setAttempted(true)
     if (!coreComplete) return
-    const contextId = `${slug(industry)}-${slug(situation)}-${slug(challenge)}`
+    const contextId = situation
+      ? `${slug(industry)}-${slug(situation)}-${slug(challenge)}`
+      : `${slug(industry)}-${slug(challenge)}`
     router.push(`/contexts/${contextId}`)
   }
 
@@ -89,7 +94,7 @@ export function ContextSelector() {
 
         {attempted && !coreComplete && (
           <p className="text-[13px] text-zinc-400">
-            Select an industry, situation, and challenge to continue.
+            Select an industry and challenge to continue.
           </p>
         )}
       </div>

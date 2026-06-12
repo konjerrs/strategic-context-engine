@@ -1,5 +1,6 @@
 import type { ContextData } from './mockContext'
 import { generateContext, parseContextId } from './generator'
+import { additionalContexts } from './additionalContexts'
 
 export type { ContextData }
 
@@ -735,12 +736,14 @@ export const curatedContexts: ContextData[] = [
   consumerContext,
 ]
 
-// allContexts used for the homepage saved-contexts cards
-export const allContexts = curatedContexts
+// allContexts used for the homepage saved-contexts cards (curated + additional)
+export const allContexts: ContextData[] = [...curatedContexts, ...additionalContexts]
 
 export function getContextById(id: string): ContextData | undefined {
-  const curated = curatedContexts.find((c) => c.id === id)
-  if (curated) return curated
+  // Check all curated and additional contexts first
+  const found = allContexts.find((c) => c.id === id)
+  if (found) return found
+  // Fall back to generator for valid 3-part slugs
   const parsed = parseContextId(id)
   if (!parsed) return undefined
   return generateContext(parsed.industry, parsed.situation, parsed.challenge)
