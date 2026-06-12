@@ -7,7 +7,7 @@ export function Header() {
   const pathname = usePathname()
   const isForces = pathname.startsWith('/forces')
   const isSaved = pathname.startsWith('/saved')
-  const isLens = !isForces && !isSaved
+  const isLens = pathname.startsWith('/lens')
 
   return (
     <header className="border-b border-zinc-100 bg-white">
@@ -30,7 +30,7 @@ export function Header() {
             Forces
           </Link>
           <Link
-            href="/"
+            href="/lens"
             className={`text-[13px] transition-colors ${
               isLens ? 'text-zinc-900 font-medium' : 'text-zinc-400 hover:text-zinc-700'
             }`}
