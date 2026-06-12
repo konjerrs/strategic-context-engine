@@ -7,6 +7,7 @@ export type Force = {
   description: string
   whySurfaced: string[]
   whereShows: string[]
+  topSignals: string[]
 }
 
 export type Signal = {
@@ -25,6 +26,19 @@ export type StrategicTension = {
   right: string
   lean: string
   leanPosition: number
+  interpretation: string
+}
+
+export type StrategicImplication = {
+  id: string
+  label: string
+  text: string
+}
+
+export type SnapshotChange = {
+  force: string
+  text: string
+  direction: 'up' | 'stable' | 'down'
 }
 
 export type AlignmentCard = {
@@ -45,6 +59,8 @@ export type ContextResult = {
   provocations: { number: string; text: string }[]
   signals: Signal[]
   alignmentCards: AlignmentCard[]
+  implications: StrategicImplication[]
+  snapshotChanges: SnapshotChange[]
 }
 
 export const mockContext: ContextResult = {
@@ -53,6 +69,24 @@ export const mockContext: ContextResult = {
   strategicChallenge: 'Growth',
   timeHorizon: '3–5 Years',
   snapshot: 'June 2026',
+
+  snapshotChanges: [
+    {
+      force: 'AI Ascendance',
+      text: 'Moved up in relevance due to new evidence of agentic workflows entering clinical settings.',
+      direction: 'up',
+    },
+    {
+      force: 'Workforce Transformation',
+      text: 'Remains highly relevant as structural shortages continue and role redesign accelerates.',
+      direction: 'stable',
+    },
+    {
+      force: 'Trust Recalibration',
+      text: 'Increased in importance as AI-enabled care raises new patient confidence questions.',
+      direction: 'up',
+    },
+  ],
 
   forces: [
     {
@@ -70,6 +104,11 @@ export const mockContext: ContextResult = {
         'New CEOs have unusual freedom to redesign operating assumptions',
       ],
       whereShows: ['Operations', 'Care delivery', 'Decision support'],
+      topSignals: [
+        'AI agents enter clinical and administrative workflows',
+        'Rapid growth in healthcare AI investment',
+        'Expansion of AI governance requirements',
+      ],
     },
     {
       rank: '02',
@@ -86,12 +125,16 @@ export const mockContext: ContextResult = {
         'Growth targets cannot be met under current staffing assumptions',
       ],
       whereShows: ['Talent', 'Operating model', 'Culture'],
+      topSignals: [
+        'Persistent workforce shortages in clinical roles',
+        'Growth of hybrid human-AI care teams',
+      ],
     },
     {
       rank: '03',
       id: 'trust-recalibration',
       name: 'Trust Recalibration',
-      shortLine: 'Becomes the new CEO\'s scarcest, decisive asset.',
+      shortLine: "Becomes the new CEO's scarcest, decisive asset.",
       accentHex: '#059669',
       description:
         'Trust — with patients, clinicians, regulators, and payers — is under pressure from AI deployment, leadership change, and widening gaps between stated values and observable action.',
@@ -102,6 +145,10 @@ export const mockContext: ContextResult = {
         'Trust is both a growth constraint and a competitive differentiator',
       ],
       whereShows: ['Governance', 'Patient relationships', 'Workforce trust'],
+      topSignals: [
+        'Public trust in AI-assisted care diverges by domain',
+        'Expansion of AI governance requirements',
+      ],
     },
     {
       rank: '04',
@@ -118,6 +165,10 @@ export const mockContext: ContextResult = {
         'Human-AI complementarity produces superior outcomes in research',
       ],
       whereShows: ['Clinical operations', 'Role design', 'Technology investment'],
+      topSignals: [
+        'Growth of personalized patient experiences',
+        'AI diagnostic tools reach clinical parity',
+      ],
     },
     {
       rank: '05',
@@ -134,15 +185,82 @@ export const mockContext: ContextResult = {
         'Compliance frameworks are still being written in real time',
       ],
       whereShows: ['Governance', 'Compliance', 'Board relationships'],
+      topSignals: [
+        'Expansion of AI governance requirements',
+        'New compliance frameworks for high-risk AI systems',
+      ],
     },
   ],
 
   tensions: [
-    { left: 'Efficiency', right: 'Humanity', lean: 'Holding the tension', leanPosition: 50 },
-    { left: 'Scale', right: 'Personalization', lean: 'Holding the tension', leanPosition: 50 },
-    { left: 'Innovation', right: 'Trust', lean: 'Leaning innovation', leanPosition: 62 },
-    { left: 'Access', right: 'Quality', lean: 'Holding the tension', leanPosition: 50 },
-    { left: 'Intelligence', right: 'Judgment', lean: 'Leaning intelligence', leanPosition: 38 },
+    {
+      left: 'Efficiency',
+      right: 'Humanity',
+      lean: 'Holding the tension',
+      leanPosition: 50,
+      interpretation:
+        'The organization needs to improve throughput without diminishing the human experience of care.',
+    },
+    {
+      left: 'Scale',
+      right: 'Personalization',
+      lean: 'Holding the tension',
+      leanPosition: 50,
+      interpretation:
+        'Growth will require more scalable systems while preserving individualized care.',
+    },
+    {
+      left: 'Innovation',
+      right: 'Trust',
+      lean: 'Leaning innovation',
+      leanPosition: 62,
+      interpretation:
+        'New capabilities are necessary, but adoption will depend on credibility with patients, clinicians, and regulators.',
+    },
+    {
+      left: 'Access',
+      right: 'Quality',
+      lean: 'Holding the tension',
+      leanPosition: 50,
+      interpretation:
+        'Expanding access cannot come at the expense of clinical confidence or outcomes.',
+    },
+    {
+      left: 'Intelligence',
+      right: 'Judgment',
+      lean: 'Leaning intelligence',
+      leanPosition: 38,
+      interpretation:
+        'AI can expand decision support, but human judgment must remain visible and accountable.',
+    },
+  ],
+
+  implications: [
+    {
+      id: 'leadership',
+      label: 'Leadership',
+      text: 'A new CEO may need to become the organization\'s chief interpreter of how these forces interact — not just a manager of change, but a narrator of the transition.',
+    },
+    {
+      id: 'talent',
+      label: 'Talent',
+      text: 'The workforce strategy may need to shift from filling roles to redesigning work around new capabilities — treating AI deployment as a role design question, not just a technology one.',
+    },
+    {
+      id: 'operating-model',
+      label: 'Operating Model',
+      text: 'The organization may need to redesign workflows rather than simply improve existing processes — the assumption that current structures can be optimized may be the most dangerous assumption.',
+    },
+    {
+      id: 'growth',
+      label: 'Growth',
+      text: 'New growth may come from more intelligent, personalized, and trusted models of care — not from scale alone. The growth strategy and the AI strategy may need to become one document.',
+    },
+    {
+      id: 'governance',
+      label: 'Governance',
+      text: 'AI deployment, workforce pressure, and trust dynamics may require clearer accountability structures — including visibility into where AI is making or influencing decisions.',
+    },
   ],
 
   questions: [
@@ -171,7 +289,7 @@ export const mockContext: ContextResult = {
   provocations: [
     {
       number: '01',
-      text: 'What if healthcare\'s primary scarcity is no longer expertise but attention?',
+      text: "What if healthcare's primary scarcity is no longer expertise but attention?",
     },
     {
       number: '02',

@@ -110,6 +110,25 @@ export function ForceAccordion({ forces }: Props) {
                         </div>
                       </div>
                     </div>
+
+                    {force.topSignals && force.topSignals.length > 0 && (
+                      <div className="mt-8 pt-6 border-t border-zinc-100">
+                        <p className="text-[10px] uppercase tracking-[0.15em] text-zinc-400 mb-4">
+                          Top signals driving this force
+                        </p>
+                        <div className="flex flex-col gap-2">
+                          {force.topSignals.map((sig, j) => (
+                            <div key={j} className="flex items-center gap-3">
+                              <div
+                                className="w-1 h-1 rounded-full shrink-0"
+                                style={{ backgroundColor: force.accentHex }}
+                              />
+                              <span className="text-[13px] text-zinc-500">{sig}</span>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    )}
                   </div>
                 )}
               </div>

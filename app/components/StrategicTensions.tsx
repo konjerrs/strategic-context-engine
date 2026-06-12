@@ -6,20 +6,6 @@ interface Props {
 
 const LEAN_ACCENT = '#6d28d9'
 
-function Diamond({ active }: { active: boolean }) {
-  return (
-    <svg width="10" height="10" viewBox="0 0 10 10" className="shrink-0">
-      <rect
-        x="5" y="0.5"
-        width="6.4" height="6.4"
-        rx="0.5"
-        transform="rotate(45 5 5)"
-        fill={active ? LEAN_ACCENT : '#d4d4d8'}
-      />
-    </svg>
-  )
-}
-
 export function StrategicTensions({ tensions }: Props) {
   return (
     <section className="border-b border-zinc-100 bg-white">
@@ -29,7 +15,7 @@ export function StrategicTensions({ tensions }: Props) {
             Strategic Tensions
           </p>
           <span className="text-[11px] text-zinc-400 max-w-sm text-right hidden md:block leading-relaxed">
-            Not problems to solve — leadership choices to make. Declare where this organization should lean.
+            Not problems to solve — leadership choices to make.
           </span>
         </div>
 
@@ -37,60 +23,62 @@ export function StrategicTensions({ tensions }: Props) {
           {tensions.map((t, i) => {
             const leansLeft = t.leanPosition < 48
             const leansRight = t.leanPosition > 52
-            const isLeaning = leansLeft || leansRight
+            const isHolding = !leansLeft && !leansRight
+
+            const leftColor = leansLeft ? LEAN_ACCENT : '#3f3f46'
+            const rightColor = leansRight ? LEAN_ACCENT : '#a1a1aa'
 
             return (
-              <div key={i} className="border-b border-zinc-100 py-7">
-                <div className="flex items-center gap-8">
+              <div key={i} className="border-b border-zinc-100 py-8">
+                {/* Two-pole editorial row */}
+                <div className="flex items-center gap-0">
                   {/* Left pole */}
-                  <span
-                    className="text-[16px] font-medium w-40 shrink-0 transition-colors"
-                    style={{ color: leansLeft ? LEAN_ACCENT : '#3f3f46' }}
-                  >
-                    {t.left}
-                  </span>
+                  <div className="flex-1 pr-6 text-right">
+                    <span
+                      className="text-[20px] font-medium leading-none transition-colors"
+                      style={{
+                        fontFamily: 'var(--font-serif)',
+                        color: leftColor,
+                      }}
+                    >
+                      {t.left}
+                    </span>
+                  </div>
 
-                  {/* Axis */}
-                  <div className="flex-1 flex flex-col gap-2.5">
-                    {/* The axis line + markers */}
-                    <div className="relative flex items-center">
-                      {/* Left dot */}
-                      <div className="w-1.5 h-1.5 rounded-full bg-zinc-200 shrink-0" />
-                      {/* Line segment left */}
-                      <div className="flex-1 h-px bg-zinc-150" style={{ backgroundColor: '#ebebeb' }} />
-                      {/* Center diamond */}
-                      <div className="mx-1.5 shrink-0">
-                        <Diamond active={isLeaning} />
-                      </div>
-                      {/* Line segment right */}
-                      <div className="flex-1 h-px bg-zinc-150" style={{ backgroundColor: '#ebebeb' }} />
-                      {/* Right dot */}
-                      <div className="w-1.5 h-1.5 rounded-full bg-zinc-200 shrink-0" />
-                    </div>
-
-                    {/* Lean label */}
-                    <div className="flex justify-center">
-                      <span
-                        className="text-[10px] tracking-wide whitespace-nowrap"
-                        style={{
-                          color: isLeaning ? LEAN_ACCENT : '#a1a1aa',
-                          textTransform: 'uppercase',
-                          letterSpacing: '0.1em',
-                        }}
-                      >
-                        {t.lean}
-                      </span>
-                    </div>
+                  {/* Center divider + lean badge */}
+                  <div className="flex flex-col items-center shrink-0 gap-2">
+                    <div className="w-px h-8 bg-zinc-200" />
+                    <span
+                      className="text-[9px] uppercase tracking-[0.15em] whitespace-nowrap px-2.5 py-1 rounded-full border"
+                      style={
+                        isHolding
+                          ? { color: '#a1a1aa', borderColor: '#e4e4e7', backgroundColor: '#fafafa' }
+                          : { color: LEAN_ACCENT, borderColor: LEAN_ACCENT + '30', backgroundColor: LEAN_ACCENT + '08' }
+                      }
+                    >
+                      {t.lean}
+                    </span>
+                    <div className="w-px h-8 bg-zinc-200" />
                   </div>
 
                   {/* Right pole */}
-                  <span
-                    className="text-[16px] font-medium w-40 shrink-0 text-right transition-colors"
-                    style={{ color: leansRight ? LEAN_ACCENT : '#a1a1aa' }}
-                  >
-                    {t.right}
-                  </span>
+                  <div className="flex-1 pl-6">
+                    <span
+                      className="text-[20px] font-medium leading-none transition-colors"
+                      style={{
+                        fontFamily: 'var(--font-serif)',
+                        color: rightColor,
+                      }}
+                    >
+                      {t.right}
+                    </span>
+                  </div>
                 </div>
+
+                {/* Interpretation text */}
+                <p className="mt-4 text-[13px] text-zinc-400 leading-[1.7] max-w-2xl mx-auto text-center">
+                  {t.interpretation}
+                </p>
               </div>
             )
           })}
