@@ -1,14 +1,24 @@
+import Link from 'next/link'
+
 export function Header() {
   return (
     <header className="border-b border-zinc-100 bg-white">
       <div className="max-w-6xl mx-auto px-8 h-14 flex items-center justify-between">
         <div className="flex items-center gap-3">
-          <span className="text-sm font-semibold tracking-tight text-zinc-900">Field</span>
+          <Link href="/" className="text-sm font-semibold tracking-tight text-zinc-900 hover:text-zinc-600 transition-colors">
+            Field
+          </Link>
           <span className="text-zinc-200 select-none">|</span>
           <span className="text-sm text-zinc-400 tracking-tight">Strategic Context Engine</span>
         </div>
         <nav className="flex items-center gap-7">
-          {['Forces', 'Library', 'Signals', 'Saved'].map((item) => (
+          <Link
+            href="/forces"
+            className="text-[13px] text-zinc-400 hover:text-zinc-700 transition-colors"
+          >
+            Forces
+          </Link>
+          {['Signals', 'Saved'].map((item) => (
             <a
               key={item}
               href="#"

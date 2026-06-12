@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import Link from 'next/link'
 import type { Force } from '@/data/mockContext'
 
 interface Props {
@@ -42,9 +43,14 @@ export function ForceAccordion({ forces }: Props) {
                   />
 
                   <div className="flex-1 flex items-baseline gap-5 min-w-0">
-                    <span className="text-[16px] font-medium text-zinc-800 shrink-0">
+                    {/* Force name — clickable link to detail page */}
+                    <Link
+                      href={`/forces/${force.id}`}
+                      onClick={(e) => e.stopPropagation()}
+                      className="text-[16px] font-medium text-zinc-800 hover:text-zinc-600 underline underline-offset-2 decoration-transparent hover:decoration-zinc-300 transition-all shrink-0"
+                    >
                       {force.name}
-                    </span>
+                    </Link>
                     {!isOpen && (
                       <span className="text-[13px] text-zinc-400 truncate hidden sm:block">
                         {force.shortLine}
@@ -129,6 +135,23 @@ export function ForceAccordion({ forces }: Props) {
                         </div>
                       </div>
                     )}
+
+                    {/* Link to full detail page */}
+                    <div className="mt-8 pt-6 border-t border-zinc-100">
+                      <Link
+                        href={`/forces/${force.id}`}
+                        className="inline-flex items-center gap-2 text-[12px] text-zinc-400 hover:text-zinc-700 transition-colors group/link"
+                      >
+                        <span>Read full force analysis</span>
+                        <svg
+                          className="w-3.5 h-3.5 group-hover/link:translate-x-0.5 transition-transform"
+                          fill="none"
+                          viewBox="0 0 14 14"
+                        >
+                          <path d="M4 7h6M7 4l3 3-3 3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                        </svg>
+                      </Link>
+                    </div>
                   </div>
                 )}
               </div>
