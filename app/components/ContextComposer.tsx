@@ -43,7 +43,7 @@ const challenges: ComposerChallenge[] = [
   'Relevance',
 ]
 
-const horizons: ComposerHorizon[] = ['0–2 Years', '3–5 Years', '5–10 Years']
+const horizons: ComposerHorizon[] = ['0–6 Months', '6–12 Months', '12–24 Months']
 
 // ─── Pill button ─────────────────────────────────────────────────────────────
 
@@ -180,12 +180,12 @@ export function ContextComposer() {
   const [industry, setIndustry] = useState<ComposerIndustry>('Healthcare')
   const [situation, setSituation] = useState<ComposerSituation | null>('CEO Transition')
   const [challenge, setChallenge] = useState<ComposerChallenge>('Growth')
-  const [horizon, setHorizon] = useState<ComposerHorizon>('0–2 Years')
+  const [horizon, setHorizon] = useState<ComposerHorizon>('6–12 Months')
   const [attempted, setAttempted] = useState(false)
 
   const rankedForces = useMemo(
-    () => rankForcesForContext(industry, situation ?? 'CEO Transition', challenge),
-    [industry, situation, challenge]
+    () => rankForcesForContext(industry, situation ?? 'CEO Transition', challenge, horizon),
+    [industry, situation, challenge, horizon]
   )
 
   const implications = useMemo(
@@ -247,7 +247,7 @@ return (
             label="Time Horizon"
             options={horizons}
             selected={horizon}
-            onSelect={(v) => setHorizon((v || '0–2 Years') as ComposerHorizon)}
+            onSelect={(v) => setHorizon((v || '6–12 Months') as ComposerHorizon)}
           />
         </div>
 

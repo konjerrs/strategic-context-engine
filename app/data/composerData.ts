@@ -36,7 +36,7 @@ export type ComposerForceId =
   | 'resource-and-energy-transition'
   | 'identity-and-belonging'
 
-export type ComposerHorizon = '0–2 Years' | '3–5 Years' | '5–10 Years'
+export type ComposerHorizon = '0–6 Months' | '6–12 Months' | '12–24 Months'
 
 // ─── Force display metadata ───────────────────────────────────────────────────
 
@@ -265,6 +265,27 @@ function getRationale(forceId: ComposerForceId, industry: ComposerIndustry, chal
   return forceRationales[forceId][key] ?? forceRationales[forceId].default
 }
 
+// ─── Horizon scores ───────────────────────────────────────────────────────────
+// Weight forces by how soon they manifest operationally vs. strategically.
+// 0–6 Months: immediate, acute pressures (trust, compliance, talent gaps).
+// 6–12 Months: near-term planning window — AI deployment, workforce redesign.
+// 12–24 Months: strategic horizon — structural forces, competitive repositioning.
+
+type HorizonRow = Record<ComposerHorizon, number>
+
+const horizonScores: Record<ComposerForceId, HorizonRow> = {
+  'ai-ascendance':               { '0–6 Months': 3, '6–12 Months': 6, '12–24 Months': 8 },
+  'workforce-transformation':    { '0–6 Months': 7, '6–12 Months': 6, '12–24 Months': 5 },
+  'trust-recalibration':         { '0–6 Months': 8, '6–12 Months': 6, '12–24 Months': 5 },
+  'human-augmentation':          { '0–6 Months': 3, '6–12 Months': 5, '12–24 Months': 7 },
+  'institutional-rewiring':      { '0–6 Months': 6, '6–12 Months': 5, '12–24 Months': 5 },
+  'economic-reconfiguration':    { '0–6 Months': 3, '6–12 Months': 5, '12–24 Months': 7 },
+  'geopolitical-realignment':    { '0–6 Months': 3, '6–12 Months': 4, '12–24 Months': 6 },
+  'climate-and-resilience':      { '0–6 Months': 2, '6–12 Months': 4, '12–24 Months': 6 },
+  'resource-and-energy-transition': { '0–6 Months': 2, '6–12 Months': 4, '12–24 Months': 6 },
+  'identity-and-belonging':      { '0–6 Months': 6, '6–12 Months': 5, '12–24 Months': 4 },
+}
+
 // ─── Scoring function ──────────────────────────────────────────────────────────
 
 export type RankedForce = {
@@ -292,14 +313,16 @@ const allForceIds: ComposerForceId[] = [
 export function rankForcesForContext(
   industry: ComposerIndustry,
   situation: ComposerSituation,
-  challenge: ComposerChallenge
+  challenge: ComposerChallenge,
+  horizon: ComposerHorizon = '6–12 Months'
 ): RankedForce[] {
   const scored = allForceIds.map((id) => ({
     id,
     raw:
       challengeScores[id][challenge] +
       situationScores[id][situation] +
-      industryScores[id][industry],
+      industryScores[id][industry] +
+      horizonScores[id][horizon],
   }))
 
   const maxRaw = Math.max(...scored.map((s) => s.raw))
