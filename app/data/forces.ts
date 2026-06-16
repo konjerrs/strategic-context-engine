@@ -135,6 +135,46 @@ export const allForces: ForceDetail[] = [
         confidence: 'High',
         sourceLink: '#',
       },
+      {
+        id: 'sig-ai-8',
+        title: 'Agentic AI systems entering production across research, analysis, and operations',
+        interpretation:
+          'AI systems that can plan, execute multi-step tasks, and operate autonomously across tools are moving from experiment to production. The implication is not incremental automation but a fundamental shift in how knowledge work is organized and who — or what — performs it.',
+        source: 'Anthropic / OpenAI Research',
+        date: 'May 2026',
+        confidence: 'High',
+        sourceLink: '#',
+      },
+      {
+        id: 'sig-ai-9',
+        title: 'Synthetic media proliferating faster than detection and verification infrastructure',
+        interpretation:
+          'AI-generated text, images, audio, and video are now indistinguishable from human-created content at scale. Organizations that depend on the authenticity of communications — internally and externally — face a new information integrity challenge with no established playbook.',
+        source: 'MIT Media Lab / Stanford Internet Observatory',
+        date: 'Apr 2026',
+        confidence: 'High',
+        sourceLink: '#',
+      },
+      {
+        id: 'sig-ai-10',
+        title: 'Data governance disputes emerging as AI training and deployment scale',
+        interpretation:
+          'Conflicts over data ownership, licensing, consent, and liability are multiplying as AI systems require vast training data and operate across organizational boundaries. Legal and regulatory frameworks are lagging the technical reality.',
+        source: 'IAPP / Future of Privacy Forum',
+        date: 'Mar 2026',
+        confidence: 'Medium',
+        sourceLink: '#',
+      },
+      {
+        id: 'sig-ai-11',
+        title: 'AI judgment and reasoning errors in high-stakes settings raising liability questions',
+        interpretation:
+          'As AI systems take on more consequential roles — in clinical triage, legal analysis, financial advice, and engineering decisions — errors that would be accepted from humans are creating new liability exposure. Governance frameworks for AI accountability are underdeveloped relative to the speed of deployment.',
+        source: 'Brookings / National Academy of Sciences',
+        date: 'Feb 2026',
+        confidence: 'Medium',
+        sourceLink: '#',
+      },
     ],
     relatedForces: [
       { id: 'workforce-transformation', name: 'Workforce Transformation' },
@@ -229,6 +269,36 @@ export const allForces: ForceDetail[] = [
         confidence: 'Medium',
         sourceLink: '#',
       },
+      {
+        id: 'sig-trust-6',
+        title: 'Misinformation at scale eroding the shared information environment organizations depend on',
+        interpretation:
+          'AI-generated misinformation is undermining the shared factual baseline that organizations need for stakeholder communication, policy engagement, and public trust-building. When the information environment itself is contested, every communication carries higher credibility risk.',
+        source: 'Reuters Institute Digital News Report',
+        date: 'May 2026',
+        confidence: 'High',
+        sourceLink: '#',
+      },
+      {
+        id: 'sig-trust-7',
+        title: 'Real-time reputation events compressing the window for organizational response',
+        interpretation:
+          'Social media and AI-amplified content are shortening the time between a trust-damaging event and full public visibility to hours or minutes. Organizations with slow approval processes and reactive communication cultures face structural disadvantage in reputation management.',
+        source: 'Edelman Trust Barometer 2026',
+        date: 'Apr 2026',
+        confidence: 'High',
+        sourceLink: '#',
+      },
+      {
+        id: 'sig-trust-8',
+        title: 'Institutional trust at multi-decade lows across health, media, government, and business',
+        interpretation:
+          'Survey data shows declining baseline trust in major institutions across most advanced economies. Organizations cannot assume a reservoir of goodwill — trust must be earned continuously and specifically, not inherited from institutional category.',
+        source: 'Edelman Trust Barometer / Gallup',
+        date: 'Jan 2026',
+        confidence: 'High',
+        sourceLink: '#',
+      },
     ],
     relatedForces: [
       { id: 'ai-ascendance', name: 'AI Ascendance' },
@@ -310,6 +380,36 @@ export const allForces: ForceDetail[] = [
           'Collective bargaining is expanding to cover AI deployment conditions, workforce transition support, and algorithmic management. Organizations deploying AI at scale in unionized environments need a negotiation strategy.',
         source: 'Bureau of Labor Statistics',
         date: 'Jan 2026',
+        confidence: 'Medium',
+        sourceLink: '#',
+      },
+      {
+        id: 'sig-ir-5',
+        title: 'Governance vacuum in AI, social media, and frontier technology creating uncertainty for organizations',
+        interpretation:
+          'The gap between technological capability and regulatory frameworks is wider than at any point since the internet era. Organizations are making consequential decisions about AI deployment, data use, and platform participation without the regulatory certainty that normally shapes compliance strategy.',
+        source: 'OECD AI Policy Observatory',
+        date: 'May 2026',
+        confidence: 'High',
+        sourceLink: '#',
+      },
+      {
+        id: 'sig-ir-6',
+        title: 'Political leadership volatility increasing policy uncertainty across major economies',
+        interpretation:
+          'Election cycles, coalition fragility, and political polarization are producing faster policy reversals in areas previously considered stable — including climate, trade, industrial policy, and labor regulation. Organizations that built long-term plans on policy continuity face new exposure.',
+        source: 'Eurasia Group Global Risks',
+        date: 'Apr 2026',
+        confidence: 'High',
+        sourceLink: '#',
+      },
+      {
+        id: 'sig-ir-7',
+        title: 'Community and civic accountability expectations rising alongside formal regulatory requirements',
+        interpretation:
+          'Organizations are increasingly accountable not just to regulators but to the communities in which they operate — for environmental impact, employment practices, and local investment. Social licence is becoming a parallel governance constraint alongside legal compliance.',
+        source: 'Business Roundtable / BSR',
+        date: 'Mar 2026',
         confidence: 'Medium',
         sourceLink: '#',
       },
@@ -418,6 +518,46 @@ export const allForces: ForceDetail[] = [
         confidence: 'Medium',
         sourceLink: '#',
       },
+      {
+        id: 'sig-wf-7',
+        title: 'Hybrid work now a baseline expectation, not a benefit, for knowledge workers',
+        interpretation:
+          'Flexible work arrangements have shifted from a differentiator to a minimum threshold for attracting knowledge workers. Organizations mandating full-time office presence without clear rationale are experiencing elevated attrition among their most mobile talent.',
+        source: 'Microsoft Work Trend Index',
+        date: 'Apr 2026',
+        confidence: 'High',
+        sourceLink: '#',
+      },
+      {
+        id: 'sig-wf-8',
+        title: 'Burnout and chronic stress visible in workforce data across multiple sectors',
+        interpretation:
+          'Healthcare, professional services, education, and technology sectors are all showing elevated burnout indicators. Organizations treating this as a personal resilience issue rather than a structural design problem are losing the people they most need to retain.',
+        source: 'APA Work and Well-Being Survey',
+        date: 'Mar 2026',
+        confidence: 'High',
+        sourceLink: '#',
+      },
+      {
+        id: 'sig-wf-9',
+        title: 'Workforce fluidity increasing as people move between employment models more frequently',
+        interpretation:
+          'The boundary between employee, contractor, fractional worker, and independent professional is becoming more permeable. Organizations that can engage talent across these models — rather than requiring traditional employment — may access a larger effective talent pool.',
+        source: 'MBO Partners State of Independence',
+        date: 'Feb 2026',
+        confidence: 'Medium',
+        sourceLink: '#',
+      },
+      {
+        id: 'sig-wf-10',
+        title: 'Corporate layoff cycles creating a cohort of experienced workers evaluating their options',
+        interpretation:
+          'Multiple rounds of technology and professional services layoffs have produced a large cohort of experienced workers who are rethinking their relationship with large-organization employment. This is simultaneously a talent acquisition opportunity and a signal about where employer-of-choice pressure is intensifying.',
+        source: 'Challenger Gray & Christmas',
+        date: 'May 2026',
+        confidence: 'Medium',
+        sourceLink: '#',
+      },
     ],
     relatedForces: [
       { id: 'ai-ascendance', name: 'AI Ascendance' },
@@ -488,6 +628,26 @@ export const allForces: ForceDetail[] = [
         source: 'PwC Consumer Intelligence',
         date: 'Apr 2026',
         confidence: 'High',
+        sourceLink: '#',
+      },
+      {
+        id: 'sig-ha-4',
+        title: 'Design for dignity emerging as a framework for AI deployment in human-facing contexts',
+        interpretation:
+          'Organizations deploying AI in contexts where people are vulnerable — patients, job seekers, benefit recipients, students — are facing growing expectations that systems be designed to preserve rather than diminish human dignity. This is becoming a governance and brand requirement, not just an ethical aspiration.',
+        source: 'Mozilla Foundation / AI Now Institute',
+        date: 'Mar 2026',
+        confidence: 'Medium',
+        sourceLink: '#',
+      },
+      {
+        id: 'sig-ha-5',
+        title: 'Workers expecting AI to take over routine tasks, not expand them',
+        interpretation:
+          'Employee surveys show that workers expect AI tools to reduce administrative burden, not create new layers of AI-generated work to manage. Organizations deploying AI in ways that increase rather than decrease human workload are seeing adoption resistance and engagement decline.',
+        source: 'Workday Peakon Employee Voice',
+        date: 'Feb 2026',
+        confidence: 'Medium',
         sourceLink: '#',
       },
     ],
@@ -583,6 +743,46 @@ export const allForces: ForceDetail[] = [
         confidence: 'Medium',
         sourceLink: '#',
       },
+      {
+        id: 'sig-er-6',
+        title: 'Consumer confidence fragile and diverging sharply by income segment',
+        interpretation:
+          'Persistent inflation in essentials — food, housing, energy — is suppressing discretionary spending among lower-income consumers while higher-income segments remain relatively resilient. Organizations serving broad consumer markets face structurally diverging demand signals.',
+        source: 'University of Michigan Consumer Sentiment',
+        date: 'May 2026',
+        confidence: 'High',
+        sourceLink: '#',
+      },
+      {
+        id: 'sig-er-7',
+        title: 'Clients and customers demanding outcome-based pricing across professional and consumer services',
+        interpretation:
+          'Buyers — both institutional and consumer — are increasingly unwilling to pay for inputs (time, process, effort) when they can specify outcomes. This is restructuring economics in consulting, healthcare, legal services, and SaaS simultaneously.',
+        source: 'Bain Client Demand Survey',
+        date: 'Apr 2026',
+        confidence: 'High',
+        sourceLink: '#',
+      },
+      {
+        id: 'sig-er-8',
+        title: 'Rising inequality becoming a political and regulatory constraint on corporate strategy',
+        interpretation:
+          'Growing wealth concentration is generating policy responses — tax changes, wage regulation, antitrust action — that affect corporate operating assumptions. Organizations that treated rising inequality as a macroeconomic backdrop rather than a strategic variable may face unexpected regulatory exposure.',
+        source: 'Oxfam / World Inequality Lab',
+        date: 'Mar 2026',
+        confidence: 'Medium',
+        sourceLink: '#',
+      },
+      {
+        id: 'sig-er-9',
+        title: 'Capital discipline tightening as investors reassert return expectations',
+        interpretation:
+          'The era of growth-at-any-cost is over across most sectors. Investors are demanding clearer paths to profitability, and organizations that built operating models on the assumption of sustained access to cheap capital are redesigning around more constrained assumptions.',
+        source: 'Goldman Sachs Equity Research',
+        date: 'Feb 2026',
+        confidence: 'High',
+        sourceLink: '#',
+      },
     ],
     relatedForces: [
       { id: 'geopolitical-realignment', name: 'Geopolitical Realignment' },
@@ -664,6 +864,36 @@ export const allForces: ForceDetail[] = [
           'Government defense and security budgets are growing at rates not seen since the Cold War. Organizations in relevant sectors face new market opportunities; the broader economy faces fiscal implications that will shape policy for years.',
         source: 'Stockholm International Peace Research Institute',
         date: 'Feb 2026',
+        confidence: 'High',
+        sourceLink: '#',
+      },
+      {
+        id: 'sig-gr-5',
+        title: 'US-Iran tensions and Middle East instability creating energy and logistics risk',
+        interpretation:
+          'Escalating tensions in the Middle East are creating volatility in oil markets, shipping routes, and regional supply chains. Organizations with exposure to energy costs, Gulf logistics corridors, or regional operations face heightened uncertainty in operational and financial planning.',
+        source: 'International Crisis Group',
+        date: 'May 2026',
+        confidence: 'Medium',
+        sourceLink: '#',
+      },
+      {
+        id: 'sig-gr-6',
+        title: 'Trade friction between major economies expanding beyond goods into services and data',
+        interpretation:
+          'Trade disputes are no longer limited to tariffs on physical goods. Data localization requirements, digital services taxes, and restrictions on cross-border professional services are creating new compliance complexity for organizations with global operating models.',
+        source: 'WTO / Peterson Institute for International Economics',
+        date: 'Apr 2026',
+        confidence: 'High',
+        sourceLink: '#',
+      },
+      {
+        id: 'sig-gr-7',
+        title: 'Political leadership volatility increasing the half-life of strategic assumptions',
+        interpretation:
+          'Government changes in major economies are producing faster policy reversals than previous cycles. Strategic plans built on the assumption of policy continuity — in climate, trade, industrial policy, and tax — need more frequent review and built-in scenario optionality.',
+        source: 'Eurasia Group Political Risk',
+        date: 'Mar 2026',
         confidence: 'High',
         sourceLink: '#',
       },
@@ -751,6 +981,36 @@ export const allForces: ForceDetail[] = [
         confidence: 'Medium',
         sourceLink: '#',
       },
+      {
+        id: 'sig-cr-5',
+        title: 'Extreme weather events causing direct operational disruption at increasing frequency',
+        interpretation:
+          'Floods, wildfires, heat events, and storms are disrupting operations, logistics, and supply chains at a frequency that is no longer absorbed within normal business continuity planning. Physical climate risk is moving from a future scenario to a present operational constraint.',
+        source: 'Munich Re Natural Catastrophe Statistics',
+        date: 'Apr 2026',
+        confidence: 'High',
+        sourceLink: '#',
+      },
+      {
+        id: 'sig-cr-6',
+        title: 'Critical infrastructure fragility exposed by compound climate and cyber events',
+        interpretation:
+          'Power grids, water systems, and logistics networks are showing vulnerability to compound stresses — extreme weather combined with ageing infrastructure or cyberattack. Organizations dependent on infrastructure reliability face new business continuity requirements.',
+        source: 'CISA / World Economic Forum Global Risks',
+        date: 'Mar 2026',
+        confidence: 'Medium',
+        sourceLink: '#',
+      },
+      {
+        id: 'sig-cr-7',
+        title: 'Biodiversity and ecosystem stress entering corporate risk frameworks',
+        interpretation:
+          'Nature-related financial risks — from biodiversity loss, deforestation, and ecosystem degradation — are beginning to enter investor and regulatory frameworks alongside climate. The Taskforce on Nature-related Financial Disclosures is creating new disclosure expectations for sectors with material nature dependencies.',
+        source: 'TNFD / WWF',
+        date: 'Feb 2026',
+        confidence: 'Medium',
+        sourceLink: '#',
+      },
     ],
     relatedForces: [
       { id: 'resource-and-energy-transition', name: 'Resource & Energy Transition' },
@@ -835,6 +1095,26 @@ export const allForces: ForceDetail[] = [
         confidence: 'Medium',
         sourceLink: '#',
       },
+      {
+        id: 'sig-ret-5',
+        title: 'Fossil fuel reserve depletion and stranded asset risk repricing in institutional portfolios',
+        interpretation:
+          'Major institutional investors are accelerating the repricing of fossil fuel assets as transition timelines shorten and regulatory risk increases. Organizations holding fossil fuel assets — or exposed to them through supply chains and financing relationships — face growing stranded asset risk that is no longer theoretical.',
+        source: 'Carbon Tracker Initiative',
+        date: 'May 2026',
+        confidence: 'High',
+        sourceLink: '#',
+      },
+      {
+        id: 'sig-ret-6',
+        title: 'Oil reserve depletion scenarios shortening productive horizon for fossil fuel dependent strategies',
+        interpretation:
+          'Independent analysis suggests accessible, economically viable oil reserves are being consumed faster than new discoveries can replace them. Combined with accelerating transition timelines, organizations with fossil fuel exposure face both demand-side and supply-side transition pressure simultaneously.',
+        source: 'IEA World Energy Outlook',
+        date: 'Apr 2026',
+        confidence: 'Medium',
+        sourceLink: '#',
+      },
     ],
     relatedForces: [
       { id: 'climate-and-resilience', name: 'Climate & Resilience' },
@@ -916,6 +1196,36 @@ export const allForces: ForceDetail[] = [
           'Leading consumer brands are investing in genuine community infrastructure — not just social media presence — as a growth and retention strategy. Brands with authentic communities are demonstrating higher lifetime value and lower customer acquisition costs.',
         source: 'Edelman Brand Trust / a16z Consumer',
         date: 'Jan 2026',
+        confidence: 'Medium',
+        sourceLink: '#',
+      },
+      {
+        id: 'sig-ib-5',
+        title: 'Narrative fragmentation making shared organizational story harder to sustain',
+        interpretation:
+          'The collapse of shared information environments — accelerated by AI-generated content and algorithmically siloed media — means that employees, customers, and stakeholders may inhabit genuinely different factual worlds. Internal communications strategies built on the assumption of shared context are becoming less effective.',
+        source: 'Reuters Institute / Knight Foundation',
+        date: 'Apr 2026',
+        confidence: 'High',
+        sourceLink: '#',
+      },
+      {
+        id: 'sig-ib-6',
+        title: 'Stakeholder expectations of value creation expanding beyond shareholders',
+        interpretation:
+          'Employees, communities, and regulators are asserting legitimate claims on how value is created and distributed. Organizations that continue to optimize purely for shareholder return are finding social licence, talent access, and regulatory relationships increasingly difficult to maintain.',
+        source: 'Business Roundtable / B Team',
+        date: 'Mar 2026',
+        confidence: 'Medium',
+        sourceLink: '#',
+      },
+      {
+        id: 'sig-ib-7',
+        title: 'Brand and market overcrowding intensifying as AI lowers production barriers',
+        interpretation:
+          'AI is making it cheaper to launch products, brands, and content — dramatically increasing the noise environment in which organizations compete for consumer attention and loyalty. Genuine differentiation is becoming harder to achieve and faster to erode.',
+        source: 'Kantar Brand Z / Forrester',
+        date: 'Feb 2026',
         confidence: 'Medium',
         sourceLink: '#',
       },
