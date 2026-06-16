@@ -2,7 +2,7 @@ import type { ContextData, Force, Signal, StrategicImplication, SnapshotChange, 
 
 // ─── Slug utilities ──────────────────────────────────────────────────────────
 
-export type IndustrySlug = 'healthcare' | 'financial-services' | 'consumer' | 'technology' | 'energy' | 'manufacturing' | 'consumer-brand' | 'government'
+export type IndustrySlug = 'healthcare' | 'financial-services' | 'consumer' | 'technology' | 'energy' | 'manufacturing' | 'consumer-brand' | 'government' | 'consulting'
 export type SituationSlug = 'ceo-transition' | 'transformation' | 'culture-change'
 export type ChallengeSlug = 'growth' | 'trust' | 'innovation' | 'talent'
 export type ForceId =
@@ -26,6 +26,7 @@ const industryLabels: Record<IndustrySlug, string> = {
   'manufacturing':       'Manufacturing',
   'consumer-brand':      'Consumer Brand',
   'government':          'Government',
+  'consulting':          'Consulting',
 }
 const situationLabels: Record<SituationSlug, string> = {
   'ceo-transition': 'CEO Transition',
@@ -101,16 +102,16 @@ const situationScore: Record<ForceId, Record<SituationSlug, number>> = {
 }
 
 const industryScore: Record<ForceId, Record<IndustrySlug, number>> = {
-  'ai-ascendance':                  { technology: 7, healthcare: 4, consumer: 4, 'financial-services': 3, energy: 4, manufacturing: 5, 'consumer-brand': 5, government: 4 },
-  'workforce-transformation':       { healthcare: 5, technology: 3, 'financial-services': 3, consumer: 3, energy: 6, manufacturing: 8, 'consumer-brand': 4, government: 6 },
-  'trust-recalibration':            { 'financial-services': 6, healthcare: 4, consumer: 4, technology: 2, energy: 7, manufacturing: 3, 'consumer-brand': 7, government: 8 },
-  'human-augmentation':             { technology: 6, healthcare: 4, consumer: 3, 'financial-services': 2, energy: 4, manufacturing: 7, 'consumer-brand': 7, government: 5 },
-  'institutional-rewiring':         { 'financial-services': 6, healthcare: 4, technology: 3, consumer: 2, energy: 7, manufacturing: 5, 'consumer-brand': 5, government: 9 },
-  'economic-reconfiguration':       { 'financial-services': 7, consumer: 5, healthcare: 4, technology: 4, energy: 6, manufacturing: 7, 'consumer-brand': 5, government: 5 },
-  'geopolitical-realignment':       { technology: 5, 'financial-services': 5, consumer: 3, healthcare: 2, energy: 8, manufacturing: 7, 'consumer-brand': 4, government: 7 },
-  'climate-and-resilience':         { healthcare: 4, 'financial-services': 4, consumer: 3, technology: 3, energy: 9, manufacturing: 5, 'consumer-brand': 5, government: 6 },
-  'resource-and-energy-transition': { 'financial-services': 4, consumer: 3, healthcare: 3, technology: 3, energy: 9, manufacturing: 7, 'consumer-brand': 3, government: 5 },
-  'identity-and-belonging':         { consumer: 6, healthcare: 5, technology: 4, 'financial-services': 3, energy: 3, manufacturing: 4, 'consumer-brand': 8, government: 6 },
+  'ai-ascendance':                  { technology: 7, healthcare: 4, consumer: 4, 'financial-services': 3, energy: 4, manufacturing: 5, 'consumer-brand': 5, government: 4, consulting: 9 },
+  'workforce-transformation':       { healthcare: 5, technology: 3, 'financial-services': 3, consumer: 3, energy: 6, manufacturing: 8, 'consumer-brand': 4, government: 6, consulting: 6 },
+  'trust-recalibration':            { 'financial-services': 6, healthcare: 4, consumer: 4, technology: 2, energy: 7, manufacturing: 3, 'consumer-brand': 7, government: 8, consulting: 8 },
+  'human-augmentation':             { technology: 6, healthcare: 4, consumer: 3, 'financial-services': 2, energy: 4, manufacturing: 7, 'consumer-brand': 7, government: 5, consulting: 7 },
+  'institutional-rewiring':         { 'financial-services': 6, healthcare: 4, technology: 3, consumer: 2, energy: 7, manufacturing: 5, 'consumer-brand': 5, government: 9, consulting: 4 },
+  'economic-reconfiguration':       { 'financial-services': 7, consumer: 5, healthcare: 4, technology: 4, energy: 6, manufacturing: 7, 'consumer-brand': 5, government: 5, consulting: 7 },
+  'geopolitical-realignment':       { technology: 5, 'financial-services': 5, consumer: 3, healthcare: 2, energy: 8, manufacturing: 7, 'consumer-brand': 4, government: 7, consulting: 5 },
+  'climate-and-resilience':         { healthcare: 4, 'financial-services': 4, consumer: 3, technology: 3, energy: 9, manufacturing: 5, 'consumer-brand': 5, government: 6, consulting: 3 },
+  'resource-and-energy-transition': { 'financial-services': 4, consumer: 3, healthcare: 3, technology: 3, energy: 9, manufacturing: 7, 'consumer-brand': 3, government: 5, consulting: 2 },
+  'identity-and-belonging':         { consumer: 6, healthcare: 5, technology: 4, 'financial-services': 3, energy: 3, manufacturing: 4, 'consumer-brand': 8, government: 6, consulting: 6 },
 }
 
 const allForceIds: ForceId[] = [
@@ -148,6 +149,7 @@ const forceShortLines: Record<ForceId, Record<IndustrySlug, string>> = {
     manufacturing:        'Transforms production, quality control, and supply chain intelligence.',
     'consumer-brand':     'Reshapes how brands understand, reach, and retain customers at scale.',
     government:           'Raises the productivity ceiling for public services and regulatory capacity.',
+    consulting:           'Compresses the core economics of strategy, research, and delivery work.',
   },
   'workforce-transformation': {
     healthcare:           'Persistent shortages reshape the operating model.',
@@ -158,6 +160,7 @@ const forceShortLines: Record<ForceId, Record<IndustrySlug, string>> = {
     manufacturing:        'Automation is changing every role on the factory floor.',
     'consumer-brand':     'AI changes what brand, marketing, and creative roles require of the people who fill them.',
     government:           'Public sector workforce expectations and capabilities are being reset.',
+    consulting:           'Senior talent migrating to independent models reshapes who delivers the work and how.',
   },
   'trust-recalibration': {
     healthcare:           "Becomes the new CEO's scarcest, decisive asset.",
@@ -168,6 +171,7 @@ const forceShortLines: Record<ForceId, Record<IndustrySlug, string>> = {
     manufacturing:        'Supply chain integrity and operational transparency are becoming competitive requirements.',
     'consumer-brand':     'Consumer trust is fragile, contextual, and harder to recover than ever before.',
     government:           'Public trust in government institutions is the defining constraint on effective governance.',
+    consulting:           'Clients are scrutinising value more actively than at any point in recent decades.',
   },
   'human-augmentation': {
     healthcare:           'Redraws the line between clinician and machine.',
@@ -178,6 +182,7 @@ const forceShortLines: Record<ForceId, Record<IndustrySlug, string>> = {
     manufacturing:        'Robots and AI are redefining what human expertise means on the factory floor.',
     'consumer-brand':     'Human creativity and judgment remain irreplaceable even as AI handles more execution.',
     government:           'AI tools are expanding what public servants can do — and raising questions about accountability.',
+    consulting:           'The human-AI service model is becoming the new competitive baseline for advisory work.',
   },
   'institutional-rewiring': {
     healthcare:           'Governance and the regulatory floor are reset.',
@@ -188,6 +193,7 @@ const forceShortLines: Record<ForceId, Record<IndustrySlug, string>> = {
     manufacturing:        'Industrial policy and trade regulation are reshaping the rules of manufacturing competition.',
     'consumer-brand':     'Data, privacy, and AI regulations are actively rewriting the marketing rulebook.',
     government:           'The governance frameworks that define government are being tested and rewritten.',
+    consulting:           'Governance and compliance are growing as client demand categories.',
   },
   'economic-reconfiguration': {
     healthcare:           'Capital, reimbursement models, and the cost of care are all shifting simultaneously.',
@@ -198,6 +204,7 @@ const forceShortLines: Record<ForceId, Record<IndustrySlug, string>> = {
     manufacturing:        'Industrial policy, tariffs, and automation economics are reshaping the cost of manufacturing.',
     'consumer-brand':     'Consumer spending power and the economics of brand loyalty are shifting structurally.',
     government:           'Fiscal pressure is forcing governments to redesign how public value is delivered.',
+    consulting:           'Outcome-based buying and budget pressure are restructuring the economics of client engagements.',
   },
   'geopolitical-realignment': {
     healthcare:           'Supply chain dependencies and regulatory divergence are creating new operating constraints.',
@@ -208,6 +215,7 @@ const forceShortLines: Record<ForceId, Record<IndustrySlug, string>> = {
     manufacturing:        'Trade realignment, tariffs, and friend-shoring are redrawing the map of manufacturing.',
     'consumer-brand':     'Supply chain exposure and trade policy are changing the economics of global consumer goods.',
     government:           'Geopolitical realignment is reshaping the sovereignty constraints and alliances that define governance.',
+    consulting:           'Geopolitical uncertainty is shaping what clients need and how quickly they can decide.',
   },
   'climate-and-resilience': {
     healthcare:           'Climate-related health pressures and operational resilience requirements are rising.',
@@ -218,6 +226,7 @@ const forceShortLines: Record<ForceId, Record<IndustrySlug, string>> = {
     manufacturing:        'Climate-related risk and the carbon cost of production are becoming competitive factors.',
     'consumer-brand':     'Climate credibility is becoming a measurable driver of consumer brand preference.',
     government:           'Climate impacts are creating new demands on public institutions and testing their resilience.',
+    consulting:           'Decarbonisation and climate transition advisory are growing as demand categories.',
   },
   'resource-and-energy-transition': {
     healthcare:           'Energy costs and supply chain resilience for medical goods are rising strategic concerns.',
@@ -228,6 +237,7 @@ const forceShortLines: Record<ForceId, Record<IndustrySlug, string>> = {
     manufacturing:        'Energy cost exposure and the shift to low-carbon processes are creating structural competitive change.',
     'consumer-brand':     'The energy footprint of products and supply chains is becoming a brand variable.',
     government:           'The pace of energy transition depends heavily on public sector investment, regulation, and coordination.',
+    consulting:           'Energy transition is creating specialist advisory demand across sectors.',
   },
   'identity-and-belonging': {
     healthcare:           'Workforce belonging determines whether clinical talent stays, performs, and advocates.',
@@ -238,6 +248,7 @@ const forceShortLines: Record<ForceId, Record<IndustrySlug, string>> = {
     manufacturing:        'The transformation of factory work raises fundamental questions about worker identity and value.',
     'consumer-brand':     'Consumer brand loyalty is increasingly built on whether people feel seen and represented.',
     government:           'Public institutions must serve diverse populations while managing their own workforce belonging challenges.',
+    consulting:           'Culture and belonging are increasingly the presenting problem behind strategic mandates.',
   },
 }
 
@@ -253,6 +264,7 @@ const forceDescriptions: Record<ForceId, Record<IndustrySlug, string>> = {
     manufacturing:        'AI is transforming manufacturing operations — enabling predictive maintenance, quality control, supply chain optimization, and production scheduling at a level of precision that was not previously achievable. The manufacturers that deploy AI most effectively will create cost and quality advantages that are structurally difficult for competitors to close.',
     'consumer-brand':     'AI is reshaping every dimension of consumer brand strategy — how consumers are understood, how products are developed, how marketing is personalized, and how brand relationships are maintained at scale. The gap between AI-enabled and AI-naive consumer organizations is widening faster than most anticipated.',
     government:           'AI is raising the potential productivity of public services — in benefit administration, regulatory review, citizen services, and policy analysis — while creating new questions about accountability, bias, and the appropriate boundaries of automated decision-making in government.',
+    consulting:           'AI is compressing the research, analysis, and document-production work that historically justified the consulting leverage model. Tasks that previously required junior teams of analysts can now be completed faster and at lower cost with AI tools — by clients themselves, by AI-native competitors, or by the same firm with fewer people. The gap between AI-enabled and AI-naive consulting firms is widening, and the value proposition built on information asymmetry and analytical throughput is under structural pressure.',
   },
   'workforce-transformation': {
     healthcare:           'Structural workforce shortages — not cyclical — are forcing healthcare organizations to rethink staffing models, role design, and the relationship between human and machine work.',
@@ -263,6 +275,7 @@ const forceDescriptions: Record<ForceId, Record<IndustrySlug, string>> = {
     manufacturing:        'Automation and AI are changing every layer of manufacturing employment — from the skills that floor workers need, to the role of supervisors, to what engineering and operations leaders manage. Organizations that invest in workforce redesign alongside technology deployment will move faster and face less resistance than those that treat automation and workforce as separate agendas.',
     'consumer-brand':     'Consumer brand organizations are navigating a transformation of their core creative and marketing roles as AI takes over more execution while human judgment, taste, and cultural fluency become more valuable. The workforce challenge is partly technical and partly cultural — the meaning of creative work is changing.',
     government:           'Public sector organizations face workforce challenges that private sector organizations also face — AI adoption, skills gaps, changing employee expectations — alongside constraints specific to government: civil service rules, salary caps, and the difficulty of competing with private sector employers for technical talent.',
+    consulting:           'The consulting workforce is fracturing in ways that challenge the traditional partnership model from multiple directions simultaneously. Senior talent — partners and principals whose client relationships are the primary asset — is migrating to fractional, independent, and boutique models faster than most established firms anticipated. Platforms that enable direct client-expert matching are removing the intermediary role that firms historically played. And the talent that remains is applying belonging and values criteria to their employer choice that the billability-first culture of traditional consulting was not designed to satisfy.',
   },
   'trust-recalibration': {
     healthcare:           'Trust — with patients, clinicians, regulators, and payers — is under pressure from AI deployment, leadership change, and widening gaps between stated values and observable action.',
@@ -273,6 +286,7 @@ const forceDescriptions: Record<ForceId, Record<IndustrySlug, string>> = {
     manufacturing:        'Supply chain transparency — knowing where materials come from, under what conditions, and at what environmental cost — is becoming a baseline expectation from customers, regulators, and investors. The manufacturers that build visible, verifiable transparency into their operations will have structural trust advantages.',
     'consumer-brand':     'Consumer trust is fragile, contextual, and difficult to recover once lost. The AI-enabled personalization and engagement practices that create competitive advantage also create risk: consumers who feel surveilled, manipulated, or misrepresented withdraw both spending and advocacy at speed.',
     government:           'Trust in public institutions is the precondition for effective governance. Governments that lose public trust find every policy initiative harder to implement, every crisis harder to manage, and every reform harder to sustain. Rebuilding institutional trust is among the hardest and most consequential challenges in public leadership.',
+    consulting:           'Client trust in the consulting value proposition is under structural pressure. AI is reducing the information asymmetry that historically justified advisory fees; clients are building internal strategy and transformation capability that reduces advisory dependency; and the scrutiny applied to measurable impact has intensified as procurement sophistication rises and discretionary budgets tighten. Firms that cannot demonstrate clear, attributable outcomes — rather than high-quality process and well-packaged insight — are finding the value proposition harder to defend.',
   },
   'human-augmentation': {
     healthcare:           'The boundary between what humans do and what machines do in healthcare is actively shifting. Clinical roles are being redesigned around AI capability rather than against it.',
@@ -283,6 +297,7 @@ const forceDescriptions: Record<ForceId, Record<IndustrySlug, string>> = {
     manufacturing:        'Robots and AI are taking over more physical and analytical tasks in manufacturing, changing what human expertise means on the floor. The most effective manufacturing organizations are those that redesign jobs around what humans do best — the judgment, adaptability, and relational skills that automation cannot yet replicate.',
     'consumer-brand':     'The creative and strategic heart of consumer brand work remains intensely human — judgment about culture, tone, authenticity, and meaning cannot be automated. What is changing is the execution layer: AI handles more of the production, personalization, and analytics, allowing human talent to focus on decisions that require cultural fluency and creative risk-taking.',
     government:           'AI is expanding what public servants can do — handling more routine inquiries, processing more data, and generating more analysis — while raising questions about where human judgment, accountability, and the democratic obligations of government require humans to make the decision, not machines.',
+    consulting:           'The human-AI service model is becoming the new competitive baseline in consulting. Firms that deploy AI to handle research synthesis, data analysis, first-draft production, and scenario generation — while directing senior human judgment toward the highest-value moments of the engagement — can deliver more with less. The question is not whether to use AI but how to design the human-AI collaboration so that the result is genuinely better, not just faster and cheaper. The firms that get this design right will have a structural advantage over those that either ignore AI or use it primarily to reduce headcount.',
   },
   'institutional-rewiring': {
     healthcare:           'Healthcare regulatory frameworks, governance structures, and institutional expectations are under revision as AI deployment, workforce change, and trust dynamics force new accountability architectures.',
@@ -293,6 +308,7 @@ const forceDescriptions: Record<ForceId, Record<IndustrySlug, string>> = {
     manufacturing:        'Industrial policy — from the US Inflation Reduction Act to EU industrial strategy to China\'s manufacturing ambitions — is actively reshaping the competitive economics of manufacturing. Organizations that position themselves to benefit from these frameworks, rather than simply react to them, will have structural advantages.',
     'consumer-brand':     'Data privacy regulations, AI in marketing guidelines, and consumer protection frameworks are being actively rewritten across major markets. The consumer brand organizations that build compliance into their operating model — rather than treating it as a constraint to minimize — will have more strategic freedom in an environment of increasing regulatory activity.',
     government:           'Government institutions are simultaneously subject to institutional reform and agents of it — the expectations placed on public organizations by citizens, parliaments, and oversight bodies are changing alongside the organizations themselves. The governance capacity to manage AI deployment, fiscal constraint, and service transformation simultaneously is tested in most public institutions.',
+    consulting:           'Governance, compliance, and regulatory advisory are among the fastest-growing demand categories in professional services. As AI regulation, data privacy, and ESG disclosure requirements expand across major markets, clients need advisors who can navigate the complexity — and who have the institutional credibility to represent positions before regulators and boards. For consulting firms positioned at the intersection of strategy and governance, this is a structural growth opportunity. For those without that positioning, it represents a category they are ill-equipped to enter quickly.',
   },
   'economic-reconfiguration': {
     healthcare:           'Reimbursement models, capital access, and the fundamental economics of delivering care are shifting. Healthcare organizations built for one cost structure may find themselves exposed in another.',
@@ -303,6 +319,7 @@ const forceDescriptions: Record<ForceId, Record<IndustrySlug, string>> = {
     manufacturing:        'Industrial policy subsidies, tariff-driven reshoring, and the automation-driven restructuring of labour costs are creating a new economic geography for manufacturing. Organizations positioned in the right locations, with the right incentive structures and supply chain configurations, will have cost advantages that compound over time.',
     'consumer-brand':     'Consumer spending is bifurcating as income inequality grows and purchasing power diverges sharply by demographic segment. The consumer brand economics built for a more unified middle market are under pressure — the organizations that understand their actual customer economics in this environment will make better strategic decisions than those assuming continuity with the previous decade.',
     government:           'Governments are navigating a fiscal constraint that limits the resources available for public investment just as the demand for public services is rising. The organizations that find ways to deliver more with existing resources, rather than simply requesting more, will have more political and operational freedom.',
+    consulting:           'The economics of client engagements are being restructured from both sides simultaneously. Clients are resisting time-and-materials pricing, demanding outcome-based models that shift performance risk to the advisor. AI is compressing the labour hours required to produce the same analytical output, reducing the justification for traditional fee structures built on team size and hours billed. And procurement sophistication — driven by CFO scrutiny of discretionary spend — is treating consulting as a managed category with strict ROI requirements. Firms that can demonstrate clear outcomes and price accordingly will have more durable client relationships than those defending legacy models.',
   },
   'geopolitical-realignment': {
     healthcare:           'Supply chain dependencies on geographically concentrated pharmaceutical and device manufacturing are creating new strategic vulnerabilities. Regulatory divergence across major markets is adding compliance complexity.',
@@ -313,6 +330,7 @@ const forceDescriptions: Record<ForceId, Record<IndustrySlug, string>> = {
     manufacturing:        'Trade realignment — friend-shoring, tariff escalation, and the reshoring of strategic industries — is creating a new geography of manufacturing advantage and constraint. Organizations that can navigate this environment, positioning assets in the right jurisdictions, will have structural competitive advantages over those that optimize purely on historical cost.',
     'consumer-brand':     'Consumer goods organizations operating across multiple markets face a new level of trade policy uncertainty that is changing sourcing economics, supply chain design, and market access assumptions. The organizations that build supply chain optionality and geographic flexibility into their operating models will have more resilience than those optimized for a more stable trade environment.',
     government:           'Geopolitical realignment is reshaping the alliances, institutions, and norms that public organizations depend on — from trade agreements to security arrangements to international regulatory cooperation. Government leaders navigating this environment must balance national interests with the institutional commitments that give governance its legitimacy.',
+    consulting:           'Geopolitical uncertainty is simultaneously creating demand for advisory and suppressing the decisiveness required to act on it. Clients facing trade policy volatility, technology decoupling, and geopolitical market access questions need advisors with genuine geopolitical fluency — not just scenario frameworks. At the same time, leadership caution in uncertain environments is suppressing discretionary spend on the strategy programs where that advisory would be applied. Consulting firms that can provide integrated geopolitical perspective, connect it to near-term strategic decisions, and demonstrate rapid value are better positioned than those offering long-horizon strategic planning in an environment of short-horizon decision-making.',
   },
   'climate-and-resilience': {
     healthcare:           'Climate-related health events are increasing the demand burden on health systems. At the same time, healthcare organizations face rising expectations around their own climate credentials from staff, communities, and regulators.',
@@ -323,6 +341,7 @@ const forceDescriptions: Record<ForceId, Record<IndustrySlug, string>> = {
     manufacturing:        'Climate risk — physical risk to facilities, transition risk in input costs, and reputational risk from supply chain emissions — is becoming a strategic variable in manufacturing competitiveness. Organizations that manage climate exposure proactively will have lower disruption costs and stronger positions with customers and investors who scrutinize supply chain carbon.',
     'consumer-brand':     'Consumer expectations around climate credibility are moving from aspiration to accountability. The consumer brands most exposed are those that have made visible commitments but lack verifiable progress — the credibility gap between stated values and observable action is becoming a brand risk that competitors and advocates can exploit.',
     government:           'Climate is reshaping what governments must do: invest in physical resilience infrastructure, regulate industrial emissions, manage climate migration, and coordinate international responses. The governments that build the institutional capacity for long-horizon climate strategy — rather than managing climate as a series of emergency responses — will be better placed to serve their populations.',
+    consulting:           'Sustainability and climate transition advisory are among the fastest-growing practice areas in consulting. Mandatory disclosure requirements, net-zero commitments, and transition risk assessments are creating demand for advisors who can help clients navigate the gap between stated ambition and operational reality. For consulting firms, this creates both an opportunity — a growing, recurring advisory category — and a credibility challenge: clients are increasingly scrutinising whether their advisors model the sustainability practices they are paid to recommend.',
   },
   'resource-and-energy-transition': {
     healthcare:           'The cost and reliability of energy for healthcare facilities — and the resilience of supply chains for pharmaceuticals and medical devices — are becoming strategic concerns as the energy system transitions and critical mineral dependencies are exposed.',
@@ -333,6 +352,7 @@ const forceDescriptions: Record<ForceId, Record<IndustrySlug, string>> = {
     manufacturing:        'The electrification of manufacturing processes, rising carbon pricing, and the exposure of supply chains to energy cost volatility are creating structural changes in the competitive economics of industrial production. The manufacturers that invest in energy efficiency and low-carbon processes now will have lower cost structures and fewer compliance exposures as transition pressures intensify.',
     'consumer-brand':     'The energy footprint of consumer goods — from production through logistics to retail — is becoming increasingly visible and increasingly material to brand reputation. Consumer brands that can demonstrate genuine progress on supply chain decarbonization are building a source of differentiation that compounds as expectations continue to rise.',
     government:           'Government has a unique role in the energy transition: setting the regulatory frameworks, making the public investments, and coordinating the international agreements that determine the pace and shape of change. Public organizations that build genuine energy transition capability — not just policy ambition — will have the credibility to sustain this role through the political cycles that complicate long-horizon government action.',
+    consulting:           'Energy transition advisory is scaling as organisations across every sector grapple with the operational, strategic, and regulatory implications of a changing energy system. Consulting firms with genuine energy transition capability — not just sustainability reporting expertise — are in a structurally growing market. Building that capability requires specialist talent that is in acute short supply and in high demand from energy companies, infrastructure funds, and government agencies competing for the same profiles.',
   },
   'identity-and-belonging': {
     healthcare:           'Workforce belonging — whether clinical staff feel genuinely seen, valued, and respected — is emerging as a primary driver of retention in an environment where structural shortages leave no margin for voluntary departure.',
@@ -343,6 +363,7 @@ const forceDescriptions: Record<ForceId, Record<IndustrySlug, string>> = {
     manufacturing:        'The transformation of factory work — through automation, AI, and supply chain change — raises fundamental questions about worker identity, skill value, and the relationship between manufacturing organizations and the communities they are embedded in. Organizations that take these questions seriously, rather than treating them as communications challenges, will build more resilient workforces.',
     'consumer-brand':     'Consumer brand loyalty is increasingly built on belonging: whether consumers feel that a brand genuinely represents them, sees them, and shares their values. The brands that build belonging authentically — rather than performing it — create loyalty that is more resilient to competitive and price pressure than preference built on product attributes alone.',
     government:           'Public institutions serve diverse populations whose belonging needs are often in tension — and must also manage their own internal belonging dynamics as they navigate workforce transformation and public scrutiny. Governments that take belonging seriously, as a policy design criterion and as an organizational value, tend to build more effective and more trusted institutions.',
+    consulting:           'Culture and belonging are increasingly the presenting problem behind the strategic and transformation mandates that bring clients to consulting firms. Organisations that need help with CEO transitions, workforce transformation, or strategic repositioning are often — beneath the stated mandate — working on questions of belonging: who belongs in the future organisation, whose identity is challenged by the change, and whether the culture can absorb what the strategy requires. Consulting firms that can engage with these dimensions credibly — not just technically — are better positioned than those that treat culture as a downstream output of strategy work.',
   },
 }
 
@@ -563,6 +584,7 @@ const whereShowsMap: Record<ForceId, Record<IndustrySlug, string[]>> = {
     manufacturing:        ['Quality control', 'Production scheduling', 'Supply chain optimization'],
     'consumer-brand':     ['Marketing', 'Product discovery', 'Customer analytics'],
     government:           ['Benefits administration', 'Regulatory review', 'Citizen services'],
+    consulting:           ['Research and analysis', 'Deck production', 'Client advisory', 'Talent economics'],
   },
   'workforce-transformation': {
     healthcare:           ['Talent', 'Operating model', 'Culture'],
@@ -573,6 +595,7 @@ const whereShowsMap: Record<ForceId, Record<IndustrySlug, string[]>> = {
     manufacturing:        ['Production floor', 'Engineering', 'Talent strategy'],
     'consumer-brand':     ['Creative', 'Marketing', 'Brand strategy roles'],
     government:           ['Civil service', 'Technical talent', 'Service delivery'],
+    consulting:           ['Senior talent', 'Practice model', 'Team design', 'Client capability building'],
   },
   'trust-recalibration': {
     healthcare:           ['Governance', 'Patient relationships', 'Workforce trust'],
@@ -583,6 +606,7 @@ const whereShowsMap: Record<ForceId, Record<IndustrySlug, string[]>> = {
     manufacturing:        ['Supply chain transparency', 'Customer relationships', 'ESG reporting'],
     'consumer-brand':     ['Brand experience', 'Data practices', 'Customer communication'],
     government:           ['Public communications', 'Service delivery', 'Policy credibility'],
+    consulting:           ['Client relationships', 'Value demonstration', 'Business development'],
   },
   'human-augmentation': {
     healthcare:           ['Clinical operations', 'Role design', 'Technology investment'],
@@ -593,6 +617,7 @@ const whereShowsMap: Record<ForceId, Record<IndustrySlug, string[]>> = {
     manufacturing:        ['Production operations', 'Quality management', 'Engineering'],
     'consumer-brand':     ['Creative direction', 'Brand strategy', 'Customer experience design'],
     government:           ['Case management', 'Regulatory decision-making', 'Policy analysis'],
+    consulting:           ['Service delivery', 'Practice design', 'Client advisory model'],
   },
   'institutional-rewiring': {
     healthcare:           ['Governance', 'Compliance', 'Board relationships'],
@@ -603,6 +628,7 @@ const whereShowsMap: Record<ForceId, Record<IndustrySlug, string[]>> = {
     manufacturing:        ['Industrial policy strategy', 'Trade compliance', 'ESG reporting'],
     'consumer-brand':     ['Data privacy', 'Marketing compliance', 'AI governance'],
     government:           ['Governance reform', 'Digital infrastructure', 'Accountability frameworks'],
+    consulting:           ['Compliance advisory', 'Governance consulting', 'Risk and regulatory practice'],
   },
   'economic-reconfiguration': {
     healthcare:           ['Capital allocation', 'Reimbursement strategy', 'Operating model'],
@@ -613,6 +639,7 @@ const whereShowsMap: Record<ForceId, Record<IndustrySlug, string[]>> = {
     manufacturing:        ['Cost structure', 'Supply chain economics', 'Investment strategy'],
     'consumer-brand':     ['Pricing strategy', 'Brand economics', 'Loyalty model'],
     government:           ['Budget strategy', 'Public investment', 'Service economics'],
+    consulting:           ['Engagement model', 'Pricing strategy', 'Business development', 'Practice economics'],
   },
   'geopolitical-realignment': {
     healthcare:           ['Supply chain', 'Regulatory strategy', 'Market access'],
@@ -623,6 +650,7 @@ const whereShowsMap: Record<ForceId, Record<IndustrySlug, string[]>> = {
     manufacturing:        ['Supply chain', 'Trade compliance', 'Market strategy'],
     'consumer-brand':     ['Sourcing strategy', 'Supply chain', 'Market access'],
     government:           ['International relations', 'Trade policy', 'Security strategy'],
+    consulting:           ['Strategy advisory', 'Market advisory', 'Geopolitical risk practice'],
   },
   'climate-and-resilience': {
     healthcare:           ['Facilities', 'Supply chain resilience', 'ESG reporting'],
@@ -633,6 +661,7 @@ const whereShowsMap: Record<ForceId, Record<IndustrySlug, string[]>> = {
     manufacturing:        ['Facilities', 'Supply chain resilience', 'Carbon reporting'],
     'consumer-brand':     ['Brand positioning', 'Supply chain', 'ESG reporting'],
     government:           ['Infrastructure investment', 'Emergency management', 'Climate policy'],
+    consulting:           ['Sustainability advisory', 'ESG strategy', 'Decarbonisation practice'],
   },
   'resource-and-energy-transition': {
     healthcare:           ['Facilities management', 'Supply chain', 'Capital planning'],
@@ -643,6 +672,7 @@ const whereShowsMap: Record<ForceId, Record<IndustrySlug, string[]>> = {
     manufacturing:        ['Energy management', 'Process decarbonization', 'Capital planning'],
     'consumer-brand':     ['Supply chain', 'Product design', 'Logistics'],
     government:           ['Energy regulation', 'Infrastructure investment', 'International coordination'],
+    consulting:           ['Energy transition advisory', 'Sector specialisation', 'Talent competition'],
   },
   'identity-and-belonging': {
     healthcare:           ['Workforce retention', 'Culture', 'Leadership development'],
@@ -653,6 +683,7 @@ const whereShowsMap: Record<ForceId, Record<IndustrySlug, string[]>> = {
     manufacturing:        ['Workforce culture', 'Community relations', 'Leadership development'],
     'consumer-brand':     ['Brand positioning', 'Customer loyalty', 'Workforce culture'],
     government:           ['Service design', 'Workforce culture', 'Public communication'],
+    consulting:           ['Culture advisory', 'Transformation practice', 'Talent and belonging'],
   },
 }
 
@@ -668,6 +699,7 @@ const topSignals: Record<ForceId, Record<IndustrySlug, string[]>> = {
     manufacturing:        ['AI quality control systems reducing defect rates in high-volume production', 'Predictive maintenance AI reducing unplanned downtime in manufacturing', 'AI supply chain optimization tools entering standard manufacturing operations'],
     'consumer-brand':     ['AI-generated creative content entering mainstream consumer brand campaigns', 'AI personalization tools achieving measurable uplift in conversion and retention', 'Agentic AI tools changing how consumers discover and evaluate consumer brands'],
     government:           ['Government AI pilots in benefits processing reducing administrative time significantly', 'AI tools entering regulatory review and permitting workflows', 'Public sector AI procurement growing rapidly as vendors target government'],
+    consulting:           ['AI compressing research and analysis tasks that previously required junior consulting teams', 'Clients building internal AI strategy capability, reducing advisory dependency', 'AI-native tools enabling direct client-expert matching outside traditional firm models'],
   },
   'workforce-transformation': {
     healthcare:           ['Persistent workforce shortages in clinical roles', 'Growth of hybrid human-AI care teams', 'Ambient AI documentation tools reducing clinician burden'],
@@ -678,6 +710,7 @@ const topSignals: Record<ForceId, Record<IndustrySlug, string[]>> = {
     manufacturing:        ['Automation investment accelerating in high-labour-cost manufacturing markets', 'Manufacturers increasingly competing with technology companies for engineering talent', 'Manufacturing workforce training programs scaling as skills gap widens'],
     'consumer-brand':     ['Consumer brand organizations restructuring creative and marketing teams around AI capabilities', 'Demand for AI-fluent brand strategists and creative directors rising sharply', 'Traditional advertising and media roles declining as AI handles more production'],
     government:           ['Government struggling to compete with private sector for AI and digital talent', 'Civil service reform initiatives targeting workforce flexibility and skills development', 'Public sector workforce aging creating succession risk in critical service areas'],
+    consulting:           ['Senior talent migrating to fractional and independent models faster than firms anticipated', 'Platforms enabling high-end solo consultants to compete directly with established firms', 'Consulting talent evaluating employers on values alignment and flexibility, not just compensation'],
   },
   'trust-recalibration': {
     healthcare:           ['Public trust in AI-assisted care diverges by domain', 'Expansion of AI governance requirements in healthcare', 'Clinician trust in AI tools tracks with involvement in deployment'],
@@ -688,6 +721,7 @@ const topSignals: Record<ForceId, Record<IndustrySlug, string[]>> = {
     manufacturing:        ['Supply chain due diligence requirements becoming legally mandated in major markets', 'Consumers and enterprise buyers demanding verified supply chain transparency', 'Manufacturing ESG ratings gaining weight in procurement decisions'],
     'consumer-brand':     ['Consumer backlash against perceived AI manipulation in brand personalization', 'Brand trust erosion accelerating when stated values and observable practice diverge', 'Consumer data privacy concerns hardening into active brand avoidance in key segments'],
     government:           ['Public trust in government institutions at multi-decade lows in several major democracies', 'Institutional credibility gaps making policy implementation slower and more contested', 'Social media accelerating the speed at which government trust is lost'],
+    consulting:           ['Client scrutiny of measurable impact intensifying as AI reduces information asymmetry', 'Consultant fatigue and cynicism creating openings for differentiated value propositions', 'Reputation increasingly driven by peer networks and visible track records, not firm brand'],
   },
   'human-augmentation': {
     healthcare:           ['Growth of personalized patient experiences', 'AI diagnostic tools reach clinical parity in radiology and pathology', 'Human-AI complementarity producing superior outcomes in research'],
@@ -698,6 +732,7 @@ const topSignals: Record<ForceId, Record<IndustrySlug, string[]>> = {
     manufacturing:        ['Collaborative robotics growth shifting factory floor roles from execution to oversight', 'Manufacturing engineers increasingly managing AI systems rather than direct production', 'Human adaptability valued higher than speed in complex, variable production environments'],
     'consumer-brand':     ['Brand strategists using AI for ideation and testing while retaining creative direction', 'Consumer research confirming human judgment irreplaceable in brand culture and tone decisions', 'AI-human creative collaboration models becoming standard in leading consumer brand agencies'],
     government:           ['AI entering government decision support in welfare, permitting, and enforcement', 'Courts and oversight bodies scrutinizing AI-assisted government decisions for fairness', 'Human accountability requirements limiting pure AI automation of high-stakes government decisions'],
+    consulting:           ['Human-AI service delivery becoming the competitive baseline in strategy and advisory', 'Clients expecting faster, cheaper, always-on insight alongside senior human judgment', 'Firms deploying AI to augment senior judgment outperforming those using it only to reduce headcount'],
   },
   'institutional-rewiring': {
     healthcare:           ['Expansion of AI governance requirements in clinical settings', 'New compliance frameworks for high-risk AI systems', 'EU AI Act creating precedent for healthcare AI governance'],
@@ -708,6 +743,7 @@ const topSignals: Record<ForceId, Record<IndustrySlug, string[]>> = {
     manufacturing:        ['US, EU, and Asian industrial policy creating competitive incentive structures for domestic manufacturing', 'Supply chain due diligence legislation becoming operative in EU and UK', 'Trade remedy actions and tariff escalation creating new compliance and strategic planning requirements'],
     'consumer-brand':     ['EU Digital Markets Act and Digital Services Act creating new constraints on consumer data use', 'AI in advertising facing new disclosure and accountability requirements in major markets', 'Consumer brand AI practices attracting increasing regulatory and activist scrutiny'],
     government:           ['AI governance frameworks for public sector deployment advancing in EU, UK, and OECD', 'Digital infrastructure regulation creating new requirements for government technology procurement', 'Accountability frameworks for AI-assisted government decisions being developed by oversight bodies'],
+    consulting:           ['Governance, risk, and compliance advisory growing as proportion of consulting demand', 'AI governance requirements creating new advisory categories for positioned firms', 'Regulatory complexity increasing specialist advisory demand across sectors'],
   },
   'economic-reconfiguration': {
     healthcare:           ['Healthcare reimbursement model reform accelerating', 'Capital cost of health system expansion rising with elevated rates', 'Health system M&A activity driven by margin pressure'],
@@ -718,6 +754,7 @@ const topSignals: Record<ForceId, Record<IndustrySlug, string[]>> = {
     manufacturing:        ['Reshoring subsidies and industrial policy incentives reshaping manufacturing location economics', 'Input cost volatility — energy, critical minerals, logistics — compressing margins in exposed sectors', 'Automation ROI improving as labour costs rise and technology costs fall'],
     'consumer-brand':     ['Consumer spending power diverging sharply by income segment, complicating mass-market strategies', 'Private label and value-tier growth outpacing branded tiers as price sensitivity rises', 'Brand premium under pressure as consumers scrutinize value propositions more carefully'],
     government:           ['Fiscal consolidation pressures constraining public investment in most advanced economies', 'Rising cost of public debt reducing the available fiscal space for new government programs', 'Productivity imperative creating political pressure for public service efficiency and reform'],
+    consulting:           ['Clients resisting time-and-materials pricing and demanding outcome-based models', 'AI compressing the work that justified traditional consulting leverage ratios', 'Procurement sophistication treating consulting as managed spend with strict ROI scrutiny'],
   },
   'geopolitical-realignment': {
     healthcare:           ['Pharmaceutical supply chain concentration creating regulatory and security concerns', 'Medical device trade policy becoming more restrictive', 'Healthcare regulatory divergence complicating cross-border clinical operations'],
@@ -728,6 +765,7 @@ const topSignals: Record<ForceId, Record<IndustrySlug, string[]>> = {
     manufacturing:        ['Friend-shoring creating preferential trade relationships that advantage well-positioned manufacturers', 'Tariff escalation creating significant uncertainty in supply chain investment decisions', 'Technology export controls affecting manufacturing capabilities in semiconductor-adjacent sectors'],
     'consumer-brand':     ['Tariff and trade policy volatility increasing sourcing costs and complexity for global consumer brands', 'Country-of-origin consumer sentiment shifting in multiple major markets', 'Supply chain regionalization increasing resilience but also per-unit cost'],
     government:           ['Alliance structures under pressure as geopolitical realignment reshapes security commitments', 'International regulatory cooperation declining in some areas, creating divergent compliance environments', 'Economic statecraft — sanctions, subsidies, export controls — becoming a primary tool of government strategy'],
+    consulting:           ['Geopolitical uncertainty creating advisory demand while suppressing discretionary spending', 'Trade policy and industrial strategy creating new advisory categories for positioned firms', 'Clients seeking integrated geopolitical perspective that traditional strategy frameworks do not provide'],
   },
   'climate-and-resilience': {
     healthcare:           ['Climate-related health events increasing demand burden on health systems', 'Healthcare facilities facing rising climate resilience requirements', 'Staff expectations around organizational climate action hardening'],
@@ -738,6 +776,7 @@ const topSignals: Record<ForceId, Record<IndustrySlug, string[]>> = {
     manufacturing:        ['Extreme weather events creating direct operational disruption at manufacturing sites', 'Carbon pricing entering supply chain cost models as transition mechanisms mature', 'Industrial decarbonization investment accelerating as technology costs fall and policy pressure rises'],
     'consumer-brand':     ['Consumer preference data showing measurable shift toward climate-credible brands', 'Retail supply chains exposed to physical climate disruption in key sourcing regions', 'Consumer brand carbon footprint disclosure becoming standard in regulated markets'],
     government:           ['Climate-related disaster response cost increasing as physical climate risk materializes', 'Climate disclosure requirements for public bodies entering force in several major markets', 'Long-term public investment planning increasingly incorporating climate scenario analysis'],
+    consulting:           ['Sustainability and decarbonisation advisory among fastest-growing practice areas globally', 'Mandatory climate disclosure creating compliance-adjacent consulting demand', 'Firms without credible sustainability practices losing relevance with climate-conscious clients'],
   },
   'resource-and-energy-transition': {
     healthcare:           ['Healthcare facility energy costs rising with transition and grid volatility', 'Medical supply chain dependencies on critical minerals becoming visible', 'Energy resilience becoming a facilities strategy priority for major health systems'],
@@ -748,6 +787,7 @@ const topSignals: Record<ForceId, Record<IndustrySlug, string[]>> = {
     manufacturing:        ['Industrial electrification investment accelerating as cost parity with gas-based processes approaches', 'Green hydrogen emerging as a viable industrial fuel in hard-to-electrify manufacturing sectors', 'Energy cost exposure in manufacturing intensifying as carbon pricing mechanisms expand'],
     'consumer-brand':     ['Supply chain decarbonization becoming a procurement criterion for major retail customers', 'Consumer goods packaging and logistics electrification creating capital investment requirements', 'Scope 3 emissions reporting requirements increasing pressure on consumer brand supply chains'],
     government:           ['Government energy transition investment commitments at historic highs across major economies', 'Permitting and grid connection bottlenecks emerging as transition pace constraints', 'International energy transition coordination through G7, G20, and COP mechanisms intensifying'],
+    consulting:           ['Energy transition advisory scaling as organisations across sectors face operational implications', 'Critical minerals and supply chain exposure creating advisory demand outside energy sector', 'Firms building energy transition practices facing significant talent competition'],
   },
   'identity-and-belonging': {
     healthcare:           ['Clinical workforce belonging scores predicting voluntary departure at 18-month horizon', 'Healthcare organizations with stronger belonging metrics showing lower agency staff costs', 'Gen Z clinical professionals citing belonging as a top-three employment criterion'],
@@ -758,6 +798,7 @@ const topSignals: Record<ForceId, Record<IndustrySlug, string[]>> = {
     manufacturing:        ['Manufacturing communities facing identity disruption as automation reduces traditional employment', 'Worker pride and craftsmanship identity becoming a talent retention variable in reshoring investments', 'Community investment commitments becoming a condition of social licence for manufacturing operations'],
     'consumer-brand':     ['Diverse representation in brand marketing becoming a measurable driver of purchase preference', 'Brands perceived as inauthentic in belonging claims facing organized consumer and activist pressure', 'Consumer community-building becoming a primary brand loyalty strategy'],
     government:           ['Public institutions failing to reflect the demographic diversity of the populations they serve losing credibility', 'Belonging gaps in public sector workforce creating retention risk and service quality consequences', 'Policy design increasingly expected to demonstrate belonging and inclusion by affected communities'],
+    consulting:           ['Culture advisory growing as presenting problem behind CEO transition and transformation mandates', 'Firms perceived as lacking genuine inclusion facing talent disadvantage in competitive hiring', 'Clients expecting advisory firms to model the belonging practices they are paid to recommend'],
   },
 }
 
@@ -860,6 +901,18 @@ const signalPools: Record<IndustrySlug, SignalInput[]> = {
     { title: 'Climate-related disaster response costs increasing as physical risk materializes, testing institutional capacity', potentialImpact: 'Governments facing a compounding fiscal and operational challenge as climate events become more frequent and costly.', relatedForce: 'Climate & Resilience', sourceName: 'UNDRR Global Risk Report', publicationDate: 'Mar 2026', sourceLink: '#', confidence: 'High' },
     { title: 'Government energy transition investment commitments at historic highs, creating implementation capacity challenges', potentialImpact: 'The gap between commitment and delivery capability emerging as the binding constraint on transition pace.', relatedForce: 'Resource & Energy Transition', sourceName: 'IEA Clean Energy Monitor', publicationDate: 'Feb 2026', sourceLink: '#', confidence: 'High' },
     { title: 'Public institutions failing to reflect the demographic diversity of the populations they serve losing credibility', potentialImpact: 'Belonging gaps in public sector workforce creating service quality consequences and recruitment disadvantage.', relatedForce: 'Identity & Belonging', sourceName: 'UK Civil Service Diversity', publicationDate: 'Jan 2026', sourceLink: '#', confidence: 'Medium' },
+  ],
+  consulting: [
+    { title: 'AI compressing research and analysis tasks that previously required junior consulting teams', potentialImpact: 'Traditional leverage model under structural pressure as AI enables fewer people to produce comparable analytical output.', relatedForce: 'AI Ascendance', sourceName: 'BCG Henderson Institute', publicationDate: 'May 2026', sourceLink: '#', confidence: 'High' },
+    { title: 'Senior consulting talent migrating to fractional and independent models faster than firms anticipated', potentialImpact: 'Partnership pipelines and client relationship continuity at risk as senior talent redefines working models.', relatedForce: 'Workforce Transformation', sourceName: 'Korn Ferry Consulting Talent', publicationDate: 'Apr 2026', sourceLink: '#', confidence: 'High' },
+    { title: 'Client scrutiny of measurable consulting impact intensifying as AI reduces information asymmetry', potentialImpact: 'Value propositions built on process quality and analytical capability under pressure from clients who can verify more independently.', relatedForce: 'Trust Recalibration', sourceName: 'Source Global Research', publicationDate: 'Mar 2026', sourceLink: '#', confidence: 'High' },
+    { title: 'Human-AI service delivery becoming the competitive baseline in strategy and advisory', potentialImpact: 'Firms that design effective human-AI collaboration models able to deliver more value at comparable cost.', relatedForce: 'Human Augmentation', sourceName: 'McKinsey Global Institute', publicationDate: 'Feb 2026', sourceLink: '#', confidence: 'High' },
+    { title: 'Governance, risk, and compliance advisory growing as proportion of total consulting demand', potentialImpact: 'Firms positioned at the intersection of strategy and governance gaining structural advantage in a growing category.', relatedForce: 'Institutional Rewiring', sourceName: 'ALM Intelligence', publicationDate: 'Jan 2026', sourceLink: '#', confidence: 'High' },
+    { title: 'Clients demanding outcome-based engagement models that shift performance risk to the advisor', potentialImpact: 'Traditional time-and-materials pricing models under sustained pressure as procurement sophistication rises.', relatedForce: 'Economic Reconfiguration', sourceName: 'Heidrick & Struggles Consulting Outlook', publicationDate: 'May 2026', sourceLink: '#', confidence: 'High' },
+    { title: 'Geopolitical uncertainty creating advisory demand while suppressing client decisiveness and discretionary spend', potentialImpact: 'Consulting firms facing paradox of rising strategic need and declining conversion of that need into contracted work.', relatedForce: 'Geopolitical Realignment', sourceName: 'KPMG CEO Outlook', publicationDate: 'Apr 2026', sourceLink: '#', confidence: 'Medium' },
+    { title: 'Sustainability and decarbonisation advisory among fastest-growing practice areas globally', potentialImpact: 'Firms with credible sustainability capability gaining access to a growing recurring advisory category.', relatedForce: 'Climate & Resilience', sourceName: 'Verdantix Green Quadrant', publicationDate: 'Mar 2026', sourceLink: '#', confidence: 'High' },
+    { title: 'Energy transition advisory scaling as clients across sectors face operational and strategic implications', potentialImpact: 'Specialist energy transition capability becoming a structural competitive differentiator for positioned firms.', relatedForce: 'Resource & Energy Transition', sourceName: 'Wood Mackenzie Advisory', publicationDate: 'Feb 2026', sourceLink: '#', confidence: 'Medium' },
+    { title: 'Culture and belonging emerging as the presenting problem behind CEO transition and transformation mandates', potentialImpact: 'Firms that can engage credibly with culture dimensions of strategic mandates winning deeper and longer engagements.', relatedForce: 'Identity & Belonging', sourceName: 'Spencer Stuart Leadership Index', publicationDate: 'Jan 2026', sourceLink: '#', confidence: 'Medium' },
   ],
 }
 
@@ -1327,6 +1380,20 @@ const executiveBriefBody: Record<IndustrySlug, Record<SituationSlug, { body1: st
       body2: 'Government organizations that achieve genuine culture change tend to be those that connect the internal experience of the workforce to the external quality of service: treating belonging, capability, and wellbeing of public servants as organizational outcomes that matter in their own right, not just as inputs to service delivery metrics. The organizations that invest in their people with the same seriousness with which they are asked to serve the public tend to build the institutional trust — internal and external — that makes sustained change possible.',
     },
   },
+  consulting: {
+    'ceo-transition': {
+      body1: 'Consulting firm leaders entering new roles inherit practices, client portfolios, and partnership cultures shaped by a model that is under structural pressure from multiple directions simultaneously. AI is compressing the analytical work that historically justified the leverage pyramid; senior talent is migrating toward independence faster than succession pipelines can replace it; and clients are demanding measurable outcomes at a time when the definition of value is shifting beneath traditional fee structures. The incoming leader who treats this as a cycle to manage is likely to find it is a structural shift to navigate.',
+      body2: "The consulting leaders most likely to build durable firm positions are those who are willing to ask foundational questions early: what is the firm's distinctive value in a world of AI-enabled analysis; which client relationships are deep enough to survive model disruption; and what changes to the talent and operating model are needed now, not in three years. The window for proactive repositioning is narrower than most succession timelines assume.",
+    },
+    transformation: {
+      body1: 'Consulting firm transformation programs are complicated by a structural irony: the organizations most expert at advising on transformation are often those with the deepest cultural resistance to transforming themselves. Partnership governance, billability cultures, and practice incentives that reward individual client relationships over collective capability-building are all design features that make the firm effective in stable markets and difficult to adapt in disrupted ones. The transformation challenge is not primarily strategic — it is cultural and structural.',
+      body2: "The consulting firms most likely to complete successful transformations are those that invest early in changing the incentive and culture architecture, not just the strategy deck. That means rethinking how partners are evaluated and rewarded, how AI capability is built and shared across practices, and how the firm's value proposition is communicated to clients who are watching to see whether the advisory on transformation is backed by visible organizational change in the firm itself.",
+    },
+    'culture-change': {
+      body1: "Culture change in consulting firms confronts a distinctive challenge: the firm's culture is its product. The way consultants collaborate, challenge each other, maintain client relationships, and develop younger talent is not separable from the quality of the advisory work clients receive. Culture change programs that treat internal culture as distinct from client experience — that focus on internal values statements without changing the actual dynamics of engagement staffing, client interaction, and knowledge-sharing — tend to produce branding without change.",
+      body2: 'Consulting organizations that achieve genuine culture change tend to be those that make the connection between internal belonging and external performance explicit: that the quality of the work depends on the quality of the environment in which it is produced. Firms that invest in belonging and inclusion not as compliance programs but as capability investments — recognising that diverse teams produce better strategic insight, and that psychologically safe environments produce more honest client advice — tend to build the internal cultures that sustain competitive differentiation over time.',
+    },
+  },
 }
 
 // ─── Signal builder ──────────────────────────────────────────────────────────
@@ -1417,7 +1484,7 @@ export function parseContextId(id: string): {
   situation: SituationSlug
   challenge: ChallengeSlug
 } | null {
-  const industries: IndustrySlug[] = ['healthcare', 'financial-services', 'consumer', 'technology', 'consumer-brand', 'energy', 'manufacturing', 'government']
+  const industries: IndustrySlug[] = ['healthcare', 'financial-services', 'consumer', 'technology', 'consumer-brand', 'energy', 'manufacturing', 'government', 'consulting']
   const situations: SituationSlug[] = ['ceo-transition', 'transformation', 'culture-change']
   const challenges: ChallengeSlug[] = ['growth', 'trust', 'innovation', 'talent']
 
@@ -1437,7 +1504,7 @@ export function parseContextId(id: string): {
 // ─── All possible param combinations ─────────────────────────────────────────
 
 export function getAllContextIds(): string[] {
-  const industries: IndustrySlug[] = ['healthcare', 'financial-services', 'consumer', 'technology', 'consumer-brand', 'energy', 'manufacturing', 'government']
+  const industries: IndustrySlug[] = ['healthcare', 'financial-services', 'consumer', 'technology', 'consumer-brand', 'energy', 'manufacturing', 'government', 'consulting']
   const situations: SituationSlug[] = ['ceo-transition', 'transformation', 'culture-change']
   const challenges: ChallengeSlug[] = ['growth', 'trust', 'innovation', 'talent']
   return industries.flatMap(i => situations.flatMap(s => challenges.map(c => `${i}-${s}-${c}`)))

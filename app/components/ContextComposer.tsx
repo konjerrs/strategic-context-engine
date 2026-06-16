@@ -26,6 +26,7 @@ const industries: ComposerIndustry[] = [
   'Manufacturing',
   'Energy',
   'Government',
+  'Consulting',
 ]
 
 const situations: ComposerSituation[] = [
