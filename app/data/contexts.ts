@@ -751,14 +751,14 @@ export const curatedContexts: ContextData[] = [
 // allContexts used for the homepage saved-contexts cards (curated + additional)
 export const allContexts: ContextData[] = [...curatedContexts, ...additionalContexts]
 
-export function getContextById(id: string): ContextData | undefined {
+export function getContextById(id: string, horizon?: string): ContextData | undefined {
   // Check all curated and additional contexts first
   const found = allContexts.find((c) => c.id === id)
-  if (found) return found
+  if (found) return horizon ? { ...found, timeHorizon: horizon } : found
   // Fall back to generator for valid 3-part slugs
   const parsed = parseContextId(id)
   if (!parsed) return undefined
-  return generateContext(parsed.industry, parsed.situation, parsed.challenge)
+  return generateContext(parsed.industry, parsed.situation, parsed.challenge, horizon)
 }
 
 // Always returns a full slug — never null

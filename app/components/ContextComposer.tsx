@@ -199,7 +199,8 @@ export function ContextComposer() {
     [industry, challenge]
   )
 
-  const route = resolveComposerRoute(industry, situation, challenge)
+  const baseRoute = resolveComposerRoute(industry, situation, challenge)
+  const route = `${baseRoute}?horizon=${encodeURIComponent(horizon)}`
 
   const handleGenerate = () => {
     setAttempted(true)

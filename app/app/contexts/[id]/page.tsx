@@ -26,11 +26,14 @@ export async function generateStaticParams() {
 
 export default async function ContextResultsPage({
   params,
+  searchParams,
 }: {
   params: Promise<{ id: string }>
+  searchParams: Promise<{ horizon?: string }>
 }) {
   const { id } = await params
-  const context = getContextById(id)
+  const { horizon } = await searchParams
+  const context = getContextById(id, horizon)
   if (!context) notFound()
 
   const forceAccentMap = Object.fromEntries(
