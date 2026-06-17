@@ -54,6 +54,8 @@ export type ContextData = ContextResult & {
   headline: string
   lastUpdated: string
   trackedForces: number
+  coreInsight: string
+  whatLeadersAreMissing: string
   executiveBrief: {
     pullQuote: string
     pullQuoteAccent: string

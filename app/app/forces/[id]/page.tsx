@@ -94,6 +94,16 @@ export default async function ForceDetailPage({
         </p>
       </div>
 
+      {/* ── CORE THESIS ── */}
+      <div className="max-w-6xl mx-auto px-8 pt-12 pb-10 border-b border-zinc-100">
+        <p
+          className="text-[26px] text-zinc-900 leading-[1.45] max-w-3xl"
+          style={{ fontFamily: 'var(--font-serif)', borderLeft: `3px solid ${force.accentHex}`, paddingLeft: '1.25rem' }}
+        >
+          {force.coreThesis}
+        </p>
+      </div>
+
       {/* ── EXECUTIVE SUMMARY ── */}
       <div className="max-w-6xl mx-auto px-8 py-16 border-b border-zinc-100">
         <p className="text-[10px] uppercase tracking-[0.18em] text-zinc-400 font-medium mb-8">
@@ -101,6 +111,16 @@ export default async function ForceDetailPage({
         </p>
         <p className="text-[17px] text-zinc-600 leading-[1.85] max-w-3xl">
           {force.executiveSummary}
+        </p>
+      </div>
+
+      {/* ── WHAT LEADERS ARE MISSING ── */}
+      <div className="max-w-6xl mx-auto px-8 py-16 border-b border-zinc-100">
+        <p className="text-[10px] uppercase tracking-[0.18em] text-zinc-400 font-medium mb-8">
+          What Leaders Are Missing
+        </p>
+        <p className="text-[17px] text-zinc-700 leading-[1.85] max-w-3xl">
+          {force.whatLeadersAreMissing}
         </p>
       </div>
 
@@ -115,6 +135,41 @@ export default async function ForceDetailPage({
         >
           {force.whyItMatters}
         </p>
+      </div>
+
+      {/* ── STRATEGIC STAKES ── */}
+      <div className="max-w-6xl mx-auto px-8 py-16 border-b border-zinc-100">
+        <p className="text-[10px] uppercase tracking-[0.18em] text-zinc-400 font-medium mb-12">
+          Strategic Stakes
+        </p>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-4xl">
+          <div>
+            <p className="text-[11px] uppercase tracking-[0.14em] text-emerald-600 font-medium mb-5">
+              If leaders get this right
+            </p>
+            <ul className="flex flex-col gap-4">
+              {force.strategicStakes.ifLeadersGetThisRight.map((item, i) => (
+                <li key={i} className="flex items-start gap-3">
+                  <span className="mt-[6px] w-1.5 h-1.5 rounded-full bg-emerald-400 shrink-0" />
+                  <p className="text-[14px] text-zinc-600 leading-[1.75]">{item}</p>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div>
+            <p className="text-[11px] uppercase tracking-[0.14em] text-rose-600 font-medium mb-5">
+              If leaders get this wrong
+            </p>
+            <ul className="flex flex-col gap-4">
+              {force.strategicStakes.ifLeadersGetThisWrong.map((item, i) => (
+                <li key={i} className="flex items-start gap-3">
+                  <span className="mt-[6px] w-1.5 h-1.5 rounded-full bg-rose-400 shrink-0" />
+                  <p className="text-[14px] text-zinc-600 leading-[1.75]">{item}</p>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
       </div>
 
       {/* ── STRATEGIC IMPLICATIONS ── */}

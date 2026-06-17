@@ -16,6 +16,11 @@ export type ForceImplications = {
   governance: string
 }
 
+export type StrategicStakes = {
+  ifLeadersGetThisRight: string[]
+  ifLeadersGetThisWrong: string[]
+}
+
 export type ForceDetail = {
   id: string
   name: string
@@ -24,8 +29,11 @@ export type ForceDetail = {
   momentum: 'Rising' | 'Stable' | 'Declining'
   confidence: 'High' | 'Medium' | 'Low'
   lastUpdated: string
+  coreThesis: string
   executiveSummary: string
+  whatLeadersAreMissing: string
   whyItMatters: string
+  strategicStakes: StrategicStakes
   implications: ForceImplications
   provocations: string[]
   signals: ForceSignal[]
@@ -42,27 +50,44 @@ export const allForces: ForceDetail[] = [
     momentum: 'Rising',
     confidence: 'High',
     lastUpdated: 'June 2026',
+    coreThesis: 'As intelligence becomes abundant, judgment becomes the primary source of advantage.',
     executiveSummary:
-      'Across industries, the workflows, roles, and operating models built for an era of expensive information processing are being challenged by a new reality: AI is making intelligence abundant, fast, and embedded. Clinical documentation, financial analysis, manufacturing quality control, customer service, strategic decision support, and administrative coordination are all being transformed simultaneously. The pace of this transformation has accelerated sharply. What was experimental three years ago is now operational at scale in leading organizations. Leaders across every sector do so in a context where AI is no longer a future consideration but an active structural force reshaping cost, capacity, quality, and the meaning of human work.',
+      'Across industries, the workflows, roles, and operating models built for an era of expensive information processing are being challenged by a new reality: AI is making intelligence abundant, fast, and embedded. Clinical documentation, financial analysis, manufacturing quality control, customer service, strategic decision support, and administrative coordination are all being transformed simultaneously. But the more significant shift may be cognitive: organizations are beginning to outsource reasoning itself — not just tasks. AI systems are drafting strategy documents, synthesizing research, generating code, and advising on decisions that previously required years of accumulated human expertise. The pace of this transformation has accelerated sharply. What was experimental three years ago is now operational at scale in leading organizations. Leaders across every sector face a context in which AI is no longer a future consideration but an active structural force reshaping cost, capacity, quality, and the boundaries of human judgment.',
     whyItMatters:
-      'The strategic importance of AI Ascendance is not primarily about efficiency — it is about the redesign of what organizations do and how they do it. Leaders who treat AI as a cost-reduction tool may capture some near-term gains while missing the deeper opportunity: to rebuild operating models around new capabilities that were not possible five years ago. The organizations most likely to succeed in the next decade may be those that ask not how to make existing workflows faster, but what kinds of outcomes become possible when information is abundant and intelligence is cheap.',
+      'The strategic importance of AI Ascendance is not primarily about efficiency — it is about the redesign of what organizations do and how they do it. Leaders who treat AI as a cost-reduction tool may capture some near-term gains while missing the deeper question: as organizations outsource more reasoning to AI systems, they may also be eroding the organizational capacity to evaluate, challenge, and reproduce that reasoning independently. The organizations most likely to succeed in the next decade may be those that ask not only how to deploy AI faster, but what kinds of human judgment become more valuable — not less — as AI becomes more capable. When expertise is abundant, judgment becomes the scarce resource.',
+    whatLeadersAreMissing:
+      'Many leaders are focused on productivity gains. The deeper implication is that organizations are beginning to outsource reasoning itself — and may weaken the human judgment they will need most. When AI generates the analysis, drafts the strategy, and synthesizes the options, the humans in the loop are increasingly in a position to approve rather than to think. That is a structural change in organizational capability, and it is happening faster than most leaders have noticed.',
+    strategicStakes: {
+      ifLeadersGetThisRight: [
+        'New operating models become possible — serving more people, at higher quality, with fewer constraints.',
+        'Human judgment is elevated rather than eroded: people focus on the decisions that only they can make.',
+        'AI-enabled growth earns trust because the governance that surrounds it is visible and accountable.',
+      ],
+      ifLeadersGetThisWrong: [
+        'Skill and judgment atrophy inside the organization — the capacity to evaluate AI reasoning quietly disappears.',
+        'Governance failures damage trust at the moments when AI deployment is most visible.',
+        'AI becomes a patchwork of tools rather than a strategic capability, with no one accountable for what it collectively produces.',
+      ],
+    },
     implications: {
       leadership:
-        'Leaders may need to position AI not as a technology initiative but as the context in which every major strategic decision is now made. The leadership task includes interpreting what AI means for operating models, culture, and the meaning of human work.',
+        'AI is no longer a technology initiative — it is the operating context in which every major strategic decision is now made. Leaders who treat it as an IT function have already misframed the problem.',
       talent:
-        'AI changes what roles require. Organizations may need to redesign careers — not just retrain people — and develop clarity about which work remains distinctively human and why that matters strategically.',
+        'The organizations that redesign careers around what AI makes possible — rather than simply retraining people for roles AI is replacing — will build workforces that are structurally harder to displace.',
       operatingModel:
-        'Many current workflows were designed for a world of expensive information processing. AI may make it possible to fundamentally rethink how work is coordinated and supported — not just automate the same steps faster.',
+        'Workflows designed for expensive information processing are increasingly obsolete. The opportunity is not to automate the same steps faster — it is to rethink what coordination and knowledge work require at all.',
       growth:
-        'AI creates new possibilities for growth through personalized experiences, expanded access, and higher-quality decision support. Organizations that deploy AI credibly may attract customers, partners, and talent that prefer capable, trust-earning systems.',
+        'AI enables organizations to serve populations and needs that were previously too expensive to reach. The growth ceiling has changed — but only for organizations that can build AI-enabled trust alongside AI-enabled scale.',
       governance:
-        'AI introduces new governance requirements: visibility into where AI is influencing decisions, accountability structures for errors, and mechanisms for maintaining human oversight at appropriate points in critical processes.',
+        'When AI influences consequential decisions, accountability must be explicit before it is needed. Organizations that cannot answer "who is responsible when this goes wrong" are not ready to deploy AI at scale.',
     },
     provocations: [
-      'What if the organizations that move slowly on AI lose the talent to organizations that move faster?',
-      'What if AI makes it economically viable to serve populations that were previously too expensive to reach?',
-      'What if the bottleneck shifts from expertise to trust in AI-assisted decisions?',
-      'What if the most important skill in five years is knowing when not to follow an AI recommendation?',
+      'Most organizations believe AI will make people more productive. What if its bigger impact is making expertise less scarce — and the organizations built around expert scarcity are structurally disrupted?',
+      'What breaks if the organization can no longer reproduce the reasoning it has outsourced to AI — and the vulnerability only becomes visible in a crisis?',
+      'The risk is not that AI makes mistakes. It is that organizations lose the capacity to recognize them.',
+      'Where are we preserving the appearance of human judgment long after the humans involved are mostly approving what the model already decided?',
+      'What becomes possible if the organizations with the best judgment — not the most data — win the next decade?',
+      'Most leaders assume AI adoption is a competitive advantage. What if it becomes a competitive floor — and the real advantage lies entirely in how it is governed?',
     ],
     signals: [
       {
@@ -166,6 +191,26 @@ export const allForces: ForceDetail[] = [
         sourceLink: '#',
       },
       {
+        id: 'sig-ai-12',
+        title: 'Organizations outsourcing reasoning to AI systems at a pace that outstrips their ability to audit it',
+        interpretation:
+          'As AI systems take on strategy synthesis, research, and complex analysis, a growing risk emerges: organizations may lose the internal capacity to evaluate the quality of AI-produced reasoning. When the system that generates the answer also validates it, intellectual dependency becomes a structural governance risk.',
+        source: 'MIT Sloan Management Review / Harvard Business Review',
+        date: 'May 2026',
+        confidence: 'Medium',
+        sourceLink: '#',
+      },
+      {
+        id: 'sig-ai-13',
+        title: 'Human-machine collaboration emerging as the dominant performance model in knowledge-intensive work',
+        interpretation:
+          'Research across legal, clinical, financial, and consulting contexts shows that human-AI collaboration consistently outperforms either alone — but only when the human retains directional judgment. Organizations that structure AI as a tool for human judgment, rather than a replacement for it, are seeing the largest gains.',
+        source: 'Stanford HAI / MIT Work of the Future',
+        date: 'Apr 2026',
+        confidence: 'Medium',
+        sourceLink: '#',
+      },
+      {
         id: 'sig-ai-11',
         title: 'AI judgment and reasoning errors in high-stakes settings raising liability questions',
         interpretation:
@@ -195,28 +240,43 @@ export const allForces: ForceDetail[] = [
     momentum: 'Rising',
     confidence: 'High',
     lastUpdated: 'June 2026',
+    coreThesis: 'Trust is no longer granted through authority; it is earned through evidence.',
     executiveSummary:
-      'Trust in organizations — with customers, employees, regulators, and the public — is under structural pressure from multiple directions simultaneously. AI deployment raises questions about accountability and transparency. Leadership transitions create uncertainty about institutional direction. Widening gaps between stated values and observable actions erode internal credibility. And people, increasingly informed and empowered, are applying higher expectations to the organizations they choose to engage. In this environment, trust is not merely a reputational asset — it is an operational and competitive variable that affects access to talent, customers, partners, and capital.',
+      'Trust is not a reputational metric — it is strategic infrastructure. The organizations that can sustain trust across customers, employees, regulators, and the public will have structural advantages in every dimension that matters: AI adoption, talent retention, regulatory relationships, capital access, and strategic freedom. Trust is under pressure from multiple directions simultaneously. AI deployment raises new questions about accountability and explainability. Leadership credibility erodes when stated values diverge from observable actions. Institutional trust has declined across health, media, government, and business — creating a context in which goodwill can no longer be assumed and must be continuously earned. Narrative fragmentation means that the same organization can be perceived in fundamentally different ways by different stakeholder groups, making coherent trust-building harder. In this environment, organizations that treat trust as infrastructure — designed in, maintained, and actively governed — will have different strategic options than those that treat it as reputation management.',
     whyItMatters:
-      'Trust has historically been treated as a soft consideration in strategy — important in theory but difficult to act on directly. What is changing is the degree to which trust is becoming measurable, differentiated, and strategically decisive. Organizations with high trust attract customers. Organizations that deploy AI credibly earn the right to move faster. The leader who understands that trust is both a constraint and an asset — and who acts on it deliberately — may have a structural advantage that compounds over time.',
+      'When trust operates as infrastructure, it enables things that would otherwise be impossible: AI adoption at pace, transformation without internal resistance, regulatory relationships that allow strategic freedom, and access to the talent who choose their employers on values alignment as much as compensation. The organizations most likely to build durable competitive positions are not those with the best technology or the most efficient operations — they are those that earn the legitimacy to deploy both. Trust is both the condition and the competitive output. Leaders who treat it as a soft concern will find themselves managing the consequences of its absence at the worst moments.',
+    whatLeadersAreMissing:
+      'Most organizations treat trust as a communications issue — something to be managed through messaging, disclosure, and reputation programs. Increasingly, trust functions as infrastructure: the precondition for AI adoption, transformation velocity, regulatory freedom, and talent retention. When trust is absent, every other strategic priority becomes harder and slower. Organizations that design trust in — rather than communicate it on — will have different strategic options than those that discover its absence through a crisis.',
+    strategicStakes: {
+      ifLeadersGetThisRight: [
+        'AI deployment earns rather than erodes stakeholder confidence — opening the pace of adoption that strategy requires.',
+        'Transformation meets less internal resistance because people believe the organization means what it says.',
+        'Regulatory relationships provide strategic freedom rather than friction at the moments that matter most.',
+      ],
+      ifLeadersGetThisWrong: [
+        'Trust failures slow AI adoption at the worst moments — when competitive pressure is highest.',
+        'The gap between stated values and observable practice drives attrition in the talent the organization most needs.',
+        'Regulatory or reputational events constrain strategy precisely when decisiveness is most needed.',
+      ],
+    },
     implications: {
       leadership:
-        'Leaders set the trust tone for their organizations — through what they say, what they do, and whether the two align. The credibility questions that matter most to stakeholders are shaped in moments of high visibility: how AI is explained and deployed, how difficult decisions are communicated, and whether stated values are observable in practice.',
+        'The trust tone of an organization is set by what leaders do at moments of high visibility — how they deploy AI, what they say when things go wrong, and whether their stated values survive contact with difficult decisions.',
       talent:
-        'People increasingly evaluate organizations on whether they feel trusted, respected, and supported — not just compensated. Organizations that deploy AI in ways that feel replacing rather than augmenting may face accelerating attrition.',
+        'People who feel replaced rather than augmented do not stay. The talent capable of building organizational capability is the same talent with the most options — and they are watching closely how AI is introduced.',
       operatingModel:
-        'Operating models that make AI decisions opaque, that obscure accountability, or that reduce human contact at the wrong moments will erode trust. Trust-sensitive operating model design requires intentionality about where transparency and human presence matter most.',
+        'AI decisions that are opaque, accountability structures that are unclear, and human touchpoints that disappear at the wrong moments will erode the trust that enables every other strategic priority.',
       growth:
-        'Trust is a growth lever. Customers who trust an organization refer others, return more often, and engage more fully. In a competitive market, trust differentiation may become as important as product capability or price.',
+        'Trust compounds. Organizations that earn it grow through referral, reduce friction in sales, and attract talent who would not otherwise choose them. Organizations that lose it face costs that accumulate faster than they can be rebuilt.',
       governance:
-        'Trust requires governance. Boards, regulators, and customers are beginning to ask who is accountable when AI influences a consequential decision. Organizations that build clear accountability structures before they are required will be better positioned.',
+        'The accountability question is no longer abstract: who is responsible when an AI system influences a consequential decision badly? The organizations that build clear answers before they are required will be ahead of those managing the question after an incident.',
     },
     provocations: [
-      'What if the organizations that deploy AI most cautiously end up being trusted more — and faster by regulators?',
-      'What if trust becomes a more valuable competitive asset than technology capability?',
-      'What if the most important leadership act in the first ninety days is not a strategy announcement but a trust-building signal?',
-      'What if the gap between what organizations say about AI and what they actually do is the defining credibility problem of this decade?',
-      'What if the communities most dependent on an organization are also the ones with the least trust in it — and the most power to slow it down?',
+      'What if the fastest way to build trust is to give up the illusion of control — to be genuinely transparent about what AI does and does not do?',
+      'The risk is not transparency. It is the discovery of what you were not saying.',
+      'Most leaders assume trust is built through communication. What if the primary trust signal is the gap between what you say and what you do?',
+      'What becomes possible if the organizations most trusted by AI-skeptical stakeholders move faster on AI than those chasing early adoption?',
+      'Where are we performing transparency while preserving opacity in the decisions that actually matter?',
     ],
     signals: [
       {
@@ -290,6 +350,26 @@ export const allForces: ForceDetail[] = [
         sourceLink: '#',
       },
       {
+        id: 'sig-trust-9',
+        title: 'Leadership transparency expectations rising as organizations navigate AI deployment and transformation',
+        interpretation:
+          'Employees, investors, and regulators are applying higher scrutiny to how leaders communicate about AI deployment, workforce impacts, and strategic decisions. The gap between what leaders say and what they do is shortening the window for credibility — and the organizations with clear, consistent communication are differentiating from those that are opaque or inconsistent.',
+        source: 'Edelman Trust Barometer / Mercer',
+        date: 'Apr 2026',
+        confidence: 'High',
+        sourceLink: '#',
+      },
+      {
+        id: 'sig-trust-10',
+        title: 'Accountability pressure intensifying as AI systems influence consequential decisions',
+        interpretation:
+          'When AI systems contribute to consequential decisions — in credit, hiring, healthcare, and benefits — affected individuals are asserting rights to explanation and recourse. Organizations that cannot identify who is accountable for AI-influenced decisions face growing regulatory and legal exposure, and a deepening credibility problem with the people most affected.',
+        source: 'Algorithmic Justice League / AI Now Institute',
+        date: 'Mar 2026',
+        confidence: 'High',
+        sourceLink: '#',
+      },
+      {
         id: 'sig-trust-8',
         title: 'Institutional trust at multi-decade lows across health, media, government, and business',
         interpretation:
@@ -320,27 +400,43 @@ export const allForces: ForceDetail[] = [
     momentum: 'Rising',
     confidence: 'High',
     lastUpdated: 'June 2026',
+    coreThesis: 'Legitimacy is shifting from institutional position to demonstrated accountability.',
     executiveSummary:
-      'The regulatory, governance, and accountability frameworks that organize institutional life are being actively rewritten across every major sector simultaneously. AI regulation, financial services compliance, energy transition requirements, government digital transformation standards, and data privacy laws are all advancing — often faster than the organizations subject to them anticipated. This is not a temporary compliance surge: it reflects a structural shift in how societies expect institutions to be accountable, transparent, and adaptive. For leaders, institutional rewiring is not background noise — it is a design constraint on every major strategic initiative.',
+      'The rules of institutional life are being rewritten — not just the regulations, but the deeper question of what earns legitimacy. Regulatory frameworks are advancing across AI, energy transition, financial services, data privacy, and labor protection simultaneously. But alongside formal regulation, something broader is happening: institutions are being expected to demonstrate accountability in new ways, to communities and stakeholders who now have the tools and organizing capacity to enforce that accountability independently of regulators. Inclusive design, responsible AI governance, accessibility, and stakeholder value creation are transitioning from aspirational frameworks to operating requirements. For leaders, institutional rewiring is not background noise — it is a fundamental redesign of the conditions under which organizations earn the right to operate, grow, and innovate.',
     whyItMatters:
-      'Organizations that treat regulatory change as a periodic compliance exercise will be repeatedly surprised. Organizations that treat it as a structural force — one that shapes what is possible, what is permitted, and what earns legitimacy — will build governance infrastructure early, move with more confidence inside regulated environments, and earn the regulatory trust that translates into strategic freedom. Institutional rewiring is not about risk management. It is about recognizing that the rules of the game are being rewritten, and that the organizations most involved in shaping those rules will have the most freedom to operate inside them.',
+      'Organizations that treat regulatory change as a periodic compliance exercise will be repeatedly surprised. Those that treat it as a structural signal about changing institutional legitimacy will build governance infrastructure early, earn regulatory trust, and develop the social licence that translates into strategic freedom. The question is not only what the rules require — it is what earns legitimacy in an environment where formal rules and stakeholder expectations are moving at different speeds in different directions. The organizations that understand both dimensions will navigate the decade ahead with more confidence than those managing only the compliance dimension.',
+    whatLeadersAreMissing:
+      'Most organizations manage regulation as a compliance function — something handled by legal and government affairs at the margins of strategy. The deeper shift is that legitimacy itself — the license to operate, grow, and innovate — is being renegotiated by communities, regulators, and stakeholders who now have the capacity to enforce expectations independently of formal rules. The organizations that understand this are building governance as a strategic capability. Those that do not are managing a compliance function that will keep getting more expensive.',
+    strategicStakes: {
+      ifLeadersGetThisRight: [
+        'Regulatory relationships provide strategic freedom rather than friction at the moments decisions require speed.',
+        'Governance becomes a differentiator in enterprise sales, capital access, and regulatory trust.',
+        'The organization earns a seat at the table in shaping the frameworks it will operate under.',
+      ],
+      ifLeadersGetThisWrong: [
+        'Governance failures create existential regulatory exposure at the moments when other priorities are most urgent.',
+        'The organization is perpetually reactive to frameworks it had no hand in designing.',
+        'Compliance overhead accumulates without strategic return — a cost without a capability.',
+      ],
+    },
     implications: {
       leadership:
-        'Leaders may need to position governance capability as a strategic asset, not just a compliance cost. The organizations that build deep regulatory relationships and governance infrastructure will navigate change faster than those that treat compliance as an afterthought.',
+        'Governance capability is a strategic asset — the organizations that build it early have more freedom to act, faster approvals, and stronger regulatory relationships when contested decisions arise.',
       talent:
-        'The most valuable talent at the intersection of policy, legal, and operations is increasingly scarce and increasingly strategic. Organizations that develop regulatory expertise internally will have a more durable advantage than those dependent on external counsel.',
+        'The most valuable people at the intersection of policy, legal, and operations are deciding which organizations are serious about governance before they commit. They are not waiting for a job description.',
       operatingModel:
-        'Operating models that can adapt to changing regulatory requirements without full redesign will outperform those that must rebuild with each regulatory cycle. Governance agility is becoming an operational capability.',
+        'Organizations that build regulatory agility into their operating model outperform those that must rebuild compliance infrastructure with each new framework. Adaptability to regulation is now an operational capability, not a legal function.',
       growth:
-        'In highly regulated industries, the organizations with the strongest regulatory trust often have more freedom to grow — faster approvals, fewer audit disruptions, and more credibility with enterprise buyers who require compliance documentation.',
+        'In regulated sectors, organizations with the deepest regulatory trust move faster — more approvals, fewer audit disruptions, more credibility with enterprise buyers. Governance is a growth enabler, not only a cost center.',
       governance:
-        'Boards may need to develop genuine literacy in the regulatory domains most relevant to their organization. The era of governance-by-delegation to management is under pressure in AI, energy transition, and financial services contexts.',
+        'Board literacy in the regulatory domains most relevant to the business is no longer optional. In AI, energy, and financial services, the questions are now consequential enough that governance-by-delegation to management is an inadequate model.',
     },
     provocations: [
-      'What if the organizations that invest most in governance infrastructure end up with more strategic freedom than those that minimize it?',
-      'What if regulation turns out to be a competitive advantage for the organizations that anticipated it?',
-      'What if the most consequential institutional decisions of the next decade are not made by executives but by regulators writing the rules they will operate inside?',
-      'What if the organizations that help write the regulations governing their industry end up with a more favorable operating environment than those that only respond to them?',
+      'Most organizations treat compliance as a cost. What if it is actually a barrier to entry that favors those who have already paid it?',
+      'The organizations that help write the regulations governing their industry will operate in a more favorable environment than those that only respond to them. Where are you in that positioning?',
+      'What breaks if regulators move faster than you assumed — and the window to build genuine governance capability closes before you started?',
+      'What becomes possible if regulatory trust becomes as strategically valuable as market share?',
+      'Where are we preserving the appearance of governance while the accountability structures that would make it real remain unbuilt?',
     ],
     signals: [
       {
@@ -404,6 +500,36 @@ export const allForces: ForceDetail[] = [
         sourceLink: '#',
       },
       {
+        id: 'sig-ir-8',
+        title: 'Responsible AI governance frameworks entering operational requirements across sectors',
+        interpretation:
+          'Governance frameworks for responsible AI — covering fairness, transparency, explainability, and human oversight — are moving from voluntary principles to enforceable standards in healthcare, financial services, and government. Organizations without formal AI governance infrastructure face increasing regulatory exposure and procurement disadvantage.',
+        source: 'NIST AI Risk Management Framework / IEEE',
+        date: 'Apr 2026',
+        confidence: 'High',
+        sourceLink: '#',
+      },
+      {
+        id: 'sig-ir-9',
+        title: 'Inclusive design and accessibility standards entering core product and service requirements',
+        interpretation:
+          'Accessibility and inclusive design are moving from best-practice recommendations to compliance requirements in digital products, physical infrastructure, and service delivery. Organizations that designed primarily for average users face retrofitting costs and growing regulatory exposure as standards broaden.',
+        source: 'W3C / ADA / European Accessibility Act',
+        date: 'Feb 2026',
+        confidence: 'Medium',
+        sourceLink: '#',
+      },
+      {
+        id: 'sig-ir-10',
+        title: 'Stakeholder value creation displacing pure shareholder primacy as the accepted standard of corporate governance',
+        interpretation:
+          'Regulatory frameworks, investor coalitions, and legal accountability structures are increasingly encoding multi-stakeholder obligations into governance requirements. Organizations that designed operating models purely around shareholder return face growing pressure from regulators, employees, and communities asserting legitimate claims on how value is created and distributed.',
+        source: 'Business Roundtable / BCBS / OECD Corporate Governance',
+        date: 'Mar 2026',
+        confidence: 'Medium',
+        sourceLink: '#',
+      },
+      {
         id: 'sig-ir-7',
         title: 'Community and civic accountability expectations rising alongside formal regulatory requirements',
         interpretation:
@@ -433,29 +559,43 @@ export const allForces: ForceDetail[] = [
     momentum: 'Stable',
     confidence: 'High',
     lastUpdated: 'June 2026',
+    coreThesis: 'The workforce challenge is no longer filling roles; it is redesigning work.',
     executiveSummary:
       'Workforce transformation is no longer a future consideration — it is the operating reality. Across industries, the skills required for work are changing faster than training systems can respond. AI is compressing some roles while elevating others. Skilled trades shortages coexist with knowledge worker surpluses. Clinical burnout and shop floor automation are simultaneous crises. The organizations navigating this well are treating workforce transformation as a design challenge: redesigning what work requires, not simply trying to hire or retrain faster against a structure that may no longer fit.',
     whyItMatters:
       'Workforce strategy built for the last decade is increasingly the wrong architecture for the next five years. Organizations that recognize this early — and redesign roles, workflows, and career paths around new realities — will have structural advantages in talent attraction, retention, and productivity that laggards will find difficult to close. The workforce question is not peripheral. It is central to whether organizations can execute on any of the other strategic priorities that matter.',
+    whatLeadersAreMissing:
+      'Most organizations frame workforce issues as hiring, retention, or reskilling problems. The deeper challenge is that work itself may need to be redesigned — the roles, the workflows, the definition of what human contribution looks like in an AI-assisted environment. Organizations still trying to fill the current job architecture faster are solving the wrong problem. The organizations redesigning the architecture are the ones building durable workforce advantage.',
+    strategicStakes: {
+      ifLeadersGetThisRight: [
+        'Role redesign unlocks human capability rather than suppressing it — people do work that requires genuine judgment.',
+        'Augmented workforces out-deliver those built on headcount alone, creating structural competitive advantage.',
+        'The organization builds genuine talent advantage through design, not competition for a scarce and shrinking pool.',
+      ],
+      ifLeadersGetThisWrong: [
+        'People leave not for compensation but because the work no longer feels meaningful or worth the effort.',
+        'AI deployment accelerates attrition rather than relieving it — creating new administrative burden without removing existing constraint.',
+        'Workforce resilience fails precisely when strategic execution requires it most.',
+      ],
+    },
     implications: {
       leadership:
-        'Leaders may need to communicate a credible vision for what the workforce will look like in five years — not just what positions they are trying to fill today. The risk of silence on this question is that people fill the void with fear about replacement.',
+        'A credible vision for what the workforce will look like in three years — not just what positions are open — is now a leadership requirement. The organizations whose leaders cannot articulate this are losing talent who will not wait.',
       talent:
-        'Workforce strategy may need to evolve from workforce planning (how many people do we need?) to workforce architecture (what work should humans do, and how should it be organized around new capabilities?). This requires investment in job design, training, and leadership development.',
+        'Workforce strategy must evolve from headcount planning to work architecture: what should humans do, what should AI do, and how are those roles designed around genuine human strengths — not legacy job descriptions that predate the tools.',
       operatingModel:
-        'Operating models built around the assumption of fully staffed teams with stable skill profiles may need redesign. Organizations that use AI and automation to reduce burden on people — without reducing human judgment at critical points — may find sustainable efficiency gains.',
+        'The organizations that redesign work around human-AI handoffs — and invest in removing administrative burden from the people doing work that actually matters — will achieve sustainable efficiency gains that conventional staffing cannot match.',
       growth:
-        'Growth plans that assume current workforce availability and capability may not be achievable. New growth models may require thinking about how to serve more with differently organized teams — not just larger ones.',
+        'Growth plans that assume current workforce availability are built on a constraint that is tightening. The organizations that redesign around AI-augmented teams will unlock growth capacity that conventional hiring strategies cannot replicate.',
       governance:
-        'Boards may need to treat workforce transformation as a long-cycle strategic challenge with capital implications, not a short-term operational issue. Regular reporting on workforce architecture and redesign progress may become board-level expectations.',
+        'Workforce transformation is a capital allocation question. The decisions about role redesign, reskilling investment, and augmentation tooling deserve the same board-level rigor as other major capital decisions — including explicit attention to the workforce experience, not just the economics.',
     },
     provocations: [
-      'What if the organizations that reduce administrative burden for their most skilled people retain them — and the talent crisis effectively solves itself?',
-      'What if the skills shortage is never solved by traditional hiring — and organizations have to build the workforce they need from people who are already there?',
-      'What if the best workers of the next decade are those most skilled at working with AI — and the organizations that trained them earliest will be hardest to compete with?',
-      'What if AI could shift 30% of current documentation and coordination time back to the work that actually requires human judgment?',
-      'What if the most durable competitive advantage in labor-intensive industries is not technology but the culture that makes people want to work there through transformation?',
-      'What if augmentation tools make the average worker as capable as the best worker of ten years ago — and the implications for competitive dynamics are barely understood yet?',
+      'Most organizations are trying to hire their way through a workforce crisis. What if the constraint is structural — and the only path through is redesign?',
+      'The risk is not that AI takes jobs. It is that organizations automate tasks without redesigning roles — and end up with workers managing processes rather than doing work that matters.',
+      'What breaks if the people you most need to retain are also the people with the most options and the highest expectations of meaningful work?',
+      'What becomes possible if you redesign work around what humans do best — and deploy AI for everything else?',
+      'Where are we preserving roles that no longer reflect the actual work, while the people in them quietly disengage or find somewhere else to go?',
     ],
     signals: [
       {
@@ -549,6 +689,26 @@ export const allForces: ForceDetail[] = [
         sourceLink: '#',
       },
       {
+        id: 'sig-wf-11',
+        title: 'Continuous reskilling becoming a structural workforce requirement, not a periodic initiative',
+        interpretation:
+          'The half-life of specific technical and operational skills is shortening as AI rewrites job requirements in real time. Organizations that built workforce development around periodic training cycles are finding them inadequate for a context where what the job requires may change faster than the training can respond. Continuous learning infrastructure is becoming a competitive necessity, not a benefit.',
+        source: 'World Economic Forum Future of Jobs / LinkedIn Learning',
+        date: 'Mar 2026',
+        confidence: 'High',
+        sourceLink: '#',
+      },
+      {
+        id: 'sig-wf-12',
+        title: 'Expectation of meaningful work hardening as a retention variable, particularly among high-performers',
+        interpretation:
+          'High-performing employees — the cohort most capable of choosing — are demonstrating increasing sensitivity to whether their work feels meaningful and whether their capabilities are genuinely used. AI-assisted work that creates new layers of machine management without genuine autonomy is producing disengagement in the talent that organizations most need to keep.',
+        source: 'McKinsey Great Attrition Research / Gallup',
+        date: 'Apr 2026',
+        confidence: 'High',
+        sourceLink: '#',
+      },
+      {
         id: 'sig-wf-10',
         title: 'Corporate layoff cycles creating a cohort of experienced workers evaluating their options',
         interpretation:
@@ -578,26 +738,43 @@ export const allForces: ForceDetail[] = [
     momentum: 'Stable',
     confidence: 'Medium',
     lastUpdated: 'June 2026',
+    coreThesis: 'The future of advantage lies in designing better human-machine systems, not replacing people.',
     executiveSummary:
       'The boundary between what humans do and what machines do is actively shifting across every domain of work. Clinical roles are being redesigned around AI capability. Engineering teams are producing more with smaller headcounts. Financial advisors are making decisions in partnership with AI recommendation systems. The question is no longer whether AI will change how people work, but how organizations design that partnership — and who sets the terms of it. Human augmentation is not the same as automation. Automation replaces human work; augmentation redesigns it. The organizations that understand the distinction and design accordingly will achieve outcomes that neither purely human nor purely automated approaches can match.',
     whyItMatters:
       'Human augmentation may be one of the most strategically consequential forces in play — because it is the one that directly shapes what humans do in an AI era. If organizations get the augmentation design right, they unlock new levels of human capability, judgment, and satisfaction. If they get it wrong — deploying AI in ways that feel degrading, disempowering, or trust-eroding — they face resistance, attrition, and poor outcomes. The organizations that ask "how do we help people do their best work in an AI era?" will build fundamentally more adaptive workforces than those that ask only "what can we automate?"',
+    whatLeadersAreMissing:
+      'Most organizations are asking "what can we automate?" The question that produces better outcomes — and more resilient workforces — is "what should humans still do, and how do we make them exceptional at it?" The organizations that design augmentation systems around human excellence will build capability that AI tools alone cannot replicate — because the humans inside them will have gotten better, not more dependent.',
+    strategicStakes: {
+      ifLeadersGetThisRight: [
+        'Human capability expands alongside AI — people focus on judgment, creativity, and the work that actually requires them.',
+        'Workforce engagement rises because the work feels meaningful and the tools support rather than surveil.',
+        'The organization builds institutional knowledge and judgment that AI tools alone cannot generate or replicate.',
+      ],
+      ifLeadersGetThisWrong: [
+        'AI deployment creates disengagement and attrition in the talent the organization most needs to keep.',
+        'The institutional knowledge and judgment that made the AI useful in the first place quietly erodes.',
+        'Human-machine systems fail at the moments that require human accountability — because no one has actually practiced exercising it.',
+      ],
+    },
     implications: {
       leadership:
-        'Leaders may need to set the cultural and design norms for human-AI collaboration — early, explicitly, and visibly. The meaning of augmentation in an organization is largely set by what leaders model and what they say. Silence on this question allows anxiety to fill the void.',
+        'Leaders who set the cultural norms for human-AI collaboration early — visibly, and with genuine respect for what humans bring — will build workforces that adopt AI as an amplifier rather than resisting it as a threat to their purpose.',
       talent:
-        'The most valuable talent in an augmented organization may be people who know how to direct AI systems toward genuinely useful outcomes — and who can tell when not to. This is a judgment skill, not a technical one, and it cannot be trained away from the work itself.',
+        'The most valuable people in an augmented organization are those who can direct AI systems toward genuinely useful outcomes — and know when not to. That is a judgment skill, and it develops only through work that makes judgment matter.',
       operatingModel:
-        'Operating models may need to be redesigned around human-AI handoff points — the moments where AI should give way to human judgment, and vice versa. Getting these handoffs right is both a design problem and a trust problem.',
+        'The human-AI handoff points — where AI should yield to human judgment, and vice versa — are the most consequential design decisions in an augmented operating model. Getting them wrong produces quality failures and trust failures simultaneously.',
       growth:
-        'Augmentation may be the most viable path to growing capacity without proportional headcount growth. Organizations that demonstrate measurable capacity expansion through augmentation will have access to growth strategies that their non-augmented competitors cannot match.',
+        'Augmentation is the most viable path to growing organizational capacity without proportional headcount growth. Organizations that demonstrate measurable capacity expansion through augmentation will access growth strategies that non-augmented competitors cannot match.',
       governance:
-        'The accountability question for augmented organizations is not fully settled: when an AI-assisted human makes an error, who is responsible? Organizations that build explicit accountability structures for human-AI collaboration will navigate this question better than those that leave it implicit.',
+        'When AI-assisted humans make errors, the accountability structure must be explicit before it is needed. The organizations that build clear human-AI accountability frameworks now are ahead of those designing them after an incident.',
     },
     provocations: [
-      'What if the organizations that invest most in helping people work with AI — rather than replacing them with it — end up with the most adaptive and capable workforces?',
-      'What if the most important design question of the next decade is not "what can AI do?" but "what should humans still do — and why?"',
-      'What if augmentation raises the floor of human performance so dramatically that the meaningful differentiation becomes entirely about the ceiling of human judgment?',
+      'Most organizations are asking what AI can replace. What if the better question is what humans become capable of when AI handles everything else?',
+      'The risk is not augmentation. It is designing augmentation systems that create dependency without building capability — so when the system fails, so does the human.',
+      'What breaks if the handoff from AI to human judgment happens too late — and the human has already lost the context to make a good call?',
+      'Where are we preserving the appearance of human oversight while the humans involved no longer understand enough to actually exercise it?',
+      'What becomes possible if organizations stop designing AI systems around efficiency and start designing them around what they want humans to be capable of?',
     ],
     signals: [
       {
@@ -670,27 +847,43 @@ export const allForces: ForceDetail[] = [
     momentum: 'Rising',
     confidence: 'High',
     lastUpdated: 'June 2026',
+    coreThesis: 'The rules of value creation are changing faster than most organizations realize.',
     executiveSummary:
-      'The underlying logic of economic value creation is shifting. Decades of assumptions about where growth comes from, who creates it, how labor and capital interact, and what productivity means are all under active revision. AI is compressing the cost of knowledge work. Automation is hollowing out mid-skill roles while concentrating returns at the top and bottom of the distribution. Industrial policy is redirecting capital flows in ways that markets alone would not produce. Geopolitical fragmentation is creating new cost structures and supply chain designs. And the relationship between productivity gains and broadly shared prosperity has become one of the defining political questions of the era. For leaders, economic reconfiguration is not a macroeconomic backdrop — it is a design constraint on every major strategic decision.',
+      'The rules of the economic game are being rewritten — not just the conditions, but the underlying logic of how value is created, captured, and distributed. The era of cheap capital, seamless globalization, and productivity gains that accrued primarily to shareholders is giving way to something structurally different. Industrial policy is redirecting capital at scale. Trade friction is restructuring supply chains and pricing assumptions. AI is concentrating productivity gains in ways that create political and regulatory pressure on the organizations capturing them. Inflation has restructured consumer spending and exposed fragility in business models built on margin compression rather than genuine value creation. Rising inequality has become a strategic variable — not just a moral concern — because it generates the political responses that change the rules under which organizations operate. And stakeholder expectations of value creation are broadening in ways that formal governance frameworks are now beginning to encode. For leaders, economic reconfiguration is not a macroeconomic backdrop. It is a redesign of the environment in which every major decision is made.',
     whyItMatters:
-      'Organizations that built their strategies on the economic logic of 2010–2020 may be operating with assumptions that are quietly becoming obsolete. The cost structures, talent models, pricing power, and growth paths that made sense in an era of globalization, cheap capital, and stable productivity may no longer hold. The leaders who recognize this earliest — and redesign their operating models and growth strategies accordingly — will be better positioned than those who treat current economic turbulence as a temporary deviation from a norm that is unlikely to return.',
+      'Organizations that built their strategies on the economic logic of 2010–2020 may be operating with assumptions that are quietly becoming obsolete. The growth paths, cost structures, pricing power, and capital models that made sense in an era of globalization and cheap money may no longer hold. But economic reconfiguration is not only a risk story — it is also a reorganization of where opportunity lies. The organizations that move first to understand how value creation logic is changing in their specific domain — and redesign their operating and growth models accordingly — may find structural advantages that laggards cannot easily close. The leaders most likely to navigate this well are those who understand that they are not managing through a correction; they are operating inside a structural transition.',
+    whatLeadersAreMissing:
+      'Many leaders are waiting for economic conditions to normalize. The deeper signal is that the rules of value creation, capital allocation, and pricing power are changing — and the organizations designed for the last economic era will find the new one increasingly hostile. The wait for normalization is itself a strategic bet — and in most sectors, it is the losing one.',
+    strategicStakes: {
+      ifLeadersGetThisRight: [
+        'The organization identifies where new value creation logic creates genuine opportunity before competitors do.',
+        'Pricing models reflect actual value delivered — generating durable margin rather than defending legacy structures.',
+        'Capital is deployed against a realistic model of how competitive economics are evolving, not how they used to work.',
+      ],
+      ifLeadersGetThisWrong: [
+        'The organization is trapped in a cost structure built for economic conditions that have passed.',
+        'Growth assumptions fail when the markets and pricing models they were built on contract or restructure.',
+        'The organizations that reset fastest gain structural advantages that compound — and the gap keeps widening.',
+      ],
+    },
     implications: {
       leadership:
-        'Leaders may need to develop a clear organizational point of view on how economic reconfiguration affects their specific business model — not just as a risk to manage, but as a source of strategic opportunity for those who move early.',
+        'Leaders who develop a clear point of view on how economic reconfiguration affects their specific business model — not just their macro exposure — will make better capital, pricing, and positioning decisions than those managing quarterly results against outdated assumptions.',
       talent:
-        'The economics of talent are shifting. AI is compressing the cost of cognitive work, while genuinely scarce human capabilities are commanding premium returns. Workforce strategy may need to identify clearly which human capabilities remain irreplaceable and invest accordingly.',
+        'The economics of talent are bifurcating: AI compresses the value of routine cognitive work while genuinely scarce human judgment commands premium returns. Workforce strategy must distinguish clearly between these and invest accordingly.',
       operatingModel:
-        'Operating models built on the assumptions of stable globalization, predictable input costs, and cheap capital may need fundamental redesign. The new operating logic may need to prioritize resilience and adaptability alongside efficiency.',
+        'Operating models built on stable globalization, cheap capital, and predictable input costs require redesign. The new operating logic must prioritize resilience and adaptability alongside efficiency — and treat those as compatible rather than competing.',
       growth:
-        'Growth models that depend on expanding into stable, rules-based global markets may face structural headwinds. New growth may require identifying where economic reconfiguration creates genuine demand — for resilience, localization, or capability building.',
+        'The growth models that generated returns in 2010–2020 are increasingly misaligned with where value is being created. New growth requires identifying which economic dislocations create genuine demand — for resilience, localization, or capability that did not previously exist.',
       governance:
-        'Boards may need to develop economic literacy that goes beyond reading quarterly results — including genuine understanding of how industrial policy, capital flows, and productivity dynamics are affecting the competitive environment.',
+        'Board economic literacy must go beyond reading quarterly results to include genuine understanding of how industrial policy, capital flows, and AI-driven productivity concentration are affecting the competitive environment — and the organization\'s social licence within it.',
     },
     provocations: [
-      'What if the productivity gains from AI accrue so unevenly that they become a political and regulatory constraint on the organizations that capture them?',
-      'What if the era of cheap capital was the anomaly — and the organizations that built strategies assuming its return are systematically disadvantaged?',
-      'What if economic reconfiguration creates as much opportunity as risk — and the organizations that move first to redesign around it outperform those that wait for stability?',
-      "What if the next decade's competitive advantage is not technological but structural — the ability to operate profitably in an environment of genuine economic uncertainty?",
+      'What if the next decade rewards adaptability more than efficiency — and the organizations built to optimize are structurally disadvantaged against those built to pivot?',
+      'Most leaders assume economic conditions will normalize. What if the normalization never comes — and the organizations that kept waiting for it are the ones that fell furthest behind?',
+      'The risk is not that economic reconfiguration is hard to see. It is that the evidence only becomes undeniable at the same moment that responding to it becomes very expensive.',
+      'What becomes possible if the organization treats every pricing model, cost assumption, and growth theory as provisional — and builds the capacity to revise them faster than competitors?',
+      'Where are we preserving business models built for a globalized, low-interest, growing middle class long after the conditions that made them viable have structurally changed?',
     ],
     signals: [
       {
@@ -774,6 +967,36 @@ export const allForces: ForceDetail[] = [
         sourceLink: '#',
       },
       {
+        id: 'sig-er-10',
+        title: 'Persistent inflation in essentials structurally reshaping consumer demand patterns and operating economics',
+        interpretation:
+          'Food, housing, energy, and healthcare costs have remained elevated even as headline inflation has moderated. The structural effect is a bifurcation of consumer markets and a compression of disposable spending that is not a temporary cyclical pattern. Organizations with pricing models, product mixes, or operating cost structures built on pre-inflation assumptions are facing ongoing margin and demand pressure.',
+        source: 'Bureau of Labor Statistics / ECB Inflation Report',
+        date: 'May 2026',
+        confidence: 'High',
+        sourceLink: '#',
+      },
+      {
+        id: 'sig-er-11',
+        title: 'AI productivity gains concentrating in ways that are generating political and regulatory responses',
+        interpretation:
+          'The organizations capturing the largest AI-driven productivity gains are facing scrutiny from regulators, legislators, and the public about how those gains are distributed. Wage stagnation relative to productivity growth is a recurring political catalyst; organizations that demonstrate genuine investment in workforce capability alongside AI deployment may navigate this environment with less regulatory friction.',
+        source: 'Economic Policy Institute / McKinsey Global Institute',
+        date: 'Apr 2026',
+        confidence: 'Medium',
+        sourceLink: '#',
+      },
+      {
+        id: 'sig-er-12',
+        title: 'Trade friction expanding the cost and complexity of global operating models',
+        interpretation:
+          'Tariffs, export controls, and sanctions are restructuring the economics of global supply chains, talent flows, and market access. Organizations with operating models built on the assumption of stable, rules-based trade are encountering new costs and constraints that require active strategic response — not just compliance adaptation.',
+        source: 'WTO / Peterson Institute / US Chamber of Commerce',
+        date: 'Mar 2026',
+        confidence: 'High',
+        sourceLink: '#',
+      },
+      {
         id: 'sig-er-9',
         title: 'Capital discipline tightening as investors reassert return expectations',
         interpretation:
@@ -804,27 +1027,43 @@ export const allForces: ForceDetail[] = [
     momentum: 'Rising',
     confidence: 'High',
     lastUpdated: 'June 2026',
+    coreThesis: 'Strategy now depends on navigating fragmented power, policy volatility, and contested interdependence.',
     executiveSummary:
       "The post-Cold War framework of open, rules-based global order — which underpinned several decades of corporate globalization strategy — is being actively replaced by something more contested, fragmented, and geopolitically charged. US-China competition is restructuring technology and supply chains. European sovereignty ambitions are reshaping energy, defense, and digital infrastructure. Trade policy is increasingly an instrument of industrial and security strategy, not just economic optimization. For global organizations, the comfortable assumption that geopolitics was someone else's problem — to be managed by government-affairs teams at the margins — has become untenable. Geopolitical risk is now a first-order strategic variable.",
     whyItMatters:
       'The organizations most exposed to geopolitical realignment are not necessarily those with obvious political risk — they are those whose strategies were built on assumptions of stable, rules-based globalization that are no longer reliable. Technology supply chains, talent flows, market access, data sovereignty, and capital availability are all being reshaped by geopolitical dynamics. Leaders who develop genuine geopolitical fluency — not just government-affairs capability — will be better positioned to navigate the emerging environment. Those who wait for stability to return may be waiting for something that is not coming.',
+    whatLeadersAreMissing:
+      'Many organizations still manage geopolitics as a peripheral risk — something handled by government-affairs teams at the margins of strategy. The deeper implication is that geopolitical dynamics are now reshaping the fundamental conditions under which market access, talent flows, capital allocation, and regulatory exposure are determined. The organizations that treat geopolitical fluency as a core leadership capability — not a specialist function — will make better decisions than those who discover their exposure through a crisis.',
+    strategicStakes: {
+      ifLeadersGetThisRight: [
+        'The organization builds genuine geopolitical fluency into strategic planning — not just government-affairs monitoring.',
+        'Market access and supply chain decisions account for the new geopolitical architecture rather than the one that existed.',
+        'Technology and capital dependencies are designed for resilience in a fragmented world, not optimization in a stable one.',
+      ],
+      ifLeadersGetThisWrong: [
+        'Strategic assumptions built on globalization fail precisely when the decisions that rely on them are most consequential.',
+        'Technology or capital dependencies create leverage points that adversaries or regulators can exploit at the worst moments.',
+        'The organization discovers its geopolitical exposure through a crisis rather than through planning.',
+      ],
+    },
     implications: {
       leadership:
-        'Geopolitical fluency may need to become a core leadership capability, not a specialist function. CEOs and boards that understand how geopolitical dynamics affect their specific operating environment will make better strategic decisions than those who delegate this understanding entirely to advisors.',
+        'Geopolitical fluency is now a core leadership skill — not a specialist function to delegate. Leaders who understand how geopolitical dynamics affect their specific operating environment will make better decisions than those who rely entirely on advisors who do not share the accountability.',
       talent:
-        'Talent flows across borders are being affected by geopolitical dynamics — through visa restrictions, technology transfer controls, and shifting perceptions of destination countries. Global talent strategies may need to be redesigned around a more fragmented world.',
+        'Global talent strategies require redesign for a world of tightening visa constraints, technology transfer controls, and shifting perceptions of destination countries. The talent flows that organizations built strategies around are no longer as predictable or accessible.',
       operatingModel:
-        'Operating models built on the assumption of seamless global integration — shared technology platforms, global supply chains, cross-border data flows — may need redesign to accommodate a world of competing regulatory regimes and geopolitical boundaries.',
+        'Operating models built on seamless global integration — shared technology platforms, cross-border data flows, and global supply chains — must be redesigned for a world of competing regulatory regimes and contested geopolitical boundaries.',
       growth:
-        'Market access assumptions may need revision. Organizations that built growth strategies around open global markets may find that some of those markets are becoming politically contested, closed, or conditioned on local production and partnership requirements.',
+        'Market access assumptions need revision. Some of the most attractive growth markets are in regions where geopolitical volatility creates both risk and genuine opportunity — and the organizations that develop the capability to navigate ambiguity will access markets that risk-averse competitors avoid entirely.',
       governance:
-        'Boards may need to develop genuine geopolitical expertise — not just risk committee oversight of political risk, but strategic-level understanding of how geopolitical dynamics affect competitive position, market access, and regulatory exposure.',
+        'Boards need genuine geopolitical expertise — not just political risk committee oversight, but strategic-level understanding of how geopolitical dynamics affect competitive position, regulatory exposure, and the resilience of the supply chains and markets the organization depends on.',
     },
     provocations: [
-      'What if the organizations that build genuine geopolitical capability — not just government-affairs teams — end up with a structural advantage in navigating the next decade?',
-      'What if the bifurcation of the global technology stack forces organizations to choose sides in ways they have been successfully deferring?',
-      'What if some of the most valuable markets of the next decade are in regions that current risk models would classify as too uncertain to enter?',
-      'What if the return to industrial policy and state capitalism requires organizations to develop a fundamentally different relationship with governments than globalization made possible?',
+      'Most strategies were built for a world of stable, rules-based globalization. What if that world is not returning — and the strategies built on its return are the biggest strategic risk in the portfolio?',
+      'The risk is not geopolitical volatility. It is the strategic dependencies — in technology, supply chains, and capital — that volatility can suddenly activate.',
+      'What breaks if the technology platform your operations depend on becomes contested at a geopolitical level before you have built any alternative?',
+      'Where are we optimizing for a global operating model that is becoming harder to sustain — while organizations redesigning for fragmentation are gaining structural advantages?',
+      'What becomes possible if geopolitical fluency becomes a genuine strategic capability rather than a risk management function?',
     ],
     signals: [
       {
@@ -918,27 +1157,43 @@ export const allForces: ForceDetail[] = [
     momentum: 'Rising',
     confidence: 'High',
     lastUpdated: 'June 2026',
+    coreThesis: 'Resilience is becoming a strategic capability, not a risk management function.',
     executiveSummary:
-      'Climate is no longer a future risk to be managed at the margins of corporate strategy — it is an active, present-tense operating constraint affecting physical assets, supply chains, insurance markets, regulatory frameworks, talent expectations, and capital access. The transition to lower-carbon economies is creating winners and losers across every sector. Physical climate risks — extreme weather, water scarcity, heat stress, and sea-level rise — are affecting asset values and operational continuity in ways that are measurable and accelerating. And the credibility of corporate climate commitments is under unprecedented scrutiny, with material consequences for brand trust, regulatory relationships, and access to capital from an increasingly climate-literate investor community.',
+      'The strategic question around climate has shifted — from whether to act, to how to build genuine resilience and adaptation capability while managing accelerating physical and transition risks simultaneously. Climate is an active, present-tense operating constraint: affecting physical assets, supply chains, insurance markets, regulatory frameworks, talent expectations, and capital access. Decarbonization mandates are entering force across major markets, changing the compliance baseline for energy-intensive industries. But physical climate events — extreme weather, water scarcity, heat stress, compound infrastructure failures — are now disrupting operations at a frequency that exceeds what normal business continuity planning was designed to absorb. The organizations that will navigate this decade well are not those with the most ambitious climate commitments — they are those that have built resilience as a genuine operating capability, not a reporting posture.',
     whyItMatters:
-      'The strategic question for most organizations is no longer whether climate matters — it is how to build genuine resilience and credibility in an environment where both physical climate risks and transition risks are increasing simultaneously. Organizations that treat climate primarily as a reporting and compliance challenge may find themselves managing the wrong problem. The organizations most likely to navigate this well are those that integrate climate risk and resilience thinking into core strategic decisions — about capital allocation, operating model design, supply chain architecture, and the long-term viability of specific business models.',
+      'Adaptation and resilience are becoming the primary strategic climate challenge for most organizations — not because mitigation no longer matters, but because the physical consequences of decades of accumulated emissions are now unavoidable regardless of what organizations commit to today. The organizations most likely to emerge with structural advantages are those that treat resilience investment as a strategic asset: operationally, in supply chain design, in asset location decisions, and in energy dependency management. Climate credibility — the alignment between stated commitments and observable action — will continue to be a decisive variable in regulatory relationships and capital access. But the ability to operate through climate disruption may become as important as the ability to demonstrate progress against it.',
+    whatLeadersAreMissing:
+      'Most organizations approach climate through the lens of commitment and disclosure. The deeper challenge is operational: physical climate events are disrupting supply chains, assets, and operations at a frequency that exceeds what normal business continuity planning was designed to absorb. The organizations building resilience as a structural capability — not a compliance posture — will have operational advantages as disruption frequency continues to rise, regardless of what their stated commitments say.',
+    strategicStakes: {
+      ifLeadersGetThisRight: [
+        'Physical resilience investment produces structural operational advantages as disruption frequency increases — competitors without it face higher disruption costs.',
+        'Climate credibility provides regulatory relationships and capital access that organizations without it cannot access on the same terms.',
+        'The organization builds adaptation infrastructure before it becomes unavoidably expensive — when everyone else is building it at the same time.',
+      ],
+      ifLeadersGetThisWrong: [
+        'Physical climate disruption causes operational failures that organizations that invested in resilience can absorb and competitors cannot.',
+        'Greenwashing exposure creates legal and regulatory risk precisely when the organization least needs it.',
+        'The gap between stated commitments and observable action becomes the defining credibility failure — with capital markets, regulators, and the talent the organization is trying to attract.',
+      ],
+    },
     implications: {
       leadership:
-        'Leaders may need to move from climate commitment to climate strategy — from articulating ambitions to demonstrating how those ambitions are integrated into capital allocation, operating model design, and organizational accountability.',
+        'The leadership shift is from climate commitment to climate strategy — from articulating ambitions to demonstrating how those ambitions are integrated into capital allocation, operating model design, and organizational accountability that can be verified.',
       talent:
-        'Climate credentials are increasingly relevant to talent attraction, particularly among younger professionals. Organizations seen as credible on climate — not just compliant — may have a meaningful advantage in competitive talent markets.',
+        'Climate credibility is now a talent attraction variable among the professionals organizations most need. Leaders who treat sustainability as a compliance posture are signaling something to those people — and they notice.',
       operatingModel:
-        'Physical climate risks require operational resilience planning that goes beyond business continuity. Supply chain exposure to climate events, asset location risk, and water and energy dependency all need to be explicitly addressed in operating model design.',
+        'Physical climate risks require operational redesign that goes beyond business continuity planning. Supply chain exposure, asset location decisions, and energy and water dependency all need to be explicitly addressed in operating model architecture — not left to the risk committee.',
       growth:
-        'Climate transition creates significant demand for new products, services, and infrastructure — in energy, built environment, agriculture, water, and beyond. Organizations that can credibly serve this demand may access growth markets that are structurally underpenetrated.',
+        'Climate transition is creating significant demand for new products, services, and infrastructure. Organizations that can serve this demand credibly — not performatively — may access structurally growing markets that competitors without genuine capability cannot reach.',
       governance:
-        'Board-level climate governance is becoming an expectation, not a leading practice. Mandatory disclosure frameworks (TCFD, CSRD, SEC) are creating accountability structures that require genuine board-level climate literacy and oversight.',
+        'Board-level climate governance is no longer a leading practice — it is a disclosure requirement, a capital access condition, and increasingly a legal accountability standard. Directors who cannot engage substantively with physical risk assessment are behind the governance expectation.',
     },
     provocations: [
-      'What if the organizations that invest most seriously in physical climate resilience end up with a structural cost advantage as climate disruption accelerates?',
-      'What if the gap between stated climate commitments and observable action becomes the defining credibility challenge for corporate leaders in the next five years?',
-      'What if adaptation — rather than mitigation — becomes the primary strategic climate challenge for organizations in the next decade?',
-      'What if climate resilience becomes as important as financial resilience in how boards and investors evaluate organizational health?',
+      'Most organizations are managing climate as a reporting challenge. What if the primary challenge is operational — and the window to build resilience infrastructure before you need it is already closing?',
+      'The risk is not failing to hit net-zero targets. It is being operationally unprepared when the physical climate events arrive that your assets and supply chains were not designed to absorb.',
+      'What breaks if the insurance markets that backstop your physical climate exposure continue to withdraw from your geographies and asset classes at the current pace?',
+      'What becomes possible if resilience investment is treated as a competitive asset rather than a compliance cost — and the organization that builds it earliest has the lowest disruption cost when it matters most?',
+      'Where are we preserving climate commitments as aspirational positioning while the physical risk accumulates in the assets and supply chains that make the organization actually function?',
     ],
     signals: [
       {
@@ -1002,6 +1257,26 @@ export const allForces: ForceDetail[] = [
         sourceLink: '#',
       },
       {
+        id: 'sig-cr-8',
+        title: 'Decarbonization mandates tightening across energy-intensive sectors with binding compliance timelines',
+        interpretation:
+          'Regulatory decarbonization requirements are moving from voluntary targets to binding mandates with compliance timelines that affect capital planning horizons. Energy-intensive sectors — steel, cement, chemicals, aviation, and heavy transport — face the most acute near-term pressure, but the scope of binding requirements is expanding across the economy.',
+        source: 'IEA / European Green Deal / US EPA',
+        date: 'Apr 2026',
+        confidence: 'High',
+        sourceLink: '#',
+      },
+      {
+        id: 'sig-cr-9',
+        title: 'Resilience investment emerging as a distinct capital allocation category for operations and infrastructure',
+        interpretation:
+          'Organizations are beginning to account for climate resilience investment as a distinct capital category — separate from decarbonization spending — covering operational hardening, supply chain redesign, asset relocation, and water and energy independence. The organizations treating resilience as a strategic investment, rather than insurance overhead, are making different decisions about asset location, supply chain design, and operational architecture.',
+        source: 'Swiss Re Institute / Marsh McLennan Climate Risk',
+        date: 'Mar 2026',
+        confidence: 'Medium',
+        sourceLink: '#',
+      },
+      {
         id: 'sig-cr-7',
         title: 'Biodiversity and ecosystem stress entering corporate risk frameworks',
         interpretation:
@@ -1032,27 +1307,43 @@ export const allForces: ForceDetail[] = [
     momentum: 'Rising',
     confidence: 'High',
     lastUpdated: 'June 2026',
+    coreThesis: 'Energy and resource constraints are becoming design constraints for every growth strategy.',
     executiveSummary:
       'The global energy system is undergoing the most significant structural transformation in a century. Renewables are becoming the cheapest form of new power generation across most of the world. Electrification is expanding from transport into heating, industry, and agriculture. Critical minerals — lithium, cobalt, nickel, rare earths — have become strategic assets contested by major powers. And the infrastructure required to support the energy transition — grids, storage, pipelines, ports — is creating both massive investment opportunity and significant execution risk. For organizations outside the energy sector, the transition is reshaping input costs, supply chain risks, operational requirements, and the regulatory environment in ways that are increasingly material.',
+    whatLeadersAreMissing:
+      'Most leaders think about energy transition in terms of sustainability compliance or carbon footprint. The deeper implication is that energy and resource dynamics are reshaping competitive economics, supply chain risk, and the regulatory environment across every sector. The organizations that treat this as a reporting challenge are making a different strategic bet than those that treat it as an operating model question — and the gap between those two positions will widen as transition timelines accelerate.',
     whyItMatters:
       'Energy and resource dynamics affect every industry — through input costs, operational requirements, supply chain exposure, and regulatory obligations. Organizations that treat the energy transition as primarily a sustainability question miss the strategic significance: it is reshaping competitive dynamics, cost structures, and the regulatory environment across every sector simultaneously. The organizations most likely to navigate this well are those that develop genuine fluency in how energy and resource dynamics affect their specific business model — not just their carbon footprint — and build that understanding into long-term strategic planning.',
+    strategicStakes: {
+      ifLeadersGetThisRight: [
+        'Energy cost and availability become competitive advantages as organizations that move early lock in favorable long-term positions.',
+        'The organization builds optionality before transition constraints tighten — redesigning supply chains and infrastructure while alternatives are still affordable.',
+        'Capital deployed in energy resilience is treated as value-creating investment, not compliance cost, generating returns as competitors face higher exposure.',
+      ],
+      ifLeadersGetThisWrong: [
+        'Energy cost volatility creates structural margin exposure in business models built for stable, cheap energy — with no fast path to redesign.',
+        'Critical mineral dependencies become leverage points as supply chain disruptions arrive faster than procurement strategies can adapt.',
+        'Regulatory timelines arrive faster than capital plans can accommodate, forcing reactive and expensive infrastructure changes under constraint.',
+      ],
+    },
     implications: {
       leadership:
-        'Leaders may need to develop genuine fluency in energy and resource dynamics — not to become energy experts, but to understand how these dynamics affect their specific operating environment, cost structure, and competitive position.',
+        'Leaders need genuine fluency in energy and resource dynamics — not to become energy experts, but to understand how these dynamics affect their specific operating environment, cost structure, and competitive position. Energy illiteracy at the leadership level is increasingly a strategic liability.',
       talent:
-        'The energy transition is creating acute talent shortages in engineering, grid design, battery technology, and project management. For organizations in adjacent sectors, competition for technically skilled talent with energy-transition expertise will intensify.',
+        'The energy transition is creating acute talent shortages in engineering, grid design, battery technology, and project management. For organizations in adjacent sectors, competition for technically skilled talent with energy-transition expertise is intensifying — and the organizations that build that capability in-house will outperform those that try to hire it at the moment of need.',
       operatingModel:
-        'Operating models with significant energy cost exposure may need to redesign around energy efficiency and flexibility. Organizations with large physical footprints — in manufacturing, logistics, retail, and healthcare — face both challenge and opportunity in the energy transition.',
+        'Operating models with significant energy cost exposure need to redesign around energy efficiency and flexibility now, before constraints tighten. Organizations with large physical footprints — in manufacturing, logistics, retail, and healthcare — face both challenge and durable opportunity in the transition.',
       growth:
-        'The scale of investment required by the energy transition is creating significant demand for capital, technology, services, and talent. Organizations that can serve this demand — in finance, construction, engineering, software, and professional services — may access structurally growing markets.',
+        'The scale of investment required by the energy transition is creating significant demand for capital, technology, services, and talent. Organizations that can serve this demand — in finance, construction, engineering, software, and professional services — are positioned to access structurally growing markets for the next decade.',
       governance:
-        'Energy risk governance may need to expand from compliance and reporting to genuine strategic oversight. Board-level understanding of energy cost exposure, supply chain risk, and transition timing is becoming a differentiator, not a baseline.',
+        'Energy risk governance must expand from compliance and reporting to genuine strategic oversight. Board-level understanding of energy cost exposure, supply chain risk, and transition timing is a differentiator — and the boards that acquire it before a crisis will have more options than those that acquire it after.',
     },
     provocations: [
-      'What if the critical minerals required for the energy transition become as geopolitically contested as oil — with similar consequences for global stability and corporate strategy?',
-      'What if the pace of electrification accelerates faster than grid infrastructure can support — creating structural operational risk for organizations with significant energy demands?',
-      'What if the organizations that move earliest to redesign operations around cheap renewable energy end up with durable cost advantages that later movers cannot close?',
-      'What if the energy transition creates more disruption in adjacent industries — logistics, manufacturing, agriculture, real estate — than in energy itself?',
+      'Most organizations think about energy transition as a sustainability issue. What if it is primarily a competitive economics issue — and the organizations framing it that way are making faster, better decisions?',
+      'The risk is not moving too fast on the energy transition. It is being caught with infrastructure designed for energy conditions that no longer exist.',
+      'What breaks if critical mineral supply chains are disrupted at the same moment that electrification timelines accelerate — and your organization has no alternative sourcing strategy?',
+      'What becomes possible if energy resilience becomes a source of competitive advantage — and the organizations that built it early are using it to price differently, operate more reliably, and attract better capital?',
+      'Where are we treating energy transition as a future risk to monitor while competitors are treating it as a present opportunity to build toward?',
     ],
     signals: [
       {
@@ -1136,27 +1427,43 @@ export const allForces: ForceDetail[] = [
     momentum: 'Stable',
     confidence: 'Medium',
     lastUpdated: 'June 2026',
+    coreThesis: 'Organizations that design for genuine belonging will outperform those that treat it as a program.',
     executiveSummary:
-      'Something significant is happening in how people relate to institutions, to each other, and to the organizations they work for and buy from. Expectations around representation, meaning, and belonging at work have changed substantially over the past decade — and continue to evolve in ways that are not always linear or predictable. The social contract between employers and employees is being renegotiated in real time. Consumers increasingly choose brands that reflect or affirm their values and identity. Community — which was weakening before the pandemic — has become a strategic asset for brands and employers who can authentically create it. And the question of what it means to belong — to a workplace, a brand, a community, a nation — is more contested, more politically charged, and more commercially relevant than it has been in a generation.',
+      'Organizations compete not only for attention and revenue — they compete for relevance, meaning, and belonging. This is a structural shift in the conditions of organizational effectiveness. People are making choices about where to work, what to buy, and what to support based on whether they feel genuinely seen, valued, and part of something that matters. The social contract between employers and employees is being renegotiated under visible stress — AI is changing the nature of work, political polarization is fragmenting shared narrative, and representation expectations are evolving faster than most organizations have adapted. Community formation — the human capacity to build collective identity around shared values and experience — is becoming a strategic asset that brands and employers who can genuinely create it will have that those who cannot will struggle to replicate. And the question of what it means to belong — to a workplace, a brand, a community — is more politically charged, more commercially relevant, and more organizationally consequential than it has been in a generation. Social polarization is deepening the challenge: organizations operating across ideologically divided stakeholder communities cannot satisfy everyone, but they can choose — explicitly or by default — whether belonging is something they design for or something they leave to chance.',
+    whatLeadersAreMissing:
+      'Most leaders think about Identity & Belonging as a DEI and communications challenge — something managed through programs, policies, and messaging. The deeper implication is that belonging is a performance variable. Organizations where people feel genuinely seen, valued, and connected to something meaningful get more from those people — more creativity, more resilience, more discretionary effort. The organizations that confuse belonging programs with belonging culture are building the wrong thing, and the difference shows up in talent retention, customer loyalty, and organizational adaptability under pressure.',
     whyItMatters:
-      'Organizations that dismiss Identity & Belonging as a soft concern — relevant only to HR and marketing — may be missing one of the most strategically significant forces shaping their talent pools, customer relationships, and brand equity. The employees most likely to stay and perform are those who feel genuinely seen and valued. The customers most likely to advocate are those who feel their identity is respected. And the organizations most likely to navigate the political volatility around these questions are those that have built genuine clarity about their values — and act consistently with them. Identity & Belonging is not primarily a risk to manage; it is a design challenge.',
+      'The organizations that get Identity & Belonging right will have advantages that are genuinely difficult to replicate: the talent who choose them because they feel genuinely valued, the customers who advocate because they feel genuinely seen, the communities who support them because the organization has demonstrated that it understands and respects what matters to them. These advantages compound. The organizations most likely to navigate the political volatility around representation, DEI, and corporate values are those that have built genuine belonging as a cultural practice — not as a program or a posture. Programs can be challenged; cultural practice is harder to dislodge. Identity & Belonging is not a risk to manage or a trend to respond to. It is a design domain — one that determines whether people bring their full capability to the organizations they work for, and whether the brands people choose feel like expressions of their own identity or transactions they would rather minimize.',
+    strategicStakes: {
+      ifLeadersGetThisRight: [
+        'Talent advantage compounds as people who feel genuinely valued choose to stay, develop, and bring their full capability — rather than protecting themselves or leaving.',
+        'Brand loyalty deepens as customers who feel genuinely seen become advocates who cannot be replicated by paid media or competitive pricing alone.',
+        'Political and regulatory resilience improves as organizations with genuine cultural practice weather backlash against programs and posturing more durably than those built on compliance.',
+      ],
+      ifLeadersGetThisWrong: [
+        'The most capable people — with the most options — leave for organizations where they feel more genuinely valued, accelerating a talent disadvantage that becomes structural.',
+        'Programs designed to signal inclusion are challenged legally and politically, leaving organizations exposed without the cultural foundation that would make them defensible.',
+        'Consumer brand relevance erodes as the gap between what organizations claim and what they practice becomes visible to the communities they are trying to serve.',
+      ],
+    },
     implications: {
       leadership:
-        'Leaders may need to develop a clear and authentic organizational point of view on belonging — not a policy, but a genuine cultural position — that can survive political pressure and social evolution without constant revision.',
+        'Leaders need a clear and authentic organizational point of view on belonging — not a policy, but a genuine cultural position — that can survive political pressure and social evolution without constant revision. Leaders who cannot articulate this position leave it to chance, and chance tends to produce inconsistency.',
       talent:
-        'The most talented people increasingly evaluate organizations on whether they feel genuinely seen, valued, and able to do their best work. Belonging is not a benefit or a program — it is a felt experience that determines whether people bring their full capability or protect themselves.',
+        'The most talented people evaluate organizations on whether they feel genuinely seen, valued, and able to do their best work. Belonging is not a benefit or a program — it is a felt experience that determines whether people bring their full capability or protect themselves. The organizations that understand this design for it at every management level.',
       operatingModel:
-        'Operating models that create visible belonging — through team design, management practice, physical environment, and the way decisions are made and communicated — may outperform those that treat culture as a downstream outcome of strategy.',
+        'Operating models that create visible belonging — through team design, management practice, physical environment, and the way decisions are made and communicated — outperform those that treat culture as a downstream outcome of strategy. Belonging is designed or it is absent.',
       growth:
-        'Consumer brands that authentically reflect and affirm the identities of their target communities — without performative or extractive approaches — may build loyalty and advocacy that paid media cannot replicate. Authenticity is not a communication strategy; it is a product and culture strategy.',
+        'Consumer brands that authentically reflect and affirm the identities of their target communities build loyalty and advocacy that paid media cannot replicate. Authenticity is not a communication strategy; it is a product and culture strategy — and the gap between brands that understand this and those that do not is widening.',
       governance:
-        'The political environment around DEI, ESG, and corporate social positioning is increasingly volatile. Boards may need to develop genuine literacy in how these dynamics affect their specific organization — rather than relying on frameworks that were designed for a more stable political environment.',
+        'The political environment around DEI, ESG, and corporate social positioning is increasingly volatile. Boards need genuine literacy in how these dynamics affect their specific organization — not frameworks designed for a more stable political environment. The boards that develop this understanding before a crisis will have more options than those that develop it after.',
     },
     provocations: [
-      'What if the organizations that create the most genuine belonging — not just the most visible DEI programs — end up with the most resilient and productive workforces?',
-      'What if consumer brand loyalty in the next decade is less about product and more about whether people feel their identity is respected by the brands they choose?',
-      'What if the political backlash against corporate DEI programs creates a window for organizations that have built genuine inclusion as a cultural practice rather than a compliance posture?',
-      'What if the most important belonging question of the next decade is not who is included in the organization but whether AI-mediated work still feels meaningful to the humans doing it?',
+      'Most organizations are managing belonging as a DEI and communications challenge. What if the organizations treating it as a performance variable — something that directly determines what people are capable of delivering — are building durable advantages the others cannot see?',
+      'The risk is not the political backlash against DEI programs. It is discovering that the programs were substituting for culture — and that when the programs go, nothing is left.',
+      'What breaks if the people who most need to feel they belong — the ones with the most options and the most capability — are also the ones who can most easily leave?',
+      'What becomes possible if belonging is treated as a design constraint rather than a values aspiration — built into how teams are structured, how decisions are made, and how work is experienced?',
+      'Where are we performing inclusion while preserving cultures that only some people can fully inhabit — and who in the organization already knows this but has stopped saying it?',
     ],
     signals: [
       {
@@ -1217,6 +1524,36 @@ export const allForces: ForceDetail[] = [
         source: 'Business Roundtable / B Team',
         date: 'Mar 2026',
         confidence: 'Medium',
+        sourceLink: '#',
+      },
+      {
+        id: 'sig-ib-8',
+        title: 'Community formation becoming a primary competitive differentiator for brands and employers',
+        interpretation:
+          'Organizations that can genuinely create community — not just audience — are demonstrating measurably different outcomes in customer retention, employee engagement, and brand resilience. Authentic community requires genuine investment in shared experience, values, and belonging; organizations substituting social media presence for community infrastructure are seeing the gap widen.',
+        source: 'a16z Consumer / Edelman Brand Trust',
+        date: 'Mar 2026',
+        confidence: 'Medium',
+        sourceLink: '#',
+      },
+      {
+        id: 'sig-ib-9',
+        title: 'Representation expectations broadening from diversity metrics to genuine inclusion experience',
+        interpretation:
+          'Employee and consumer expectations around representation have shifted from diversity in headcount to inclusion in experience — whether people feel their perspective is genuinely valued and incorporated, not merely tolerated. Organizations that have invested heavily in diversity programs without redesigning the cultures those people enter are experiencing the gap between representation and belonging as a retention and trust problem.',
+        source: 'Catalyst / McKinsey Women in the Workplace',
+        date: 'Apr 2026',
+        confidence: 'High',
+        sourceLink: '#',
+      },
+      {
+        id: 'sig-ib-10',
+        title: 'Social polarization deepening the challenge of maintaining coherent organizational identity across divided stakeholder communities',
+        interpretation:
+          'Political and cultural polarization is making it harder for organizations to sustain coherent values-based positioning across their full stakeholder base. What earns trust with one community may damage it with another. Organizations are increasingly being forced to make explicit choices about whose belonging they prioritize — or to develop more nuanced approaches to community that acknowledge rather than flatten the diversity of expectations they face.',
+        source: 'Pew Research Center / Kantar',
+        date: 'Feb 2026',
+        confidence: 'High',
         sourceLink: '#',
       },
       {

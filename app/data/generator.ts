@@ -102,13 +102,13 @@ const situationScore: Record<ForceId, Record<SituationSlug, number>> = {
 }
 
 const industryScore: Record<ForceId, Record<IndustrySlug, number>> = {
-  'ai-ascendance':                  { technology: 7, healthcare: 4, consumer: 4, 'financial-services': 3, energy: 4, manufacturing: 5, 'consumer-brand': 5, government: 4, consulting: 9 },
-  'workforce-transformation':       { healthcare: 5, technology: 3, 'financial-services': 3, consumer: 3, energy: 6, manufacturing: 8, 'consumer-brand': 4, government: 6, consulting: 6 },
-  'trust-recalibration':            { 'financial-services': 6, healthcare: 4, consumer: 4, technology: 2, energy: 7, manufacturing: 3, 'consumer-brand': 7, government: 8, consulting: 8 },
+  'ai-ascendance':                  { technology: 7, healthcare: 4, consumer: 4, 'financial-services': 3, energy: 4, manufacturing: 5, 'consumer-brand': 5, government: 4, consulting: 7 },
+  'workforce-transformation':       { healthcare: 5, technology: 3, 'financial-services': 3, consumer: 3, energy: 6, manufacturing: 8, 'consumer-brand': 4, government: 6, consulting: 7 },
+  'trust-recalibration':            { 'financial-services': 6, healthcare: 4, consumer: 4, technology: 2, energy: 7, manufacturing: 3, 'consumer-brand': 7, government: 8, consulting: 9 },
   'human-augmentation':             { technology: 6, healthcare: 4, consumer: 3, 'financial-services': 2, energy: 4, manufacturing: 7, 'consumer-brand': 7, government: 5, consulting: 7 },
-  'institutional-rewiring':         { 'financial-services': 6, healthcare: 4, technology: 3, consumer: 2, energy: 7, manufacturing: 5, 'consumer-brand': 5, government: 9, consulting: 4 },
-  'economic-reconfiguration':       { 'financial-services': 7, consumer: 5, healthcare: 4, technology: 4, energy: 6, manufacturing: 7, 'consumer-brand': 5, government: 5, consulting: 7 },
-  'geopolitical-realignment':       { technology: 5, 'financial-services': 5, consumer: 3, healthcare: 2, energy: 8, manufacturing: 7, 'consumer-brand': 4, government: 7, consulting: 5 },
+  'institutional-rewiring':         { 'financial-services': 6, healthcare: 4, technology: 3, consumer: 2, energy: 7, manufacturing: 5, 'consumer-brand': 5, government: 9, consulting: 5 },
+  'economic-reconfiguration':       { 'financial-services': 7, consumer: 5, healthcare: 4, technology: 4, energy: 6, manufacturing: 7, 'consumer-brand': 5, government: 5, consulting: 9 },
+  'geopolitical-realignment':       { technology: 5, 'financial-services': 5, consumer: 3, healthcare: 2, energy: 8, manufacturing: 7, 'consumer-brand': 4, government: 7, consulting: 6 },
   'climate-and-resilience':         { healthcare: 4, 'financial-services': 4, consumer: 3, technology: 3, energy: 9, manufacturing: 5, 'consumer-brand': 5, government: 6, consulting: 3 },
   'resource-and-energy-transition': { 'financial-services': 4, consumer: 3, healthcare: 3, technology: 3, energy: 9, manufacturing: 7, 'consumer-brand': 3, government: 5, consulting: 2 },
   'identity-and-belonging':         { consumer: 6, healthcare: 5, technology: 4, 'financial-services': 3, energy: 3, manufacturing: 4, 'consumer-brand': 8, government: 6, consulting: 6 },
@@ -149,7 +149,7 @@ const forceShortLines: Record<ForceId, Record<IndustrySlug, string>> = {
     manufacturing:        'Transforms production, quality control, and supply chain intelligence.',
     'consumer-brand':     'Reshapes how brands understand, reach, and retain customers at scale.',
     government:           'Raises the productivity ceiling for public services and regulatory capacity.',
-    consulting:           'Compresses the core economics of strategy, research, and delivery work.',
+    consulting:           'Compresses research, synthesis, and delivery work — and raises the question of what advisory is worth.',
   },
   'workforce-transformation': {
     healthcare:           'Persistent shortages reshape the operating model.',
@@ -160,7 +160,7 @@ const forceShortLines: Record<ForceId, Record<IndustrySlug, string>> = {
     manufacturing:        'Automation is changing every role on the factory floor.',
     'consumer-brand':     'AI changes what brand, marketing, and creative roles require of the people who fill them.',
     government:           'Public sector workforce expectations and capabilities are being reset.',
-    consulting:           'Senior talent migrating to independent models reshapes who delivers the work and how.',
+    consulting:           'The leverage pyramid is fracturing as senior talent migrates, clients insource, and AI compresses junior output.',
   },
   'trust-recalibration': {
     healthcare:           "Becomes the new CEO's scarcest, decisive asset.",
@@ -171,7 +171,7 @@ const forceShortLines: Record<ForceId, Record<IndustrySlug, string>> = {
     manufacturing:        'Supply chain integrity and operational transparency are becoming competitive requirements.',
     'consumer-brand':     'Consumer trust is fragile, contextual, and harder to recover than ever before.',
     government:           'Public trust in government institutions is the defining constraint on effective governance.',
-    consulting:           'Clients are scrutinising value more actively than at any point in recent decades.',
+    consulting:           'Trust shifts from brand and expertise to proof, outcomes, and demonstrated capability transfer.',
   },
   'human-augmentation': {
     healthcare:           'Redraws the line between clinician and machine.',
@@ -182,7 +182,7 @@ const forceShortLines: Record<ForceId, Record<IndustrySlug, string>> = {
     manufacturing:        'Robots and AI are redefining what human expertise means on the factory floor.',
     'consumer-brand':     'Human creativity and judgment remain irreplaceable even as AI handles more execution.',
     government:           'AI tools are expanding what public servants can do — and raising questions about accountability.',
-    consulting:           'The human-AI service model is becoming the new competitive baseline for advisory work.',
+    consulting:           'Human judgment, facilitation, and sensemaking become more valuable as AI handles execution and synthesis.',
   },
   'institutional-rewiring': {
     healthcare:           'Governance and the regulatory floor are reset.',
@@ -193,7 +193,7 @@ const forceShortLines: Record<ForceId, Record<IndustrySlug, string>> = {
     manufacturing:        'Industrial policy and trade regulation are reshaping the rules of manufacturing competition.',
     'consumer-brand':     'Data, privacy, and AI regulations are actively rewriting the marketing rulebook.',
     government:           'The governance frameworks that define government are being tested and rewritten.',
-    consulting:           'Governance and compliance are growing as client demand categories.',
+    consulting:           'AI regulation, ESG disclosure, and risk complexity are creating new advisory demand categories.',
   },
   'economic-reconfiguration': {
     healthcare:           'Capital, reimbursement models, and the cost of care are all shifting simultaneously.',
@@ -204,7 +204,7 @@ const forceShortLines: Record<ForceId, Record<IndustrySlug, string>> = {
     manufacturing:        'Industrial policy, tariffs, and automation economics are reshaping the cost of manufacturing.',
     'consumer-brand':     'Consumer spending power and the economics of brand loyalty are shifting structurally.',
     government:           'Fiscal pressure is forcing governments to redesign how public value is delivered.',
-    consulting:           'Outcome-based buying and budget pressure are restructuring the economics of client engagements.',
+    consulting:           'Outcome-based pricing, procurement scrutiny, and AI compression are rewriting the economics of advisory work.',
   },
   'geopolitical-realignment': {
     healthcare:           'Supply chain dependencies and regulatory divergence are creating new operating constraints.',
@@ -215,7 +215,7 @@ const forceShortLines: Record<ForceId, Record<IndustrySlug, string>> = {
     manufacturing:        'Trade realignment, tariffs, and friend-shoring are redrawing the map of manufacturing.',
     'consumer-brand':     'Supply chain exposure and trade policy are changing the economics of global consumer goods.',
     government:           'Geopolitical realignment is reshaping the sovereignty constraints and alliances that define governance.',
-    consulting:           'Geopolitical uncertainty is shaping what clients need and how quickly they can decide.',
+    consulting:           'Geopolitical volatility creates demand for scenario planning and adaptive strategy while suppressing executive decisiveness.',
   },
   'climate-and-resilience': {
     healthcare:           'Climate-related health pressures and operational resilience requirements are rising.',
@@ -226,7 +226,7 @@ const forceShortLines: Record<ForceId, Record<IndustrySlug, string>> = {
     manufacturing:        'Climate-related risk and the carbon cost of production are becoming competitive factors.',
     'consumer-brand':     'Climate credibility is becoming a measurable driver of consumer brand preference.',
     government:           'Climate impacts are creating new demands on public institutions and testing their resilience.',
-    consulting:           'Decarbonisation and climate transition advisory are growing as demand categories.',
+    consulting:           'Sustainability advisory is fast-growing — and among the highest credibility-risk practice areas.',
   },
   'resource-and-energy-transition': {
     healthcare:           'Energy costs and supply chain resilience for medical goods are rising strategic concerns.',
@@ -237,7 +237,7 @@ const forceShortLines: Record<ForceId, Record<IndustrySlug, string>> = {
     manufacturing:        'Energy cost exposure and the shift to low-carbon processes are creating structural competitive change.',
     'consumer-brand':     'The energy footprint of products and supply chains is becoming a brand variable.',
     government:           'The pace of energy transition depends heavily on public sector investment, regulation, and coordination.',
-    consulting:           'Energy transition is creating specialist advisory demand across sectors.',
+    consulting:           'Energy transition advisory is scaling fast, but building genuine specialist capability requires talent that is in acute short supply.',
   },
   'identity-and-belonging': {
     healthcare:           'Workforce belonging determines whether clinical talent stays, performs, and advocates.',
@@ -248,7 +248,7 @@ const forceShortLines: Record<ForceId, Record<IndustrySlug, string>> = {
     manufacturing:        'The transformation of factory work raises fundamental questions about worker identity and value.',
     'consumer-brand':     'Consumer brand loyalty is increasingly built on whether people feel seen and represented.',
     government:           'Public institutions must serve diverse populations while managing their own workforce belonging challenges.',
-    consulting:           'Culture and belonging are increasingly the presenting problem behind strategic mandates.',
+    consulting:           'Culture and belonging are increasingly the presenting problem behind transformation and CEO transition mandates.',
   },
 }
 
@@ -1415,6 +1415,54 @@ function buildSignals(rankedIds: ForceId[], industry: IndustrySlug): Signal[] {
     .map((s, i) => ({ ...s, id: `${industry}-sig-${i + 1}` }))
 }
 
+// ─── Editorial generation ─────────────────────────────────────────────────────
+
+const coreInsightTemplates: Record<ChallengeSlug, (ind: string, topForce: string) => string> = {
+  growth: (ind, topForce) =>
+    `${ind} growth requires more than market access or operational scale — it requires a value proposition that holds when ${topForce.toLowerCase()} is reshaping what clients, customers, or constituents are actually willing to pay for.`,
+  trust: (_ind, topForce) =>
+    `Trust is no longer a brand or communications asset. It is an operating condition — and ${topForce.toLowerCase()} is the primary force determining whether organizations earn or erode it.`,
+  innovation: (ind, _topForce) =>
+    `${ind} innovation is shifting from building new capability to making new capability create distinct value — as AI compresses the execution layer and raises the stakes for judgment about what to build.`,
+  talent: (_ind, topForce) =>
+    `The talent challenge is no longer filling roles. It is redesigning work itself — because ${topForce.toLowerCase()} is changing what human capability needs to do alongside it.`,
+}
+
+const whatLeadersAreMissingTemplates: Record<ChallengeSlug, (ind: string, sit: string, topForce: string) => string> = {
+  growth: (ind, sit, topForce) =>
+    `Many ${ind.toLowerCase()} leaders in ${sit.toLowerCase()} are focused on market expansion, scale, and operational efficiency as growth levers. The deeper issue is that ${topForce.toLowerCase()} is shifting what drives competitive advantage — and the organizations that recognize this early will build growth models that the ones still optimizing for yesterday's logic will struggle to match.`,
+  trust: (ind, _sit, topForce) =>
+    `Many ${ind.toLowerCase()} leaders treat trust as a reputation, communications, or compliance challenge. The deeper issue is that ${topForce.toLowerCase()} is changing what trust is built on — not stated values or historical relationships, but demonstrated action, visible accountability, and the ability to show that commitments are real.`,
+  innovation: (ind, sit, topForce) =>
+    `Many ${ind.toLowerCase()} leaders in ${sit.toLowerCase()} are focused on adopting new tools and building new capabilities. The deeper issue is that ${topForce.toLowerCase()} is compressing the value of capability itself — the organizations that will lead are those that have clarity about which forms of innovation create durable value for the people they serve, not just internal productivity.`,
+  talent: (ind, _sit, topForce) =>
+    `Many ${ind.toLowerCase()} leaders are focused on recruitment, retention, and compensation as responses to the talent challenge. The deeper issue is that ${topForce.toLowerCase()} is changing the work itself — the roles, the skills, the expectations. Organizations that redesign work around new capability will attract and retain better talent than those still defining jobs the old way.`,
+}
+
+function generateCoreInsight(
+  industry: IndustrySlug,
+  situation: SituationSlug,
+  challenge: ChallengeSlug,
+  rankedIds: ForceId[]
+): string {
+  const ind = industryLabels[industry]
+  const sit = situationLabels[situation]
+  const topForce = forceBase[rankedIds[0]].name
+  return coreInsightTemplates[challenge](ind, topForce)
+}
+
+function generateWhatLeadersAreMissing(
+  industry: IndustrySlug,
+  situation: SituationSlug,
+  challenge: ChallengeSlug,
+  rankedIds: ForceId[]
+): string {
+  const ind = industryLabels[industry]
+  const sit = situationLabels[situation]
+  const topForce = forceBase[rankedIds[0]].name
+  return whatLeadersAreMissingTemplates[challenge](ind, sit, topForce)
+}
+
 // ─── Main generator ───────────────────────────────────────────────────────────
 
 export function generateContext(
@@ -1454,6 +1502,8 @@ export function generateContext(
     strategicChallenge: ch,
     timeHorizon: horizon,
     snapshot: 'June 2026',
+    coreInsight: generateCoreInsight(industry, situation, challenge, rankedIds),
+    whatLeadersAreMissing: generateWhatLeadersAreMissing(industry, situation, challenge, rankedIds),
     executiveBrief: {
       pullQuote: pq.pq,
       pullQuoteAccent: pq.accent,

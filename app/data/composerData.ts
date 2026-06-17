@@ -108,15 +108,15 @@ const industryScores: Record<ComposerForceId, IndustryRow> = {
   // Original 5
   'ai-ascendance': {
     'Technology Company': 8, Healthcare: 5, Consumer: 4, 'Consumer Brand': 4,
-    'Financial Services': 4, Manufacturing: 3, Energy: 2, Government: 2, Consulting: 9,
+    'Financial Services': 4, Manufacturing: 3, Energy: 2, Government: 2, Consulting: 7,
   },
   'workforce-transformation': {
     Healthcare: 6, Manufacturing: 7, 'Technology Company': 3, 'Financial Services': 3,
-    Consumer: 3, 'Consumer Brand': 3, Energy: 5, Government: 5, Consulting: 6,
+    Consumer: 3, 'Consumer Brand': 3, Energy: 5, Government: 5, Consulting: 7,
   },
   'trust-recalibration': {
     'Financial Services': 7, Healthcare: 5, Consumer: 4, 'Consumer Brand': 6,
-    'Technology Company': 3, Manufacturing: 2, Energy: 6, Government: 6, Consulting: 8,
+    'Technology Company': 3, Manufacturing: 2, Energy: 6, Government: 6, Consulting: 9,
   },
   'human-augmentation': {
     'Technology Company': 6, Healthcare: 5, Consumer: 3, 'Consumer Brand': 6,
@@ -124,20 +124,20 @@ const industryScores: Record<ComposerForceId, IndustryRow> = {
   },
   'institutional-rewiring': {
     'Financial Services': 6, Healthcare: 4, 'Technology Company': 4, Consumer: 2,
-    'Consumer Brand': 2, Manufacturing: 4, Energy: 7, Government: 8, Consulting: 4,
+    'Consumer Brand': 2, Manufacturing: 4, Energy: 7, Government: 8, Consulting: 5,
   },
   // New 5
-  // Economic Reconfiguration: most acute in Financial Services and Manufacturing
+  // Economic Reconfiguration: most acute in Financial Services and Manufacturing; also defining for Consulting
   'economic-reconfiguration': {
     'Financial Services': 7, Manufacturing: 7, Energy: 6, Government: 5,
-    Healthcare: 4, 'Technology Company': 5, Consumer: 4, 'Consumer Brand': 3, Consulting: 7,
+    Healthcare: 4, 'Technology Company': 5, Consumer: 4, 'Consumer Brand': 3, Consulting: 9,
   },
   // Geopolitical Realignment: most acute in Energy, Manufacturing, Government, Technology
   'geopolitical-realignment': {
     Energy: 7, Manufacturing: 7, Government: 7, 'Technology Company': 6,
-    'Financial Services': 5, Healthcare: 3, Consumer: 3, 'Consumer Brand': 2, Consulting: 5,
+    'Financial Services': 5, Healthcare: 3, Consumer: 3, 'Consumer Brand': 2, Consulting: 6,
   },
-  // Climate & Resilience: most acute in Energy, Manufacturing, Government; lower in consumer-facing
+  // Climate & Resilience: most acute in Energy, Manufacturing, Government; lower in Consulting
   'climate-and-resilience': {
     Energy: 8, Manufacturing: 6, Government: 6, 'Financial Services': 5,
     Healthcare: 3, 'Technology Company': 3, Consumer: 4, 'Consumer Brand': 3, Consulting: 3,
@@ -175,7 +175,9 @@ const forceRationales: Record<
     'Government|Innovation':          'Enables public-service delivery at new speed and scale.',
     'Consulting|Growth':              'Compresses the economics of research and analysis — and raises the premium on strategic judgment.',
     'Consulting|Relevance':           'AI-native competitors are making the traditional leverage model harder to defend.',
-    'Consulting|Innovation':          'Firms that design effective human-AI models gain structural advantage in delivery speed and depth.',
+    'Consulting|Innovation':          'Compresses research, synthesis, strategy development, and deck-building into less people-intensive models.',
+    'Consulting|Trust':               'AI reduces the information asymmetry that historically justified advisory fees, intensifying client scrutiny of value.',
+    'Consulting|Talent':              'AI compresses junior output, shifting the talent premium to strategic judgment and client capability.',
     default: 'Accelerates capability across every dimension of this context.',
   },
   'workforce-transformation': {
@@ -187,8 +189,10 @@ const forceRationales: Record<
     'Consumer|Talent':           'Frontline role redesign is the defining operational challenge.',
     'Government|Talent':         'Capability gaps and succession pressure require urgent action.',
     'Energy|Talent':             'Technical skills shortages compound as the transition accelerates.',
-    'Consulting|Talent':         'Senior talent migrating to independent models is reshaping who delivers the work and how.',
-    'Consulting|Growth':         'Practice economics built on the leverage pyramid are under structural pressure.',
+    'Consulting|Talent':         'Raises pressure on firms to rethink leverage models, senior talent retention, and capability transfer.',
+    'Consulting|Growth':         'The leverage pyramid is fracturing as senior talent migrates, clients insource, and AI compresses junior output.',
+    'Consulting|Innovation':     'Firms that redesign around AI-assisted delivery unlock new speed and leverage without traditional headcount.',
+    'Consulting|Trust':          'The talent behind the work is the primary trust signal — firms losing senior capability lose client confidence.',
     default: 'Skills, contracts, and the meaning of work are under active redesign.',
   },
   'trust-recalibration': {
@@ -198,8 +202,11 @@ const forceRationales: Record<
     'Consumer Brand|Relevance':   'Consumer skepticism toward AI-generated content is growing and measurable.',
     'Energy|Trust':               'Commitment credibility is under unprecedented scrutiny.',
     'Government|Trust':           'Public confidence in institutions requires visible, earned accountability.',
-    'Consulting|Trust':           'Client scrutiny of measurable impact is the defining constraint on the advisory value proposition.',
+    'Consulting|Trust':           'Shifts client buying from expertise claims to proof, outcomes, and demonstrated credibility.',
     'Consulting|Relevance':       'Firms that cannot demonstrate attributable outcomes are finding the value proposition harder to defend.',
+    'Consulting|Growth':          'Trust in the value proposition is the precondition for pricing power and relationship longevity.',
+    'Consulting|Innovation':      'Firms that demonstrate credible, verifiable innovation in their own models are more trusted advisors on transformation.',
+    'Consulting|Talent':          'Consultant reputation and track record are now more trust-generative than firm brand.',
     default: 'Authority is migrating from assertion to demonstrated proof.',
   },
   'human-augmentation': {
@@ -209,8 +216,10 @@ const forceRationales: Record<
     'Consumer Brand|Relevance':       'Authentic human voice is what AI-generated content cannot replicate.',
     'Technology Company|Innovation':  'Redefines the relationship between engineers, products, and AI systems.',
     'Manufacturing|Growth':           'AR-assisted workers unlock capacity without proportional training time.',
-    'Consulting|Innovation':          'Firms that design effective human-AI delivery models outperform those using AI only to cut cost.',
+    'Consulting|Innovation':          'Makes human judgment, facilitation, and sensemaking more valuable as AI handles execution and synthesis.',
     'Consulting|Growth':              'Human-AI service delivery is becoming the new competitive baseline in advisory.',
+    'Consulting|Trust':               'The irreplaceable human dimensions of advisory — judgment, relationships, facilitation — are what clients trust most.',
+    'Consulting|Talent':              'The talent premium shifts to the human capabilities AI cannot replicate: judgment, facilitation, sensemaking.',
     default: 'The line between tool and self is thinning — with strategic implications.',
   },
   'institutional-rewiring': {
@@ -220,8 +229,10 @@ const forceRationales: Record<
     'Government|Innovation':     'Legacy governance structures are the primary barrier to progress.',
     'Government|Trust':          'The accountability architecture of public institutions is under revision.',
     'Manufacturing|Growth':      'Labor and regulatory frameworks constrain automation pace.',
-    'Consulting|Growth':         'AI and regulatory complexity are creating new advisory categories for positioned firms.',
-    'Consulting|Trust':          'Governance advisory is growing as clients face expanding compliance requirements.',
+    'Consulting|Growth':         'Creates demand for governance, risk, compliance, and transformation infrastructure advisory.',
+    'Consulting|Trust':          'Governance advisory is growing as clients face expanding compliance requirements across AI, ESG, and data.',
+    'Consulting|Innovation':     'Regulatory complexity is creating new advisory categories that require both institutional credibility and technical fluency.',
+    'Consulting|Talent':         'Governance and compliance expertise is in high demand and short supply across the advisory market.',
     default: 'The architecture of accountability is being actively rewritten.',
   },
   'economic-reconfiguration': {
@@ -232,8 +243,11 @@ const forceRationales: Record<
     'Energy|Growth':                 'Industrial policy and capital flows are reshaping the energy investment landscape.',
     'Government|Innovation':         'Fiscal constraints and economic restructuring limit the scope of public investment.',
     'Technology Company|Growth':     'Platform economics and capital efficiency assumptions are being stress-tested.',
-    'Consulting|Growth':             'Outcome-based pricing and procurement scrutiny are restructuring the economics of client engagements.',
+    'Consulting|Growth':             'Rewrites the economics of advisory work — pricing, leverage, and value capture simultaneously.',
     'Consulting|Relevance':          'The engagement model built for time-and-materials is under structural pressure from every direction.',
+    'Consulting|Innovation':         'AI-driven compression of advisory economics forces firms to innovate or defend an eroding position.',
+    'Consulting|Trust':              'Outcome-based models shift performance risk to the advisor — forcing demonstrable results over process quality.',
+    'Consulting|Talent':             'Economic compression changes the ROI on senior talent investment, reshaping how firms build capability.',
     default: 'Value creation, capital, and productivity are being restructured simultaneously.',
   },
   'geopolitical-realignment': {
@@ -244,8 +258,10 @@ const forceRationales: Record<
     'Government|Trust':           'Alliance dynamics are reshaping how institutions demonstrate reliability.',
     'Technology Company|Innovation': 'Technology decoupling is bifurcating markets, standards, and investment flows.',
     'Financial Services|Growth':  'Capital flows and market access are increasingly shaped by geopolitical alignment.',
-    'Consulting|Growth':          'Geopolitical uncertainty is creating advisory demand while suppressing client decisiveness.',
+    'Consulting|Growth':          'Increases demand for scenario planning and adaptive strategy while suppressing executive decisiveness on major investments.',
     'Consulting|Relevance':       'Clients expect integrated geopolitical perspective that traditional strategy frameworks do not provide.',
+    'Consulting|Innovation':      'Volatile operating environments create openings for advisory models that emphasize rapid scenario iteration.',
+    'Consulting|Trust':           'Geopolitical credibility requires genuine expertise — not just frameworks — which few firms can demonstrate.',
     default: 'Power, alliances, and trade are being reordered with direct strategic consequences.',
   },
   'climate-and-resilience': {
@@ -277,6 +293,9 @@ const forceRationales: Record<
     'Technology Company|Talent':  'The most capable technical talent evaluates employers on values alignment and belonging.',
     'Consulting|Talent':          'Firms perceived as lacking genuine inclusion face talent disadvantage in an already competitive hiring market.',
     'Consulting|Relevance':       'Clients expect advisory firms to model the belonging practices they are paid to recommend.',
+    'Consulting|Growth':          'Culture and belonging are increasingly the presenting problem behind growth and transformation mandates.',
+    'Consulting|Trust':           'Firms that cannot demonstrate belonging credibly lose trust with both clients and the talent they need.',
+    'Consulting|Innovation':      'Elevates culture, meaning, and internal coherence as organizations undergo continuous transformation.',
     default: "People's expectations around meaning, representation, and belonging are changing the talent and brand landscape.",
   },
 }
@@ -528,6 +547,26 @@ const signalsByKey: Partial<Record<ImplicationKey, ComposerSignal[]>> = {
     { date: 'Apr 2026', title: 'US-China technology decoupling accelerating across AI and semiconductors', relatedForce: 'Geopolitical Realignment', accentHex: '#be123c' },
     { date: 'Mar 2026', title: 'Enterprise buyers adding AI governance requirements to procurement checklists', relatedForce: 'Institutional Rewiring', accentHex: '#b45309' },
   ],
+  'Consulting|Growth': [
+    { date: 'May 2026', title: 'Clients demanding outcome-based models that shift performance risk to the advisor', relatedForce: 'Economic Reconfiguration', accentHex: '#0369a1' },
+    { date: 'Apr 2026', title: 'AI compressing research and analysis tasks that previously required junior consulting teams', relatedForce: 'AI Ascendance', accentHex: '#7c3aed' },
+    { date: 'Mar 2026', title: 'Procurement sophistication treating consulting as managed spend with strict ROI scrutiny', relatedForce: 'Economic Reconfiguration', accentHex: '#0369a1' },
+  ],
+  'Consulting|Trust': [
+    { date: 'May 2026', title: 'Client scrutiny of measurable consulting impact intensifying as AI reduces information asymmetry', relatedForce: 'Trust Recalibration', accentHex: '#059669' },
+    { date: 'Apr 2026', title: 'Reputation increasingly driven by peer networks and visible track records, not firm brand', relatedForce: 'Trust Recalibration', accentHex: '#059669' },
+    { date: 'Mar 2026', title: 'Human-AI service delivery becoming the competitive baseline in strategy and advisory', relatedForce: 'AI Ascendance', accentHex: '#7c3aed' },
+  ],
+  'Consulting|Innovation': [
+    { date: 'May 2026', title: 'AI compressing research, synthesis, and deck-building into less people-intensive models', relatedForce: 'AI Ascendance', accentHex: '#7c3aed' },
+    { date: 'Apr 2026', title: 'Firms deploying AI to augment senior judgment outperforming those using it only to reduce headcount', relatedForce: 'Human Augmentation', accentHex: '#a78bfa' },
+    { date: 'Mar 2026', title: 'Governance, risk, and compliance advisory growing as proportion of total consulting demand', relatedForce: 'Institutional Rewiring', accentHex: '#b45309' },
+  ],
+  'Consulting|Talent': [
+    { date: 'May 2026', title: 'Senior consulting talent migrating to fractional and independent models faster than firms anticipated', relatedForce: 'Workforce Transformation', accentHex: '#ea580c' },
+    { date: 'Apr 2026', title: 'Consulting talent evaluating employers on values alignment and flexibility, not just compensation', relatedForce: 'Workforce Transformation', accentHex: '#ea580c' },
+    { date: 'Feb 2026', title: 'Culture advisory growing as presenting problem behind CEO transition and transformation mandates', relatedForce: 'Identity & Belonging', accentHex: '#9333ea' },
+  ],
 }
 
 const defaultSignals: ComposerSignal[] = [
@@ -582,6 +621,9 @@ const handCraftedIds = new Set([
   'energy-transformation-resilience',
   'consumer-brand-culture-change-relevance',
   'manufacturing-growth-resource-pressure',
+  'consulting-growth',
+  'consulting-trust',
+  'consulting-innovation',
 ])
 
 export function resolveComposerRoute(
@@ -674,5 +716,26 @@ export const savedContexts: SavedContext[] = [
     subtitle: 'Manufacturing · 3–5 Years',
     route: '/contexts/manufacturing-growth-resource-pressure',
     accentHex: '#d97706',
+  },
+  {
+    id: 'consulting-growth',
+    title: 'Consulting · Growth',
+    subtitle: 'Consulting · 3–5 Years',
+    route: '/contexts/consulting-growth',
+    accentHex: '#0369a1',
+  },
+  {
+    id: 'consulting-trust',
+    title: 'Consulting · Trust',
+    subtitle: 'Consulting · 3–5 Years',
+    route: '/contexts/consulting-trust',
+    accentHex: '#059669',
+  },
+  {
+    id: 'consulting-innovation',
+    title: 'Consulting · Innovation',
+    subtitle: 'Consulting · 3–5 Years',
+    route: '/contexts/consulting-innovation',
+    accentHex: '#7c3aed',
   },
 ]

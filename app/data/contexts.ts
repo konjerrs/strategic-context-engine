@@ -15,6 +15,10 @@ const healthcareContext: ContextData = {
   strategicChallenge: 'Growth',
   timeHorizon: '3–5 Years',
   snapshot: 'June 2026',
+  coreInsight:
+    'The organizations most likely to grow are not those that deploy AI fastest, but those that redesign care, workforce, trust, and governance around intelligence abundance.',
+  whatLeadersAreMissing:
+    'Many healthcare leaders are focused on workforce shortages, technology adoption, and growth pressure as separate problems. The deeper issue is that the definition of capacity itself is changing: clinical expertise, administrative work, patient trust, and organizational scale are being reshaped at the same time.',
   executiveBrief: {
     pullQuote:
       'For a new CEO, the challenge is not simply responding to these forces independently. It is understanding',
@@ -148,32 +152,32 @@ const healthcareContext: ContextData = {
     {
       id: 'leadership',
       label: 'Leadership',
-      implication: "A new CEO may need to become the organization's chief interpreter of how these forces interact.",
-      detail: 'The leadership task is less about responding to each force independently and more about creating a coherent narrative for why change is necessary, what will remain human, and where the organization must redesign itself.',
+      implication: "The new CEO's most important role is not implementing a strategy. It is creating a coherent account of how these forces interact — and what the organization must redesign as a result.",
+      detail: 'The leadership task is less about responding to each force independently and more about naming a direction that makes sense of why change is necessary, what will remain human, and where the organization must fundamentally redesign itself.',
     },
     {
       id: 'talent',
       label: 'Talent',
-      implication: 'The workforce strategy may need to shift from filling roles to redesigning work around new capabilities.',
-      detail: 'Persistent shortages and AI-enabled augmentation suggest that healthcare organizations may need to rethink roles, workflows, skill models, and career paths rather than simply hiring against the current structure.',
+      implication: 'The workforce strategy that will work is redesigning work around new capabilities — not filling roles that were built for a world before AI.',
+      detail: 'Persistent shortages and AI-enabled augmentation mean that recruiting harder against the current role structure will not close the gap. The organizations that succeed are rethinking roles, workflows, skill models, and career paths for the capacity model that AI makes possible.',
     },
     {
       id: 'operating-model',
       label: 'Operating Model',
-      implication: 'The organization may need to redesign workflows rather than simply improve existing processes.',
-      detail: 'Many current processes exist because coordination, documentation, and decision support were historically expensive. AI and automation may make it possible to reimagine how work flows across the enterprise.',
+      implication: 'The operating model question is not how to improve current workflows — it is which workflows still make sense when AI makes coordination, documentation, and decision support cheap.',
+      detail: 'Many current processes exist because information and coordination were historically expensive. AI changes that calculus. The organizations that reimagine the workflow from first principles will find different answers than those that automate existing steps.',
     },
     {
       id: 'growth',
       label: 'Growth',
-      implication: 'New growth may come from more intelligent, personalized, and trusted models of care.',
-      detail: "Growth may depend less on scale alone and more on the organization's ability to create experiences that are accessible, personalized, credible, and human where it matters most.",
+      implication: 'Growth in healthcare depends less on scale and more on the ability to create care experiences that are accessible, personalized, credible, and human where it matters most.',
+      detail: "The growth model built on volume, coverage, and margin per procedure is under structural pressure. The organizations that grow in the next period are those that build trust and personalization into care at a cost that was not previously possible.",
     },
     {
       id: 'governance',
       label: 'Governance',
-      implication: 'AI, workforce pressure, and trust dynamics may require clearer accountability structures.',
-      detail: 'As AI influences decisions, care experiences, and operational workflows, leaders will need clearer models for oversight, transparency, risk, and responsibility.',
+      implication: 'AI in healthcare requires accountability structures that are proactively designed — not added after the fact when something goes wrong.',
+      detail: 'As AI influences decisions, care experiences, and operational workflows, governance that can answer for those decisions with clarity is a competitive and regulatory requirement. The organizations that build this early will face fewer disruptions than those that do not.',
     },
   ],
   questions: [],
@@ -255,6 +259,10 @@ const financialServicesContext: ContextData = {
   strategicChallenge: 'Trust',
   timeHorizon: '3–5 Years',
   snapshot: 'June 2026',
+  coreInsight:
+    'The next trust advantage in financial services will come from making intelligence, accountability, and human judgment visible at the moments that matter most.',
+  whatLeadersAreMissing:
+    'Many financial services leaders treat trust as a brand, compliance, or communications issue. The deeper issue is that AI-assisted decisions, regulatory pressure, and customer skepticism are converging into a new operating condition: trust must be designed into how decisions are made, explained, and governed.',
   executiveBrief: {
     pullQuote:
       'For a new financial services CEO, trust is not a reputation metric. It is',
@@ -498,6 +506,10 @@ const consumerContext: ContextData = {
   strategicChallenge: 'Innovation',
   timeHorizon: '3–5 Years',
   snapshot: 'June 2026',
+  coreInsight:
+    'Consumer innovation is shifting from creating more experiences to creating experiences that feel intelligent, credible, and worth belonging to.',
+  whatLeadersAreMissing:
+    'Many consumer leaders are focused on speed, personalization, and AI-enabled experience design. The deeper issue is that consumers are becoming more selective about what feels real, relevant, and trustworthy. Innovation that scales without meaning risks accelerating irrelevance.',
   executiveBrief: {
     pullQuote:
       'For consumer organizations in transformation, innovation is not the challenge. The challenge is',

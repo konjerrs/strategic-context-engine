@@ -42,6 +42,32 @@ export default async function ContextResultsPage({
       <Header />
       <ContextHero context={context} />
       <SnapshotChanges changes={context.snapshotChanges} snapshot={context.snapshot} />
+
+      {/* ── CORE INSIGHT ── */}
+      <div className="max-w-6xl mx-auto px-8 pt-14 pb-12 border-b border-zinc-100">
+        <p className="text-[10px] uppercase tracking-[0.18em] text-zinc-400 font-medium mb-8">
+          Core Insight
+        </p>
+        <p
+          className="text-[24px] text-zinc-900 leading-[1.5] max-w-3xl"
+          style={{ fontFamily: 'var(--font-serif)' }}
+        >
+          {context.coreInsight}
+        </p>
+      </div>
+
+      {/* ── WHAT LEADERS ARE MISSING ── */}
+      <div className="max-w-6xl mx-auto px-8 py-12 border-b border-zinc-100">
+        <p className="text-[10px] uppercase tracking-[0.18em] text-zinc-400 font-medium mb-6">
+          What Leaders Are Missing
+        </p>
+        <div className="max-w-3xl border-l-2 border-zinc-200 pl-6">
+          <p className="text-[16px] text-zinc-600 leading-[1.85]">
+            {context.whatLeadersAreMissing}
+          </p>
+        </div>
+      </div>
+
       <ExecutiveBrief
         pullQuote={context.executiveBrief.pullQuote}
         pullQuoteAccent={context.executiveBrief.pullQuoteAccent}
