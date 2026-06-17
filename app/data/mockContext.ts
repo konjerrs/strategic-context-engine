@@ -8,6 +8,7 @@ export type Force = {
   whySurfaced: string[]
   whereShows: string[]
   topSignals: string[]
+  activeDrivers?: string[]
 }
 
 export type Signal = {

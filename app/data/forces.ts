@@ -21,6 +21,14 @@ export type StrategicStakes = {
   ifLeadersGetThisWrong: string[]
 }
 
+export type ForceDriver = {
+  id: string
+  name: string
+  shortDescription: string
+  whyItMatters: string
+  signals?: string[]
+}
+
 export type ForceDetail = {
   id: string
   name: string
@@ -34,6 +42,7 @@ export type ForceDetail = {
   whatLeadersAreMissing: string
   whyItMatters: string
   strategicStakes: StrategicStakes
+  drivers: ForceDriver[]
   implications: ForceImplications
   provocations: string[]
   signals: ForceSignal[]
@@ -69,6 +78,44 @@ export const allForces: ForceDetail[] = [
         'AI becomes a patchwork of tools rather than a strategic capability, with no one accountable for what it collectively produces.',
       ],
     },
+    drivers: [
+      {
+        id: 'agentic-systems',
+        name: 'Agentic Systems',
+        shortDescription: 'AI systems increasingly act across workflows rather than merely answer questions.',
+        whyItMatters: 'Organizations will need to design accountability, escalation, and oversight for AI that does work, not just provides information.',
+      },
+      {
+        id: 'cognitive-outsourcing',
+        name: 'Cognitive Outsourcing',
+        shortDescription: 'People increasingly rely on AI to synthesize, recommend, and reason.',
+        whyItMatters: 'The risk is not only bad outputs; it is weakened human capacity to challenge or reproduce the reasoning behind them.',
+      },
+      {
+        id: 'human-ai-collaboration',
+        name: 'Human-AI Collaboration',
+        shortDescription: 'Performance increasingly comes from designed human-machine systems.',
+        whyItMatters: 'Advantage depends on knowing which work should be automated, which should be augmented, and where human judgment must remain central.',
+      },
+      {
+        id: 'synthetic-media',
+        name: 'Synthetic Media',
+        shortDescription: 'AI-generated content becomes abundant and harder to distinguish from human-created material.',
+        whyItMatters: 'Verification, authenticity, and trust become more important as creation costs collapse.',
+      },
+      {
+        id: 'data-governance',
+        name: 'Data Governance',
+        shortDescription: 'Control, quality, ownership, and permitted use of data become strategic constraints.',
+        whyItMatters: 'Organizations with better data governance will have more freedom to deploy AI credibly and safely.',
+      },
+      {
+        id: 'ai-native-competition',
+        name: 'AI-Native Competition',
+        shortDescription: 'New entrants build products, services, and operating models around AI from the beginning.',
+        whyItMatters: 'Incumbents face competitors not merely using AI, but designed around it.',
+      },
+    ],
     implications: {
       leadership:
         'AI is no longer a technology initiative — it is the operating context in which every major strategic decision is now made. Leaders who treat it as an IT function have already misframed the problem.',
@@ -259,6 +306,44 @@ export const allForces: ForceDetail[] = [
         'Regulatory or reputational events constrain strategy precisely when decisiveness is most needed.',
       ],
     },
+    drivers: [
+      {
+        id: 'proof-over-authority',
+        name: 'Proof Over Authority',
+        shortDescription: 'Stakeholders increasingly demand evidence rather than accepting institutional claims.',
+        whyItMatters: 'Reputation becomes less durable unless backed by visible proof, outcomes, and accountability.',
+      },
+      {
+        id: 'leadership-transparency',
+        name: 'Leadership Transparency',
+        shortDescription: 'Leaders are expected to make decision processes more visible.',
+        whyItMatters: 'Trust is built not only through outcomes, but through the perceived integrity of how choices are made.',
+      },
+      {
+        id: 'institutional-distrust',
+        name: 'Institutional Distrust',
+        shortDescription: 'Trust shifts away from large institutions toward people, communities, and networks.',
+        whyItMatters: 'Organizations can no longer rely on category authority or legacy reputation.',
+      },
+      {
+        id: 'accountability-pressure',
+        name: 'Accountability Pressure',
+        shortDescription: 'Stakeholders expect clear responsibility when systems, leaders, or institutions fail.',
+        whyItMatters: 'Ambiguous accountability quickly becomes a trust liability.',
+      },
+      {
+        id: 'narrative-fragmentation',
+        name: 'Narrative Fragmentation',
+        shortDescription: 'Shared understanding becomes harder as audiences inhabit different information environments.',
+        whyItMatters: 'Organizations must build trust across multiple realities, not one shared story.',
+      },
+      {
+        id: 'real-time-reputation',
+        name: 'Real-Time Reputation',
+        shortDescription: 'Reputation events unfold faster and with less organizational control.',
+        whyItMatters: 'Trust can be damaged before traditional response systems are activated.',
+      },
+    ],
     implications: {
       leadership:
         'The trust tone of an organization is set by what leaders do at moments of high visibility — how they deploy AI, what they say when things go wrong, and whether their stated values survive contact with difficult decisions.',
@@ -419,6 +504,44 @@ export const allForces: ForceDetail[] = [
         'Compliance overhead accumulates without strategic return — a cost without a capability.',
       ],
     },
+    drivers: [
+      {
+        id: 'responsible-ai-governance',
+        name: 'Responsible AI Governance',
+        shortDescription: 'AI governance shifts from policy aspiration to operational requirement.',
+        whyItMatters: 'Organizations need clear structures for oversight, accountability, transparency, and risk.',
+      },
+      {
+        id: 'regulatory-acceleration',
+        name: 'Regulatory Acceleration',
+        shortDescription: 'Rules in AI, climate, data, labor, and financial services are evolving rapidly.',
+        whyItMatters: 'Governance agility becomes a strategic capability.',
+      },
+      {
+        id: 'community-accountability',
+        name: 'Community Accountability',
+        shortDescription: 'Communities increasingly enforce expectations outside formal regulatory channels.',
+        whyItMatters: 'Social license can become as important as formal permission.',
+      },
+      {
+        id: 'inclusive-design',
+        name: 'Inclusive Design & Accessibility',
+        shortDescription: 'Accessibility and inclusion expectations move into core product and service design.',
+        whyItMatters: 'Legitimacy increasingly depends on who systems are designed to serve well.',
+      },
+      {
+        id: 'stakeholder-governance',
+        name: 'Stakeholder Governance',
+        shortDescription: 'Organizations are judged against broader stakeholder value, not only shareholder return.',
+        whyItMatters: 'Governance models must account for employees, communities, customers, regulators, and society.',
+      },
+      {
+        id: 'public-private-rebalancing',
+        name: 'Public-Private Rebalancing',
+        shortDescription: 'Boundaries between public responsibility and private capability are shifting.',
+        whyItMatters: 'Organizations increasingly operate in spaces once left to institutions or governments.',
+      },
+    ],
     implications: {
       leadership:
         'Governance capability is a strategic asset — the organizations that build it early have more freedom to act, faster approvals, and stronger regulatory relationships when contested decisions arise.',
@@ -578,6 +701,44 @@ export const allForces: ForceDetail[] = [
         'Workforce resilience fails precisely when strategic execution requires it most.',
       ],
     },
+    drivers: [
+      {
+        id: 'work-redesign',
+        name: 'Work Redesign',
+        shortDescription: 'The structure of work changes faster than job descriptions.',
+        whyItMatters: 'Organizations must redesign roles and workflows, not simply hire faster.',
+      },
+      {
+        id: 'continuous-reskilling',
+        name: 'Continuous Reskilling',
+        shortDescription: 'Capability renewal becomes ongoing rather than episodic.',
+        whyItMatters: 'Learning systems become core infrastructure for workforce resilience.',
+      },
+      {
+        id: 'workforce-fluidity',
+        name: 'Workforce Fluidity',
+        shortDescription: 'Careers become more project-based, portfolio-oriented, and mobile.',
+        whyItMatters: 'Talent strategies must adapt to people moving across roles, organizations, and employment models.',
+      },
+      {
+        id: 'meaning-and-purpose',
+        name: 'Meaning & Purpose',
+        shortDescription: 'Workers evaluate jobs through identity, purpose, growth, and belonging.',
+        whyItMatters: 'Retention increasingly depends on whether work feels worth doing.',
+      },
+      {
+        id: 'burnout-visibility',
+        name: 'Burnout Visibility',
+        shortDescription: 'Wellbeing becomes measurable and strategically consequential.',
+        whyItMatters: 'Burnout is no longer a private issue; it becomes an operating constraint.',
+      },
+      {
+        id: 'hybrid-work-baseline',
+        name: 'Hybrid Work Baseline',
+        shortDescription: 'Hybrid and flexible work become expected conditions for many knowledge workers.',
+        whyItMatters: 'Organizations must design culture, collaboration, and management for distributed work.',
+      },
+    ],
     implications: {
       leadership:
         'A credible vision for what the workforce will look like in three years — not just what positions are open — is now a leadership requirement. The organizations whose leaders cannot articulate this are losing talent who will not wait.',
@@ -757,6 +918,44 @@ export const allForces: ForceDetail[] = [
         'Human-machine systems fail at the moments that require human accountability — because no one has actually practiced exercising it.',
       ],
     },
+    drivers: [
+      {
+        id: 'judgment-amplification',
+        name: 'Judgment Amplification',
+        shortDescription: 'Tools expand the range, speed, and quality of human judgment.',
+        whyItMatters: 'The best outcomes come from humans making better decisions with better systems.',
+      },
+      {
+        id: 'human-ai-handoffs',
+        name: 'Human-AI Handoffs',
+        shortDescription: 'The boundary between machine recommendation and human decision becomes a critical design point.',
+        whyItMatters: 'Poor handoffs create quality, trust, and accountability failures.',
+      },
+      {
+        id: 'skill-extension',
+        name: 'Skill Extension',
+        shortDescription: 'Technology enables people to perform tasks that previously required deeper specialization.',
+        whyItMatters: 'Capability becomes more distributed across the workforce.',
+      },
+      {
+        id: 'dignity-by-design',
+        name: 'Dignity by Design',
+        shortDescription: 'Augmentation must preserve agency, dignity, and meaning.',
+        whyItMatters: 'Tools that make people feel diminished create resistance and attrition.',
+      },
+      {
+        id: 'physical-digital-augmentation',
+        name: 'Physical-Digital Augmentation',
+        shortDescription: 'AR, sensors, robotics, and AI extend human capability in physical environments.',
+        whyItMatters: 'Augmentation is not only knowledge work; it reshapes manufacturing, healthcare, logistics, and field work.',
+      },
+      {
+        id: 'oversight-capacity',
+        name: 'Oversight Capacity',
+        shortDescription: 'Humans are asked to supervise increasingly complex systems.',
+        whyItMatters: 'Oversight only works if humans retain enough understanding and authority to intervene.',
+      },
+    ],
     implications: {
       leadership:
         'Leaders who set the cultural norms for human-AI collaboration early — visibly, and with genuine respect for what humans bring — will build workforces that adopt AI as an amplifier rather than resisting it as a threat to their purpose.',
@@ -866,6 +1065,50 @@ export const allForces: ForceDetail[] = [
         'The organizations that reset fastest gain structural advantages that compound — and the gap keeps widening.',
       ],
     },
+    drivers: [
+      {
+        id: 'outcome-based-economics',
+        name: 'Outcome-Based Economics',
+        shortDescription: 'Buyers increasingly prefer pricing tied to impact, performance, and measurable value.',
+        whyItMatters: 'Organizations must prove outcomes, not merely sell activity or expertise.',
+      },
+      {
+        id: 'procurement-rationalization',
+        name: 'Procurement Rationalization',
+        shortDescription: 'Buyers consolidate vendors, benchmark spend, and scrutinize ROI.',
+        whyItMatters: 'Differentiation must survive increasingly sophisticated buying systems.',
+      },
+      {
+        id: 'ai-cost-compression',
+        name: 'AI Cost Compression',
+        shortDescription: 'AI reduces the cost of analysis, content production, service delivery, and knowledge work.',
+        whyItMatters: 'Business models built on labor intensity and information scarcity face margin pressure.',
+      },
+      {
+        id: 'capital-discipline',
+        name: 'Capital Discipline',
+        shortDescription: 'Elevated capital costs and investor scrutiny reshape growth strategies.',
+        whyItMatters: 'Growth must justify itself through clearer returns and stronger resilience.',
+      },
+      {
+        id: 'industrial-policy',
+        name: 'Industrial Policy',
+        shortDescription: 'Governments redirect capital and market incentives through policy.',
+        whyItMatters: 'Strategy increasingly depends on understanding where public investment and regulation are moving value.',
+      },
+      {
+        id: 'inequality-demand-fragmentation',
+        name: 'Inequality & Demand Fragmentation',
+        shortDescription: 'Economic divergence reshapes consumer demand, labor markets, and political pressure.',
+        whyItMatters: 'Markets become more uneven, and strategy must account for who can pay, who is excluded, and who pushes back.',
+      },
+      {
+        id: 'internal-capability-building',
+        name: 'Internal Capability Building',
+        shortDescription: 'Clients and organizations build capabilities they previously bought externally.',
+        whyItMatters: 'External providers must shift from owning work to enabling capability.',
+      },
+    ],
     implications: {
       leadership:
         'Leaders who develop a clear point of view on how economic reconfiguration affects their specific business model — not just their macro exposure — will make better capital, pricing, and positioning decisions than those managing quarterly results against outdated assumptions.',
@@ -1046,6 +1289,44 @@ export const allForces: ForceDetail[] = [
         'The organization discovers its geopolitical exposure through a crisis rather than through planning.',
       ],
     },
+    drivers: [
+      {
+        id: 'strategic-decoupling',
+        name: 'Strategic Decoupling',
+        shortDescription: 'Technology, data, capital, and supply chains separate along geopolitical lines.',
+        whyItMatters: 'Global operating models must account for fragmentation.',
+      },
+      {
+        id: 'industrial-sovereignty',
+        name: 'Industrial Sovereignty',
+        shortDescription: 'Nations invest in domestic capacity for strategic sectors.',
+        whyItMatters: 'Market access and investment decisions increasingly reflect national priorities.',
+      },
+      {
+        id: 'trade-friction',
+        name: 'Trade Friction',
+        shortDescription: 'Trade rules become tools of security and industrial policy.',
+        whyItMatters: 'Tariffs, controls, and restrictions reshape cost structures and supply chains.',
+      },
+      {
+        id: 'security-reprioritization',
+        name: 'Security Reprioritization',
+        shortDescription: 'Defense, cyber, energy, and infrastructure security move higher on national agendas.',
+        whyItMatters: 'Private-sector strategy is increasingly shaped by security logic.',
+      },
+      {
+        id: 'policy-volatility',
+        name: 'Policy Volatility',
+        shortDescription: 'Political shifts change regulatory and market assumptions quickly.',
+        whyItMatters: 'Leaders need scenario planning and adaptive strategy capacity.',
+      },
+      {
+        id: 'contested-interdependence',
+        name: 'Contested Interdependence',
+        shortDescription: 'Organizations remain globally connected while the risks of connection rise.',
+        whyItMatters: 'Resilience requires navigating dependence without assuming stability.',
+      },
+    ],
     implications: {
       leadership:
         'Geopolitical fluency is now a core leadership skill — not a specialist function to delegate. Leaders who understand how geopolitical dynamics affect their specific operating environment will make better decisions than those who rely entirely on advisors who do not share the accountability.',
@@ -1176,6 +1457,44 @@ export const allForces: ForceDetail[] = [
         'The gap between stated commitments and observable action becomes the defining credibility failure — with capital markets, regulators, and the talent the organization is trying to attract.',
       ],
     },
+    drivers: [
+      {
+        id: 'physical-climate-disruption',
+        name: 'Physical Climate Disruption',
+        shortDescription: 'Extreme weather, heat, flooding, and water stress directly affect operations.',
+        whyItMatters: 'Climate becomes an operating constraint, not a distant risk.',
+      },
+      {
+        id: 'adaptation-resilience-investment',
+        name: 'Adaptation & Resilience Investment',
+        shortDescription: 'Organizations invest to withstand disruption rather than merely report on emissions.',
+        whyItMatters: 'Resilience becomes a source of operational advantage.',
+      },
+      {
+        id: 'climate-disclosure',
+        name: 'Climate Disclosure',
+        shortDescription: 'Reporting requirements make climate exposure more visible to investors and regulators.',
+        whyItMatters: 'Climate credibility affects capital access, governance, and reputation.',
+      },
+      {
+        id: 'decarbonization-mandates',
+        name: 'Decarbonization Mandates',
+        shortDescription: 'Policy and customer pressure create binding expectations for emissions reduction.',
+        whyItMatters: 'Transition planning becomes a strategic and operational requirement.',
+      },
+      {
+        id: 'infrastructure-fragility',
+        name: 'Infrastructure Fragility',
+        shortDescription: 'Grids, transport, water, and logistics systems show increasing vulnerability.',
+        whyItMatters: 'Organizations depend on infrastructure they do not fully control.',
+      },
+      {
+        id: 'biodiversity-ecosystem-stress',
+        name: 'Biodiversity & Ecosystem Stress',
+        shortDescription: 'Environmental degradation enters corporate risk and resilience frameworks.',
+        whyItMatters: 'Business continuity increasingly depends on ecosystem health.',
+      },
+    ],
     implications: {
       leadership:
         'The leadership shift is from climate commitment to climate strategy — from articulating ambitions to demonstrating how those ambitions are integrated into capital allocation, operating model design, and organizational accountability that can be verified.',
@@ -1326,6 +1645,44 @@ export const allForces: ForceDetail[] = [
         'Regulatory timelines arrive faster than capital plans can accommodate, forcing reactive and expensive infrastructure changes under constraint.',
       ],
     },
+    drivers: [
+      {
+        id: 'electrification-demand',
+        name: 'Electrification Demand',
+        shortDescription: 'Transport, industry, and buildings shift to electricity as the primary energy source.',
+        whyItMatters: 'Electrification creates new cost structures, infrastructure needs, and competitive dynamics.',
+      },
+      {
+        id: 'grid-constraint',
+        name: 'Grid Constraint',
+        shortDescription: 'Electricity grids struggle to keep pace with demand growth and distributed generation.',
+        whyItMatters: 'Grid reliability becomes a strategic operating constraint for energy-intensive organizations.',
+      },
+      {
+        id: 'critical-minerals',
+        name: 'Critical Minerals',
+        shortDescription: 'Lithium, cobalt, rare earths, and other minerals become strategic bottlenecks.',
+        whyItMatters: 'Supply chain resilience requires new sourcing strategies and geopolitical awareness.',
+      },
+      {
+        id: 'energy-cost-volatility',
+        name: 'Energy Cost Volatility',
+        shortDescription: 'Energy prices become less predictable as the grid and fuel mix shift.',
+        whyItMatters: 'Margin exposure increases for organizations that have not designed for price variability.',
+      },
+      {
+        id: 'industrial-decarbonization',
+        name: 'Industrial Decarbonization',
+        shortDescription: 'Hard-to-abate sectors face specific technology and capital challenges in the transition.',
+        whyItMatters: 'Transition pathways vary by sector — no single strategy applies across industries.',
+      },
+      {
+        id: 'resource-circularity',
+        name: 'Resource Circularity',
+        shortDescription: 'Circular economy models gain traction as linear resource models face regulatory and cost pressure.',
+        whyItMatters: 'Organizations that redesign for circularity gain input cost advantages and regulatory resilience.',
+      },
+    ],
     implications: {
       leadership:
         'Leaders need genuine fluency in energy and resource dynamics — not to become energy experts, but to understand how these dynamics affect their specific operating environment, cost structure, and competitive position. Energy illiteracy at the leadership level is increasingly a strategic liability.',
@@ -1446,6 +1803,44 @@ export const allForces: ForceDetail[] = [
         'Consumer brand relevance erodes as the gap between what organizations claim and what they practice becomes visible to the communities they are trying to serve.',
       ],
     },
+    drivers: [
+      {
+        id: 'meaning-at-work',
+        name: 'Meaning at Work',
+        shortDescription: 'Employees expect work to provide more than compensation — they seek purpose and contribution.',
+        whyItMatters: 'Organizations that cannot provide meaning lose the most capable and mobile talent first.',
+      },
+      {
+        id: 'community-formation',
+        name: 'Community Formation',
+        shortDescription: 'People seek belonging in smaller, identity-aligned communities rather than broad institutions.',
+        whyItMatters: 'Organizations must earn belonging rather than assume it from employment.',
+      },
+      {
+        id: 'representation-expectations',
+        name: 'Representation Expectations',
+        shortDescription: 'Employees and consumers expect to see themselves reflected in leadership, products, and culture.',
+        whyItMatters: 'Gaps between stated values and visible representation generate credibility failures.',
+      },
+      {
+        id: 'social-polarization',
+        name: 'Social Polarization',
+        shortDescription: 'Deepening social and political divides make it harder for organizations to hold diverse coalitions together.',
+        whyItMatters: 'Organizations face pressure from multiple directions simultaneously and must navigate without alienating key groups.',
+      },
+      {
+        id: 'narrative-fragmentation',
+        name: 'Narrative Fragmentation',
+        shortDescription: 'Shared organizational narratives erode as people consume different information ecosystems.',
+        whyItMatters: 'Building coherent culture becomes harder when employees and customers inhabit different realities.',
+      },
+      {
+        id: 'belonging-as-performance',
+        name: 'Belonging as Performance',
+        shortDescription: 'Programs and signals substitute for genuine inclusion, creating a gap between stated and lived culture.',
+        whyItMatters: 'Performative belonging breeds cynicism and accelerates attrition among exactly the people organizations most want to retain.',
+      },
+    ],
     implications: {
       leadership:
         'Leaders need a clear and authentic organizational point of view on belonging — not a policy, but a genuine cultural position — that can survive political pressure and social evolution without constant revision. Leaders who cannot articulate this position leave it to chance, and chance tends to produce inconsistency.',

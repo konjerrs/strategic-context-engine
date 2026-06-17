@@ -134,6 +134,24 @@ export function ForceAccordion({ forces }: Props) {
                       </div>
                     )}
 
+                    {force.activeDrivers && force.activeDrivers.length > 0 && (
+                      <div className="mt-8 pt-6 border-t border-zinc-100">
+                        <p className="text-[10px] uppercase tracking-[0.15em] text-zinc-400 mb-4">
+                          Active Drivers
+                        </p>
+                        <div className="flex flex-wrap gap-2">
+                          {force.activeDrivers.map((driver) => (
+                            <span
+                              key={driver}
+                              className="text-[11px] px-3 py-1 rounded-full border border-zinc-200 bg-zinc-50 text-zinc-500"
+                            >
+                              {driver.split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ')}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+
                     {/* Link to full detail page */}
                     <div className="mt-8 pt-6 border-t border-zinc-100">
                       <Link

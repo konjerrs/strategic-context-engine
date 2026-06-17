@@ -124,6 +124,25 @@ export default async function ForceDetailPage({
         </p>
       </div>
 
+      {/* ── FORCE DRIVERS ── */}
+      {force.drivers && force.drivers.length > 0 && (
+        <div className="max-w-6xl mx-auto px-8 py-16 border-b border-zinc-100">
+          <p className="text-[10px] uppercase tracking-[0.18em] text-zinc-400 font-medium mb-3">
+            Force Drivers
+          </p>
+          <p className="text-[13px] text-zinc-400 mb-12">The specific patterns giving this force its shape.</p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {force.drivers.map((driver) => (
+              <div key={driver.id} className="border border-zinc-100 rounded-sm p-6">
+                <p className="text-[13px] font-medium text-zinc-800 mb-2">{driver.name}</p>
+                <p className="text-[13px] text-zinc-500 leading-[1.7] mb-3">{driver.shortDescription}</p>
+                <p className="text-[12px] text-zinc-400 leading-[1.7]">{driver.whyItMatters}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+
       {/* ── WHY IT MATTERS ── */}
       <div className="max-w-6xl mx-auto px-8 py-16 border-b border-zinc-100">
         <p className="text-[10px] uppercase tracking-[0.18em] text-zinc-400 font-medium mb-8">

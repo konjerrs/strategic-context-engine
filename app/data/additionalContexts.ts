@@ -1224,6 +1224,7 @@ export const additionalContexts: ContextData[] = [
         whySurfaced: ['Engagement model economics are under structural pressure — not cyclical', 'Outcome-based pricing shifts performance risk and requires genuine confidence in results', 'AI compression reduces the cost justification for legacy leverage ratios', 'Procurement sophistication makes informal relationship-based pricing harder to sustain'],
         whereShows: ['Engagement model', 'Pricing strategy', 'Business development', 'Practice economics'],
         topSignals: ['Clients demanding outcome-based engagement models that shift performance risk to the advisor', 'AI compressing the work that justified traditional consulting leverage ratios', 'Procurement sophistication treating consulting as managed spend with strict ROI scrutiny'],
+        activeDrivers: ['outcome-based-economics', 'procurement-rationalization', 'ai-cost-compression', 'internal-capability-building'],
       },
       {
         rank: '02', id: 'ai-ascendance', name: 'AI Ascendance', accentHex: '#7c3aed',
@@ -1232,6 +1233,7 @@ export const additionalContexts: ContextData[] = [
         whySurfaced: ['AI compression changes the economic case for the analytical pyramid', 'Clients deploying their own AI tools are reducing advisory dependency in research-heavy engagements', 'Firms that adopt AI to deliver more senior-equivalent output gain structural margin advantages', 'The definition of what consulting is for is being reset by what clients can now do themselves'],
         whereShows: ['Research and analysis', 'Deck production', 'Client advisory', 'Talent economics'],
         topSignals: ['AI compressing research and analysis tasks that previously required junior consulting teams', 'Clients building internal AI strategy capability, reducing advisory dependency', 'AI-native tools enabling direct client-expert matching outside traditional firm models'],
+        activeDrivers: ['agentic-systems', 'cognitive-outsourcing', 'ai-native-competition'],
       },
       {
         rank: '03', id: 'trust-recalibration', name: 'Trust Recalibration', accentHex: '#059669',
@@ -1240,6 +1242,7 @@ export const additionalContexts: ContextData[] = [
         whySurfaced: ['Information asymmetry — historically the source of advisory value — is narrowing', 'Client organizations are more sophisticated consumers of consulting than at any prior point', 'Peer networks and track records now generate more trust than firm brand in key buyer segments', 'Demonstrable capability transfer has become a trust signal, not just a service promise'],
         whereShows: ['Client relationships', 'Value demonstration', 'Business development'],
         topSignals: ['Client scrutiny of measurable consulting impact intensifying as AI reduces information asymmetry', 'Reputation increasingly driven by peer networks and visible track records', 'Clients demanding advisory relationships that build internal capability, not dependency'],
+        activeDrivers: ['proof-over-authority', 'accountability-pressure', 'real-time-reputation'],
       },
       {
         rank: '04', id: 'workforce-transformation', name: 'Workforce Transformation', accentHex: '#ea580c',
@@ -1248,6 +1251,7 @@ export const additionalContexts: ContextData[] = [
         whySurfaced: ['Senior talent migration is eroding the relationship assets that drive growth', 'Partnership pipeline quality is under pressure as the attractiveness of firm employment declines for top talent', 'AI compression of junior work reduces the economic case for maintaining large junior cohorts', 'Client capability-building and insourcing are reducing repeat advisory demand'],
         whereShows: ['Senior talent', 'Practice model', 'Team design', 'Client capability building'],
         topSignals: ['Senior talent migrating to fractional and independent models faster than firms anticipated', 'Platforms enabling high-end solo consultants to compete directly with established firms', 'Consulting talent evaluating employers on values alignment and flexibility, not just compensation'],
+        activeDrivers: ['work-redesign', 'workforce-fluidity', 'continuous-reskilling'],
       },
       {
         rank: '05', id: 'human-augmentation', name: 'Human Augmentation', accentHex: '#a78bfa',
@@ -1256,6 +1260,7 @@ export const additionalContexts: ContextData[] = [
         whySurfaced: ['AI handles execution while human judgment determines what is worth executing on', 'Clients can distinguish between AI-generated insight and human-distilled perspective — and pay for the latter', 'Firms that design effective human-AI delivery models gain structural leverage over those that do not', 'Facilitation, sensemaking, and judgment under uncertainty remain durably human capabilities'],
         whereShows: ['Service delivery', 'Practice design', 'Client advisory model'],
         topSignals: ['Human-AI service delivery becoming the competitive baseline in strategy and advisory', 'Clients expecting faster, cheaper, always-on insight alongside senior human judgment', 'Firms deploying AI to augment senior judgment outperforming those using it only to reduce headcount'],
+        activeDrivers: ['judgment-amplification', 'human-ai-handoffs', 'skill-extension'],
       },
     ],
     implications: [
@@ -1321,6 +1326,7 @@ export const additionalContexts: ContextData[] = [
         whySurfaced: ['Trust is the primary constraint on the consulting value proposition right now', 'Information asymmetry — the traditional source of advisory authority — is narrowing rapidly', 'Peer networks and track records are the primary trust signals for new advisory relationships', 'Demonstrated capability transfer has become a trust signal, not just a service promise'],
         whereShows: ['Client relationships', 'Value demonstration', 'Business development'],
         topSignals: ['Client scrutiny of measurable consulting impact intensifying as AI reduces information asymmetry', 'Reputation increasingly driven by peer networks and visible track records, not firm brand', 'Consultant fatigue and cynicism creating openings for differentiated value propositions'],
+        activeDrivers: ['proof-over-authority', 'accountability-pressure', 'leadership-transparency', 'real-time-reputation'],
       },
       {
         rank: '02', id: 'economic-reconfiguration', name: 'Economic Reconfiguration', accentHex: '#0369a1',
@@ -1329,6 +1335,7 @@ export const additionalContexts: ContextData[] = [
         whySurfaced: ['Outcome-based pricing is itself a trust signal — advisors who propose it are confident in their results', 'Procurement sophistication means clients track results and compare them to the promise', 'Economic pressure on discretionary spend makes ROI demonstration a prerequisite, not a nice-to-have', 'The firms that can demonstrate impact will have pricing power; those that cannot will face compression'],
         whereShows: ['Engagement model', 'Pricing strategy', 'Business development', 'Practice economics'],
         topSignals: ['Clients resisting time-and-materials pricing and demanding outcome-based models', 'Procurement sophistication treating consulting as managed spend with strict ROI scrutiny', 'AI compressing the labour hours that justified traditional consulting leverage ratios'],
+        activeDrivers: ['outcome-based-economics', 'procurement-rationalization'],
       },
       {
         rank: '03', id: 'ai-ascendance', name: 'AI Ascendance', accentHex: '#7c3aed',
@@ -1337,6 +1344,7 @@ export const additionalContexts: ContextData[] = [
         whySurfaced: ['AI erodes the information asymmetry that was the basis of advisory authority', 'Firms that use AI visibly and transparently build more trust than those that obscure it', 'The advisory that AI cannot replicate — judgment, facilitation, accountability — is what clients should be paying for', 'Clients who discover their advisors are charging premium rates for AI-generated output without disclosure will lose trust rapidly'],
         whereShows: ['Research and analysis', 'Deck production', 'Client advisory', 'Talent economics'],
         topSignals: ['AI compressing research and analysis tasks that previously required junior consulting teams', 'Clients building internal AI strategy capability, reducing advisory dependency', 'AI-native tools enabling direct client-expert matching outside traditional firm models'],
+        activeDrivers: ['cognitive-outsourcing', 'ai-native-competition'],
       },
       {
         rank: '04', id: 'institutional-rewiring', name: 'Institutional Rewiring', accentHex: '#b45309',
@@ -1345,6 +1353,7 @@ export const additionalContexts: ContextData[] = [
         whySurfaced: ['Governance and compliance advisory require institutional trust that is difficult to build quickly', 'Clients choosing advisors for regulatory and governance work apply the highest trust standards', 'Firms with genuine governance expertise gain access to board-level relationships that other practice areas cannot reach', 'Regulatory advisory requires the firm to stand behind its advice in ways that strategy advisory does not'],
         whereShows: ['Compliance advisory', 'Governance consulting', 'Risk and regulatory practice'],
         topSignals: ['Governance, risk, and compliance advisory growing as proportion of consulting demand', 'AI governance requirements creating new advisory categories for positioned firms', 'Regulatory complexity increasing specialist advisory demand across sectors'],
+        activeDrivers: ['responsible-ai-governance', 'regulatory-acceleration', 'stakeholder-governance'],
       },
       {
         rank: '05', id: 'workforce-transformation', name: 'Workforce Transformation', accentHex: '#ea580c',
@@ -1353,6 +1362,7 @@ export const additionalContexts: ContextData[] = [
         whySurfaced: ['Trust in consulting is personal before it is institutional', 'Senior talent migration disrupts the client trust architecture that firms have built over years', 'Clients who see familiar faces leave may follow them — or use the transition to reconsider the relationship', 'Firms investing in senior talent retention are investing in their trust asset, not just their delivery capacity'],
         whereShows: ['Senior talent', 'Practice model', 'Team design', 'Client capability building'],
         topSignals: ['Senior talent migrating to fractional and independent models faster than firms anticipated', 'Platforms enabling high-end solo consultants to compete directly with established firms', 'Consulting talent evaluating employers on values alignment and flexibility, not just compensation'],
+        activeDrivers: ['work-redesign', 'workforce-fluidity'],
       },
     ],
     implications: [
@@ -1418,6 +1428,7 @@ export const additionalContexts: ContextData[] = [
         whySurfaced: ['AI compression is the defining innovation forcing function for consulting', 'The advisory model that must be innovated is the one AI is disrupting most directly', 'Firms that adopt AI to accelerate existing services are lagging behind firms that use AI to rethink what services mean', 'The innovation question is not how to do the same work with AI but what work only makes sense when AI does the rest'],
         whereShows: ['Research and analysis', 'Deck production', 'Client advisory', 'Talent economics'],
         topSignals: ['AI compressing research and analysis tasks that previously required junior consulting teams', 'Clients building internal AI strategy capability, reducing advisory dependency', 'AI-native tools enabling direct client-expert matching outside traditional firm models'],
+        activeDrivers: ['agentic-systems', 'cognitive-outsourcing', 'human-ai-collaboration', 'ai-native-competition'],
       },
       {
         rank: '02', id: 'human-augmentation', name: 'Human Augmentation', accentHex: '#a78bfa',
@@ -1426,6 +1437,7 @@ export const additionalContexts: ContextData[] = [
         whySurfaced: ['Human augmentation is the operating design challenge that AI ascendance creates', 'The firms that innovate the human-AI collaboration model will outperform those that add AI to existing workflows', 'Judgment, facilitation, and sensemaking are the human capabilities that become more valuable as AI handles execution', 'The delivery model that works in 2028 probably looks different in team size, role design, and engagement structure from the one that works today'],
         whereShows: ['Service delivery', 'Practice design', 'Client advisory model'],
         topSignals: ['Human-AI service delivery becoming the competitive baseline in strategy and advisory', 'Clients expecting faster, cheaper, always-on insight alongside senior human judgment', 'Firms deploying AI to augment senior judgment outperforming those using it only to reduce headcount'],
+        activeDrivers: ['judgment-amplification', 'human-ai-handoffs', 'skill-extension', 'oversight-capacity'],
       },
       {
         rank: '03', id: 'economic-reconfiguration', name: 'Economic Reconfiguration', accentHex: '#0369a1',
@@ -1434,6 +1446,7 @@ export const additionalContexts: ContextData[] = [
         whySurfaced: ['Engagement model innovation is required by the economic environment, not optional', 'Pricing innovation — toward outcomes, value, and shared risk — is a form of consulting innovation', 'Firms that build new economic models around AI-augmented delivery will have structural advantages', 'The innovation in consulting economics is as important as the innovation in service design'],
         whereShows: ['Engagement model', 'Pricing strategy', 'Business development', 'Practice economics'],
         topSignals: ['Clients demanding outcome-based engagement models that shift performance risk to the advisor', 'AI compressing the work that justified traditional consulting leverage ratios', 'Procurement sophistication treating consulting as managed spend with strict ROI scrutiny'],
+        activeDrivers: ['outcome-based-economics', 'ai-cost-compression'],
       },
       {
         rank: '04', id: 'workforce-transformation', name: 'Workforce Transformation', accentHex: '#ea580c',
@@ -1442,6 +1455,7 @@ export const additionalContexts: ContextData[] = [
         whySurfaced: ['Workforce design is the implementation layer of service model innovation', 'AI compression of junior work creates the opportunity and the necessity to redesign team structures', 'Senior talent retention requires innovating what the firm offers, not just what it pays', 'The talent model that made consulting work in the past decade is not the talent model for the next one'],
         whereShows: ['Senior talent', 'Practice model', 'Team design', 'Client capability building'],
         topSignals: ['Senior talent migrating to fractional and independent models faster than firms anticipated', 'Platforms enabling high-end solo consultants to compete directly with established firms', 'Consulting talent evaluating employers on values alignment and flexibility, not just compensation'],
+        activeDrivers: ['work-redesign', 'continuous-reskilling', 'workforce-fluidity'],
       },
       {
         rank: '05', id: 'trust-recalibration', name: 'Trust Recalibration', accentHex: '#059669',
@@ -1450,6 +1464,7 @@ export const additionalContexts: ContextData[] = [
         whySurfaced: ['Trust innovation is as important as service innovation for consulting competitiveness', 'Firms that can demonstrate genuine outcomes will have more credibility for service model innovation', 'Transparent AI use is a trust innovation that few firms have yet made standard', 'The firms that build trust through capability transfer will create a more durable client relationship than those that maximize advisory dependency'],
         whereShows: ['Client relationships', 'Value demonstration', 'Business development'],
         topSignals: ['Client scrutiny of measurable consulting impact intensifying as AI reduces information asymmetry', 'Reputation increasingly driven by peer networks and visible track records, not firm brand', 'Clients demanding advisory relationships that build internal capability, not dependency'],
+        activeDrivers: ['proof-over-authority', 'accountability-pressure'],
       },
     ],
     implications: [

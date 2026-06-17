@@ -14,18 +14,19 @@ This document explains where all content lives in the codebase and where to appl
 
 **Structure per force:**
 - `id`, `name`, `shortLine`, `accentHex`, `momentum`, `confidence`, `lastUpdated`
-- `coreThesis` — single sharp sentence: "What do we believe is true?" (NEW)
+- `coreThesis` — single sharp sentence: "What do we believe is true?"
 - `executiveSummary` — 2–3 sentence framing paragraph
-- `whatLeadersAreMissing` — 1 paragraph naming the common misread (NEW)
+- `whatLeadersAreMissing` — 1 paragraph naming the common misread
 - `whyItMatters` — 1 paragraph on strategic significance
-- `strategicStakes` — `{ifLeadersGetThisRight: string[], ifLeadersGetThisWrong: string[]}`, 3 bullets each (NEW)
+- `strategicStakes` — `{ifLeadersGetThisRight: string[], ifLeadersGetThisWrong: string[]}`, 3 bullets each
+- `drivers` — array of `ForceDriver` objects: `id` (kebab-case), `name`, `shortDescription`, `whyItMatters` (NEW — 5–7 drivers per force)
 - `implications` — 5 named dimensions: `leadership`, `talent`, `operatingModel`, `growth`, `governance`
 - `provocations` — 5–6 asymmetric, assumption-challenging questions
 - `signals` — array of `ForceSignal` objects: `id`, `title`, `interpretation`, `source`, `date`, `confidence`, `sourceLink`
 - `relatedForces`, `relevantContexts`
 
 **Render order on `/forces/[id]` detail page:**
-header → coreThesis → executiveSummary → whatLeadersAreMissing → whyItMatters → strategicStakes → implications → provocations → signals → relatedForces → relevantContexts
+header → coreThesis → executiveSummary → whatLeadersAreMissing → **drivers** → whyItMatters → strategicStakes → implications → provocations → signals → relatedForces → relevantContexts
 
 **To update:** Edit this file directly. Force detail pages are fully static and read from this file only.
 
@@ -55,10 +56,10 @@ header → coreThesis → executiveSummary → whatLeadersAreMissing → whyItMa
 - `consumer-transformation-innovation`
 
 **Structure per context:**
-- `coreInsight` — single sharp sentence or short paragraph: "What is the main thing leaders need to understand about this context?" (NEW)
-- `whatLeadersAreMissing` — concise paragraph naming the common misread and deeper issue (NEW)
+- `coreInsight` — single sharp sentence or short paragraph: "What is the main thing leaders need to understand about this context?"
+- `whatLeadersAreMissing` — concise paragraph naming the common misread and deeper issue
 - `executiveBrief` — `pullQuote`, `pullQuoteAccent`, `body1`, `body2`
-- `forces` — array of 5 ranked forces, each with: `rank`, `id`, `name`, `shortLine`, `description`, `whySurfaced`, `whereShows`, `topSignals`
+- `forces` — array of 5 ranked forces, each with: `rank`, `id`, `name`, `shortLine`, `description`, `whySurfaced`, `whereShows`, `topSignals`, `activeDrivers?` (optional, kebab-case driver IDs from forces.ts; rendered in ForceAccordion; populated for consulting contexts)
 - `implications` — 5 dimensions with `implication` (short) + `detail` (long)
 - `provocations` — 5 numbered questions
 - `signals` — 5 signal objects with `title`, `potentialImpact`, `relatedForce`, `sourceName`, `publicationDate`, `confidence`
@@ -175,6 +176,7 @@ Hand-crafted contexts always take priority over generated ones.
 | If you want to… | Edit this file |
 |---|---|
 | Update a force's summary, implications, or provocations | `forces.ts` |
+| Add or edit drivers for a force | `forces.ts` → `drivers` array |
 | Add or edit signals on a force detail page | `forces.ts` → signals array |
 | Edit a curated context (healthcare, financial services, consumer) | `contexts.ts` |
 | Edit an additional hand-crafted context | `additionalContexts.ts` |

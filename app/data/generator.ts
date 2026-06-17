@@ -1473,17 +1473,62 @@ export function generateContext(
 ): ContextData {
   const rankedIds = rankForces(industry, situation, challenge)
 
-  const forces: Force[] = rankedIds.map((id, i) => ({
-    rank: String(i + 1).padStart(2, '0'),
-    id,
-    name: forceBase[id].name,
-    accentHex: forceBase[id].accentHex,
-    shortLine: forceShortLines[id][industry],
-    description: forceDescriptions[id][industry],
-    whySurfaced: whySurfaced[id][situation],
-    whereShows: whereShowsMap[id][industry],
-    topSignals: topSignals[id][industry],
-  }))
+  const consultingActiveDrivers: Partial<Record<ForceId, Record<ChallengeSlug, string[]>>> = {
+    'economic-reconfiguration': {
+      growth: ['outcome-based-economics', 'procurement-rationalization', 'ai-cost-compression', 'internal-capability-building'],
+      trust: ['outcome-based-economics', 'procurement-rationalization'],
+      innovation: ['outcome-based-economics', 'ai-cost-compression'],
+      talent: ['outcome-based-economics', 'procurement-rationalization'],
+    },
+    'ai-ascendance': {
+      growth: ['agentic-systems', 'cognitive-outsourcing', 'ai-native-competition'],
+      trust: ['cognitive-outsourcing', 'ai-native-competition'],
+      innovation: ['agentic-systems', 'cognitive-outsourcing', 'human-ai-collaboration', 'ai-native-competition'],
+      talent: ['cognitive-outsourcing', 'human-ai-collaboration'],
+    },
+    'trust-recalibration': {
+      growth: ['proof-over-authority', 'accountability-pressure', 'real-time-reputation'],
+      trust: ['proof-over-authority', 'accountability-pressure', 'leadership-transparency', 'real-time-reputation'],
+      innovation: ['proof-over-authority', 'accountability-pressure'],
+      talent: ['leadership-transparency', 'accountability-pressure'],
+    },
+    'workforce-transformation': {
+      growth: ['work-redesign', 'workforce-fluidity', 'continuous-reskilling'],
+      trust: ['work-redesign', 'workforce-fluidity'],
+      innovation: ['work-redesign', 'continuous-reskilling', 'workforce-fluidity'],
+      talent: ['work-redesign', 'continuous-reskilling', 'burnout-visibility', 'meaning-and-purpose'],
+    },
+    'human-augmentation': {
+      growth: ['judgment-amplification', 'human-ai-handoffs', 'skill-extension'],
+      trust: [],
+      innovation: ['judgment-amplification', 'human-ai-handoffs', 'skill-extension', 'oversight-capacity'],
+      talent: ['judgment-amplification', 'skill-extension'],
+    },
+    'institutional-rewiring': {
+      growth: [],
+      trust: ['responsible-ai-governance', 'regulatory-acceleration', 'stakeholder-governance'],
+      innovation: [],
+      talent: ['responsible-ai-governance', 'inclusive-design'],
+    },
+  }
+
+  const forces: Force[] = rankedIds.map((id, i) => {
+    const activeDrivers = industry === 'consulting'
+      ? (consultingActiveDrivers[id as ForceId]?.[challenge] ?? [])
+      : undefined
+    return {
+      rank: String(i + 1).padStart(2, '0'),
+      id,
+      name: forceBase[id].name,
+      accentHex: forceBase[id].accentHex,
+      shortLine: forceShortLines[id][industry],
+      description: forceDescriptions[id][industry],
+      whySurfaced: whySurfaced[id][situation],
+      whereShows: whereShowsMap[id][industry],
+      topSignals: topSignals[id][industry],
+      ...(activeDrivers && activeDrivers.length > 0 ? { activeDrivers } : {}),
+    }
+  })
 
   const pq = executiveBriefPullQuotes[challenge]
   const body = executiveBriefBody[industry][situation]
